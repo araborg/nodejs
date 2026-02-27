@@ -5,4 +5,4 @@ let func1 = function () {
 };
 
 // export
-module.export = age;
+module.exports = age;
