@@ -17,7 +17,8 @@
             massive file, you break your code into smaller, manageable pieces 
             that communicate with each other. 
             
-            Key Characteristics
+            Key Characteristics:
+
             Private Scope: 
             By default, variables and functions defined in a module are private 
             to that file and cannot be accessed from the outside unless explicitly 
@@ -54,6 +55,16 @@
             ES Modules (ESM): 
             The modern JavaScript standard. Use export and import statements 
             (requires setting "type": "module" in your package.json).
+
+
+            Examples:
+            // math.js
+            const add = (a, b) => a + b;
+            const subtract = (a, b) => a - b;
+
+            // Exporting multiple functions as an object
+            module.exports = { add, subtract };
+
         -->
 
 		<script src="./scriptOne.js"></script>
