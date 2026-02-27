@@ -2,9 +2,9 @@
 
 // console.log(age);
 
-let func1 = require("./app");
+// let func1 = require("./app");
 
-func1();
+// func1();
 
 let { gender } = require("./app");
 

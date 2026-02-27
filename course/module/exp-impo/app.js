@@ -9,6 +9,6 @@ let func1 = function () {
 // module.exports = func1;
 
 // module.exports = { age: age, func1: func1 };
-module.exports = { age, func1 };
+// module.exports = { age, func1 };
 
 exports.gender = "gender";
