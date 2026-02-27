@@ -58,12 +58,50 @@
 
 
             Examples:
+            1. CommonJS (The Node.js Default)
+
             // math.js
             const add = (a, b) => a + b;
             const subtract = (a, b) => a - b;
 
             // Exporting multiple functions as an object
             module.exports = { add, subtract };
+
+            // app.js
+            const math = require('./math'); // Import using require()
+
+            console.log(math.add(5, 10));      // Output: 15
+            console.log(math.subtract(20, 5)); // Output: 15
+
+            2. ES Modules (Modern JavaScript)
+
+            To use this, you must either use the .mjs file extension or add "type": "module" to your package.json file
+
+            // math.mjs
+            export function multiply(a, b) {
+                return a * b;
+            }
+
+            export function divide(a, b) {
+                return a / b;
+            }
+
+            // app.mjs
+            import { multiply, divide } from './math.mjs'; // Import using import
+
+            console.log(multiply(4, 5)); // Output: 20
+            console.log(divide(10, 2));  // Output: 5
+
+
+            3. Core Modules (Built-in)
+            You don't need to create these; they come with Node.js.
+
+            const fs = require('fs'); // CommonJS import for the File System module
+            const path = require('path'); // Path utility module
+
+            // Example: Get the base name of a file path
+            console.log(path.basename('/users/admin/config.json')); // Output: config.json
+
 
         -->
 
