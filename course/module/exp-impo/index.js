@@ -4,4 +4,4 @@
 
 let func1 = require("./app");
 
-console.log(func1());
+func1();

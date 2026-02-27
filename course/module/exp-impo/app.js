@@ -6,4 +6,7 @@ let func1 = function () {
 
 // export
 // module.exports = age;
-module.exports = func1;
+// module.exports = func1;
+
+// module.exports = { age: age, func1: func1 };
+module.exports = { age, func1 };
