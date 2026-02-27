@@ -7,6 +7,29 @@
 	</head>
 
 	<body>
+		<!-- 
+            In Node.js, a module is a self-contained unit of code—typically 
+            a single JavaScript file—that encapsulates specific functionality 
+            to be reused throughout an application. Instead of having one 
+            massive file, you break your code into smaller, manageable pieces 
+            that communicate with each other. 
+            
+            Key Characteristics
+            Private Scope: 
+            By default, variables and functions defined in a module are private 
+            to that file and cannot be accessed from the outside unless explicitly 
+            exported.
+
+            Caching: 
+            When a module is loaded for the first time using require(), Node.js 
+            caches it. Subsequent requests for the same module return the cached 
+            version, improving performance.
+
+            Organized Code: Modules help follow the DRY (Don’t Repeat Yourself) principle and keep the global namespace clean
+
+
+        -->
+
 		<script src="./scriptOne.js"></script>
 		<script src="./scriptTwo.js"></script>
 	</body>

@@ -1,3 +1,10 @@
-const a = 10;
+// var a = 10;
 
-console.log(a);
+// console.log(a);
+
+(function () {
+	var a = 10;
+	console.log(a);
+})();
+
+// console.log(a);
