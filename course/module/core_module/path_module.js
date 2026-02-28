@@ -19,3 +19,8 @@ console.log(dirname);
 let ext = path.extname(myPath);
 
 console.log(ext);
+
+// basename
+let basename = path.basename(myPath);
+
+console.log(basename);
