@@ -29,4 +29,7 @@ let freememOfOs = os.freemem();
 
 console.log(freememOfOs);
 
-//
+// os cpu
+let cpusOfOs = os.cpus();
+
+console.log(cpusOfOs);
