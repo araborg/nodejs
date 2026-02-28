@@ -27,3 +27,9 @@ console.log(data2);
 fs.unlinkSync("./test.txt");
 
 // 2.
+
+// read file
+
+// write file
+
+// delete file
