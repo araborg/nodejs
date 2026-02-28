@@ -49,6 +49,13 @@ console.log(data2);
 
 */
 
+// delete file
+fs.unlink("./test.txt", function (error) {
+	if (!error) {
+		console.log("File deleted successfully");
+	}
+});
+
 // console.log(data.toString());
 
 // let data2 = fs.readFileSync("./test.txt", { encoding: "utf-8" });
