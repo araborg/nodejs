@@ -11,11 +11,14 @@ let func1 = function () {
 // module.exports = { age: age, func1: func1 };
 // module.exports = { age, func1 };
 
-exports.gender = "male";
+// exports.gender = "male";
 
 // module wrapper fxn
-console.log(module);
+
+// console.log(module);
+
 console.log(exports);
-console.log(require);
-console.log(__dirname);
-console.log(__filename);
+
+// console.log(require);
+// console.log(__dirname);
+// console.log(__filename);
