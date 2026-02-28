@@ -25,11 +25,26 @@ fs.appendFile("test.txt", ". You are welcome!", function (error) {
 
 console.log("This is sync");
 
-// fs.appendFileSync("test.txt", "good morning");
-// fs.appendFileSync("test.txt", ", Solomon");
-
 // read file
-// let data = fs.readFileSync("./test.txt");
+let data = fs.readFile("./test.txt", function (error, data) {
+	if (!error) {
+		console.log(data.toString());
+	}
+});
+
+console.log(data);
+
+let data2 = fs.readFile(
+	"./test.txt",
+	{ encoding: "utf-8" },
+	function (error, data) {
+		if (!error) {
+			console.log(data);
+		}
+	},
+);
+
+console.log(data2);
 
 // console.log(data.toString());
 
