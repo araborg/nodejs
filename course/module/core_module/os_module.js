@@ -8,3 +8,8 @@ console.log(typeof os);
 const typeOfOs = os.type();
 
 console.log(typeOfOs);
+
+// architecture of Os
+let archOfOs = os.arch();
+
+console.log(archOfOs);
