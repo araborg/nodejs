@@ -7,28 +7,38 @@ let fs = require("fs");
 
 // console.log(fs);
 
-// write file
+// write file: asynchronous
 fs.writeFile("test.txt", "hi there", function (error) {
 	if (!error) {
 		console.log("File created sucessfully");
 	}
 });
 
+console.log("This is sync");
+
 // to keep old text
-fs.appendFileSync("test.txt", "good morning");
-fs.appendFileSync("test.txt", ", Solomon");
+fs.appendFile("test.txt", ". You are welcome!", function (error) {
+	if (!error) {
+		console.log("File updated sucessfully");
+	}
+});
+
+console.log("This is sync");
+
+// fs.appendFileSync("test.txt", "good morning");
+// fs.appendFileSync("test.txt", ", Solomon");
 
 // read file
-let data = fs.readFileSync("./test.txt");
+// let data = fs.readFileSync("./test.txt");
 
-console.log(data.toString());
+// console.log(data.toString());
 
-let data2 = fs.readFileSync("./test.txt", { encoding: "utf-8" });
+// let data2 = fs.readFileSync("./test.txt", { encoding: "utf-8" });
 
-console.log(data2);
+// console.log(data2);
 
 // delete file
-fs.unlinkSync("./test.txt");
+// fs.unlinkSync("./test.txt");
 
 // 2.
 
