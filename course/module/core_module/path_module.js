@@ -14,3 +14,8 @@ console.log(parseParth);
 let dirname = path.dirname(myPath);
 
 console.log(dirname);
+
+// extension
+let ext = path.extname(myPath);
+
+console.log(ext);
