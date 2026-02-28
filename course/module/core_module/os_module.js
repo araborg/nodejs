@@ -13,3 +13,20 @@ console.log(typeOfOs);
 let archOfOs = os.arch();
 
 console.log(archOfOs);
+
+// hostname
+let hostnameOfOs = os.hostname();
+
+console.log(hostnameOfOs);
+
+// platform
+let platformOfMyOs = os.platform();
+
+console.log(platformOfMyOs);
+
+// free memory
+let freememOfOs = os.freemem();
+
+console.log(freememOfOs);
+
+//
