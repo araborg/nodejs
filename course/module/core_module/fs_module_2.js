@@ -59,28 +59,9 @@ fs.writeFile("test.txt", "hi there", function (error) {
 	}
 });
 
-// delete file
+// delete file: synchronous
 fs.unlink("./test.txt", function (error) {
 	if (!error) {
 		console.log("File deleted successfully");
 	}
 });
-
-// console.log(data.toString());
-
-// let data2 = fs.readFileSync("./test.txt", { encoding: "utf-8" });
-
-// console.log(data2);
-
-// delete file
-// fs.unlinkSync("./test.txt");
-
-// 2.
-
-// read file
-
-// write file
-
-// update file
-
-// delete file
