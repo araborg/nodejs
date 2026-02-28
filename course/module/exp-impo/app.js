@@ -19,8 +19,8 @@ let func1 = function () {
 
 // console.log(exports);
 
-// console.log(require);
+console.log(require);
 
 // console.log(__dirname);
 
-console.log(__filename);
+// console.log(__filename);
