@@ -1,3 +1,4 @@
+/*
 // importing core module
 
 // 1.
@@ -5,7 +6,7 @@
 // fs = file system
 let fs = require("fs");
 
-// console.log(fs);
+console.log(fs);
 
 // write file: asynchronous
 fs.writeFile("test.txt", "hi there", function (error) {
@@ -45,6 +46,8 @@ let data2 = fs.readFile(
 );
 
 console.log(data2);
+
+*/
 
 // console.log(data.toString());
 
