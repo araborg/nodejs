@@ -9,3 +9,8 @@ let myPath =
 let parseParth = path.parse(myPath);
 
 console.log(parseParth);
+
+// dirname
+let dirname = path.dirname(myPath);
+
+console.log(dirname);
