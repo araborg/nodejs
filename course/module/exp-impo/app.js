@@ -15,10 +15,12 @@ let func1 = function () {
 
 // module wrapper fxn
 
-console.log(module);
+// console.log(module);
 
 // console.log(exports);
 
 // console.log(require);
-// console.log(__dirname);
+
+console.log(__dirname);
+
 // console.log(__filename);
