@@ -14,13 +14,16 @@ let func1 = function () {
 // exports.gender = "male";
 
 // module wrapper fxn
+// =====================
 
 // console.log(module);
 
 // console.log(exports);
 
-console.log(require);
+// console.log(require);
 
 // console.log(__dirname);
 
 // console.log(__filename);
+
+// console.log(global);
