@@ -7,7 +7,7 @@ let fs = require("fs");
 
 // console.log(fs);
 
-// srite file
+// write file
 fs.writeFileSync("test.txt", "hi there\n");
 
 // to keep old text
@@ -25,13 +25,3 @@ console.log(data2);
 
 // delete file
 fs.unlinkSync("./test.txt");
-
-// 2.
-
-// read file
-
-// write file
-
-// update file
-
-// delete file

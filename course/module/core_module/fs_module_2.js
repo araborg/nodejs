@@ -7,8 +7,12 @@ let fs = require("fs");
 
 // console.log(fs);
 
-// srite file
-fs.writeFileSync("test.txt", "hi there\n");
+// write file
+fs.writeFile("test.txt", "hi there", function (error) {
+	if (!error) {
+		console.log("File created sucessfully");
+	}
+});
 
 // to keep old text
 fs.appendFileSync("test.txt", "good morning");
