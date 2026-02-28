@@ -1,4 +1,5 @@
 /*
+
 // importing core module
 
 // 1.
@@ -26,6 +27,7 @@ fs.appendFile("test.txt", ". You are welcome!", function (error) {
 
 console.log("This is sync");
 
+
 // read file
 let data = fs.readFile("./test.txt", function (error, data) {
 	if (!error) {
@@ -48,6 +50,14 @@ let data2 = fs.readFile(
 console.log(data2);
 
 */
+let fs = require("fs");
+
+// write file: asynchronous
+fs.writeFile("test.txt", "hi there", function (error) {
+	if (!error) {
+		console.log("File created sucessfully");
+	}
+});
 
 // delete file
 fs.unlink("./test.txt", function (error) {
