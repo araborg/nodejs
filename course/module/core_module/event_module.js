@@ -24,3 +24,15 @@ eventEmitter.on("event-1", function (param) {
 
 // emit or raise an event with param
 eventEmitter.emit("event-1", "By there");
+
+// register an event with a param
+eventEmitter.on("event-1", function (param, value, name) {
+	console.log("Hi there");
+
+	console.log(param);
+	console.log(value);
+	console.log(name);
+});
+
+// emit or raise an event with param
+eventEmitter.emit("event-1", "By there", 10, "Julius");
