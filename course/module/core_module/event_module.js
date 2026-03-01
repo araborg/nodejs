@@ -5,4 +5,8 @@ const { EventEmitter } = events;
 
 const eventEmitter = new EventEmitter();
 
-console.log(eventEmitter);
+// console.log(eventEmitter);
+
+// register an event
+
+// emit or raise an event
