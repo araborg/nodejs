@@ -10,6 +10,8 @@ server.listen(3000, function () {
 	console.log("Server is starting on port: 3000");
 });
 
+// run node http_module
+
 
 2.
 
@@ -28,8 +30,11 @@ server.listen(3000, function () {
 	console.log("Server is starting on port: 3000");
 });
 
+// run node http_module and check browser on localhost: 3000
+
+
 3. 
-*/
+
 
 const http = require("http");
 
@@ -48,3 +53,31 @@ server.on("connection", function () {
 server.listen(3000, function () {
 	console.log("Server is starting on port: 3000");
 });
+
+// run node http_module again and check browser on localhost: 3000
+// run node http_module again and check browser on localhost: 3000/about
+
+
+4.
+*/
+
+const http = require("http");
+
+// cr8 a server
+const server = http.createServer(function (request, response) {
+	if (request.url === "/") {
+	}
+});
+
+server.on("connection", function () {
+	// check localhost:3000 in d browser
+	console.log("New connection");
+});
+
+// listening to d server
+server.listen(3000, function () {
+	console.log("Server is starting on port: 3000");
+});
+
+// run node http_module again and check browser on localhost: 3000
+// run node http_module again and check browser on localhost: 3000/about
