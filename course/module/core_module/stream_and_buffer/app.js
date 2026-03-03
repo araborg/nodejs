@@ -27,7 +27,7 @@ readStream.on("data", function (buffer) {
 
 const fs = require("fs");
 
-const readStream = fs.createReadStream("./data.txt", { encoding: "utf-8" });
+const readStream = fs.createReadStream("./data.txt");
 
 let content = [];
 
