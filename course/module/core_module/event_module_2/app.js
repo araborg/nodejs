@@ -11,3 +11,6 @@ eventEmitter.on("event-1", function (obj) {
 
 	console.log(obj);
 });
+
+// export eventEmitter
+module.exports = eventEmitter;
