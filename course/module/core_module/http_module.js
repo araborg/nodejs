@@ -2,5 +2,9 @@
 const http = require("http");
 
 // cr8 a server
+const server = http.createServer();
 
 // listening to d server
+server.listen(3000, function () {
+	console.log("Server is starting on port: 3000");
+});
