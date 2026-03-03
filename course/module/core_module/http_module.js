@@ -67,6 +67,10 @@ const http = require("http");
 const server = http.createServer(function (request, response) {
 	if (request.url === "/") {
 		response.write("This is Home page");
+
+		response.write("<h1>This is Home page</h1>");
+
+		response.write("<p>This is Home page</p>");
 	} else if (request.url === "/about") {
 		response.write("This is About page");
 	} else if (request.url === "/contact") {
