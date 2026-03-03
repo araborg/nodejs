@@ -23,6 +23,18 @@ readStream.on("data", function (buffer) {
 
 
 3.
+
+
+const fs = require("fs");
+
+const readStream = fs.createReadStream("./data.txt");
+
+let content = [];
+
+readStream.on("data", function (buffer) {
+	content.push(buffer);
+});
+
 */
 
 const fs = require("fs");
@@ -33,5 +45,6 @@ let content = [];
 
 readStream.on("data", function (buffer) {
 	content.push(buffer);
-	// console.log(buffer);
 });
+
+readStream.on("data");
