@@ -47,4 +47,8 @@ readStream.on("data", function (buffer) {
 	content.push(buffer);
 });
 
-readStream.on("data");
+readStream.on("end", function () {
+	let actualData = Buffer.concat(content).toString();
+
+	console.log(actualData);
+});
