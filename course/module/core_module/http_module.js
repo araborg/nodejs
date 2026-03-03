@@ -59,7 +59,7 @@ server.listen(3000, function () {
 
 
 4.
-*/
+
 
 const http = require("http");
 
@@ -68,7 +68,38 @@ const server = http.createServer(function (request, response) {
 	if (request.url === "/") {
 		response.write("This is Home page");
 
-		response.write("<h1>This is Home page</h1>");
+	} else if (request.url === "/about") {
+		response.write("This is About page");
+	} else if (request.url === "/contact") {
+		response.write("This is Contact page");
+	} else {
+		response.write("404 Page not found!");
+	}
+
+	response.end();
+});
+
+server.on("connection", function () {
+	// check localhost:3000 in d browser
+	console.log("New connection");
+});
+
+// listening to d server
+server.listen(3000, function () {
+	console.log("Server is starting on port: 3000");
+});
+
+// run node http_module again and check browser on localhost: 3000
+// run node http_module again and check browser on localhost: 3000/about and others
+
+*/
+
+const http = require("http");
+
+// cr8 a server
+const server = http.createServer(function (request, response) {
+	if (request.url === "/") {
+		response.write(`<h1>This is Home page</h1>`);
 
 		response.write("<p>This is Home page</p>");
 	} else if (request.url === "/about") {
@@ -93,4 +124,4 @@ server.listen(3000, function () {
 });
 
 // run node http_module again and check browser on localhost: 3000
-// run node http_module again and check browser on localhost: 3000/about
+// run node http_module again and check browser on localhost: 3000/about and others
