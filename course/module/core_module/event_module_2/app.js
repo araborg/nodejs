@@ -27,7 +27,7 @@ const eventEmitter = new EventEmitter();
 
 // register an event with a param
 eventEmitter.on("event-1", function (content) {
-	fs.write("test.txt", content, function (error) {
+	fs.writeFile("test.txt", content, function (error) {
 		if (!error) {
 			console.log("File created successfully!");
 		}

@@ -13,4 +13,4 @@ const eventEmitter = require("./app");
 // run node indes.js in the terminal
 
 // 2.
-eventEmitter.emit("event-1");
+eventEmitter.emit("event-1", "Hi there!");
