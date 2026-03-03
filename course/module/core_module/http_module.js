@@ -66,7 +66,16 @@ const http = require("http");
 // cr8 a server
 const server = http.createServer(function (request, response) {
 	if (request.url === "/") {
+		response.write("This is Home page");
+	} else if (request.url === "/about") {
+		response.write("This is About page");
+	} else if (request.url === "/contact") {
+		response.write("This is Contact page");
+	} else {
+		response.write("404 Page not found!");
 	}
+
+	response.end();
 });
 
 server.on("connection", function () {
