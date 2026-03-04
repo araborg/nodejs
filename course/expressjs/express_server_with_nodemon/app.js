@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-console.log(app);
+// console.log(app);
 
 // mk use of app obj
 app.get("/", (req, res) => {

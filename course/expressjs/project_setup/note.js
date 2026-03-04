@@ -1,4 +1,12 @@
 /*
+npm website:
+https://www.npmjs.com/
+
+you can use ds to double check every package u 
+want to install.
+
+type d package name inside d search input
+
 run npm init in d terminal
 
 npm install express
@@ -23,5 +31,7 @@ npm i express
 
 
 install nodemon:
+
+
 
 */
