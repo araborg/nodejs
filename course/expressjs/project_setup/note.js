@@ -26,6 +26,8 @@ npm start
 
 in d ternminal
 
+cr8 .gitignore file and add node_modules
+
 install express.js
 npm i express
 
