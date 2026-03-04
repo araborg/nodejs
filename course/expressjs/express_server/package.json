@@ -7,7 +7,7 @@
 	"type": "commonjs",
 	"main": "app.js",
 	"scripts": {
-		"script": "node ./app.js"
+		"start": "node ./app.js"
 	},
 	"dependencies": {
 		"express": "^5.2.1"
