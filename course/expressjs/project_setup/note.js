@@ -17,4 +17,11 @@ or
 npm start
 
 in d ternminal
+
+install express.js
+npm i express
+
+
+install nodemon:
+
 */
