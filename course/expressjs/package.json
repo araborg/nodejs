@@ -1,13 +1,12 @@
 {
-  "name": "expressjs",
-  "version": "1.0.0",
-  "description": "Express intro",
-  "license": "ISC",
-  "author": "araborg",
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    // "test": "echo \"Error: no test specified\" && exit 1"
-    "start":"node ./index.js"
-  }
+	"name": "expressjs",
+	"version": "1.0.0",
+	"description": "Express intro",
+	"license": "ISC",
+	"author": "araborg",
+	"type": "commonjs",
+	"main": "index.js",
+	"scripts": {
+		"start": "node ./index.js"
+	}
 }

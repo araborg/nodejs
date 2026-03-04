@@ -9,5 +9,7 @@ and replace it with
 "start": "node ./index.js"
 
 dn type:
-npm run start in d ternminal
+
+npm run start 
+in d ternminal
 */
