@@ -35,5 +35,15 @@ npm i express
 install nodemon:
 npm i nodemon
 
+change this:
+"scripts": {
+    "start": "node ./app.js"
+},
+
+to
+"scripts": {
+    "start": "nodemon ./app.js"
+},
+
 
 */
