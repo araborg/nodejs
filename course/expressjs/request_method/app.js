@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-// console.log(app);
+// app.get(), app.post(), app.put(), app.patch(), app.delete()
 
 // mk use of app obj
 app.get("/", (req, res) => {
