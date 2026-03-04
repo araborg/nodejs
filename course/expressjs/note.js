@@ -1,0 +1,7 @@
+/*
+run npm init in d terminal
+
+npm install express
+
+
+*/
