@@ -31,7 +31,7 @@ npm i express
 
 
 install nodemon:
-
+npm i nodemon
 
 
 */
