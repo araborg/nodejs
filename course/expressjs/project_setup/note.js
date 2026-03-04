@@ -11,5 +11,10 @@ and replace it with
 dn type:
 
 npm run start 
+
+or
+
+npm start
+
 in d ternminal
 */
