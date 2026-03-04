@@ -6,8 +6,8 @@ npm install express
 inside package.json file delete test inside d scripts obj
 and replace it with
 
-"script1": "node ./index.js"
+"start": "node ./index.js"
 
 dn type:
-npm run script1 in d ternminal
+npm run start in d ternminal
 */
