@@ -6,7 +6,7 @@ const app = express();
 
 // mk use of app obj
 app.get("/", (req, res) => {
-	res.send("This is the home page");
+	res.send("This is the new home page");
 });
 
 // listen 4 d server
