@@ -5,23 +5,23 @@ const app = express();
 // app.get(), app.post(), app.put(), app.patch(), app.delete()
 
 // mk use of app obj
-app.get("/", (req, res, next) => {
+app.get("/example", (req, res, next) => {
 	res.send("This is the get method");
 });
 
-app.post("/", (req, res, next) => {
+app.post("/example", (req, res, next) => {
 	res.send("This is the post method");
 });
 
-app.put("/", (req, res, next) => {
+app.put("/example", (req, res, next) => {
 	res.send("This is the put method");
 });
 
-app.patch("/", (req, res, next) => {
+app.patch("/example", (req, res, next) => {
 	res.send("This is the patch method");
 });
 
-app.delete("/", (req, res, next) => {
+app.delete("/example", (req, res, next) => {
 	res.send("This is the delete method");
 });
 
