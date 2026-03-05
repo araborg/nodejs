@@ -6,23 +6,23 @@ const app = express();
 
 // mk use of app obj
 app.get("/", (req, res) => {
-	res.send("This is the home page");
+	res.send("This is the get method");
 });
 
 app.post("/", (req, res) => {
-	res.send("This is the home page");
+	res.send("This is the post method");
 });
 
 app.put("/", (req, res) => {
-	res.send("This is the home page");
+	res.send("This is the put method");
 });
 
 app.patch("/", (req, res) => {
-	res.send("This is the home page");
+	res.send("This is the patch method");
 });
 
 app.delete("/", (req, res) => {
-	res.send("This is the home page");
+	res.send("This is the delete method");
 });
 
 // listen 4 d server
