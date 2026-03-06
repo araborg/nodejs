@@ -12,7 +12,10 @@ app.get("/users/:userId", (req, res) => {
 	//localhost:8000/users/2?query
 	//localhost:8000/users/2?name+babatunde&email+babatunde@gmail.com
 
-	http: res.send("User id : " + userId + " detail");
+	const { name, email } = req.query;
+	console.log(name, email);
+
+	res.send("User id : " + userId + " detail");
 });
 
 // listen 4 d server
