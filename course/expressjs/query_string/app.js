@@ -12,6 +12,8 @@ app.get("/users/:userId", (req, res) => {
 	// localhost:8000/users/2?query
 	// localhost:8000/users/2?name=babatunde&email=babatunde@gmail.com
 
+	console.log(req.query); // { name: 'babatunde', email: 'babatunde@gmail.com'}
+
 	const { name, email } = req.query;
 	console.log(name, email); // babatunde babatunde@gmail.com
 
