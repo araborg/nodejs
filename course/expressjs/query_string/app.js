@@ -9,7 +9,10 @@ app.get("/users", (req, res) => {
 app.get("/users/:userId", (req, res) => {
 	const { userId } = req.params;
 
-	res.send("User id : " + userId + "detail");
+	//localhost:8000/users/2?query
+	//localhost:8000/users/2?name+babatunde&email+babatunde@gmail.com
+
+	http: res.send("User id : " + userId + " detail");
 });
 
 // listen 4 d server
