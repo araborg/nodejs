@@ -2,11 +2,9 @@ const express = require("express");
 
 const app = express();
 
-// console.log(app);
-
 // mk use of app obj
-app.get("/", (req, res) => {
-	res.send("This is the home page");
+app.get("/example", (req, res) => {
+	res.send("Example route");
 });
 
 // listen 4 d server
