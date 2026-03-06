@@ -11,6 +11,8 @@ app.post("/example", (req, res, next) => {
 	const data = req.body;
 	console.log(data);
 
+	const { name, email } = req.body;
+
 	res.send("This is example response");
 });
 
@@ -19,5 +21,12 @@ app.listen(8000, () => {
 	console.log("Server is running on port: 8000");
 });
 
-// to cr8 body on postman:
-// click body --> raw--> json
+/* to cr8 body on postman:
+click body --> raw--> json
+
+{
+    "name": "babs",
+    "email": "arababs2015#gmail.com"
+}
+
+*/
