@@ -9,16 +9,16 @@ const student = express.Router();
 app.use("/admin", admin);
 app.use("/student", student);
 
-admin.get("/home", (res, req, next) => {
+admin.get("/home", (req, res, next) => {
 	//localhost:8000/admin/home
 	res.send("Admin home route");
 });
 
-student.get("/home", (res, req, next) => {
+student.get("/home", (req, res, next) => {
 	res.send("Student home route");
 });
 
-app.get("/home", (res, req, next) => {
+app.get("/home", (req, res, next) => {
 	res.send("Common home route");
 });
 
