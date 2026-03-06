@@ -10,15 +10,17 @@ app.use("/admin", admin);
 app.use("/student", student);
 
 admin.get("/home", (req, res, next) => {
-	//localhost:8000/admin/home
+	// localhost:8000/admin/home
 	res.send("Admin home route");
 });
 
 student.get("/home", (req, res, next) => {
+	// localhost:8000/student/home
 	res.send("Student home route");
 });
 
 app.get("/home", (req, res, next) => {
+	// localhost:8000/home;
 	res.send("Common home route");
 });
 
