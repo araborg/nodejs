@@ -17,6 +17,10 @@ student.get("/home", (res, req, next) => {
 	res.send("Student home route");
 });
 
+app.get("/home", (res, req, next) => {
+	res.send("Common home route");
+});
+
 // listen 4 d server
 app.listen(8000, () => {
 	console.log("Server is running on port: 8000");
