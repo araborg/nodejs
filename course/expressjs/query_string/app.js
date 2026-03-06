@@ -9,8 +9,8 @@ app.get("/users", (req, res) => {
 app.get("/users/:userId", (req, res) => {
 	const { userId } = req.params;
 
-	//localhost:8000/users/2?query
-	//localhost:8000/users/2?name+babatunde&email+babatunde@gmail.com
+	// localhost:8000/users/2?query
+	// localhost:8000/users/2?name=babatunde&email=babatunde@gmail.com
 
 	const { name, email } = req.query;
 	console.log(name, email);
