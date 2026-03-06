@@ -5,6 +5,10 @@ const app = express();
 // app.get(), app.post(), app.put(), app.patch(), app.delete()
 
 // mk use of app obj
+app.get("/", (req, res, next) => {
+	res.send("This is the home page");
+});
+
 app.get("/example", (req, res, next) => {
 	res.send("This is the get method");
 });
