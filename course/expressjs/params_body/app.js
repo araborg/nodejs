@@ -6,7 +6,7 @@ app.get("/users", (req, res) => {
 	res.send("Users list");
 });
 
-app.get("/users/:id", (req, res) => {
+app.get("/users/:userId", (req, res) => {
 	console.log(req.params);
 
 	res.send("User detail");
