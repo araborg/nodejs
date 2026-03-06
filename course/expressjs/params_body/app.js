@@ -7,7 +7,8 @@ app.get("/users", (req, res) => {
 });
 
 app.get("/users/:userId", (req, res) => {
-	console.log(req.params);
+	// http://localhost:8000/users/2
+	console.log(req.params); // { userId: '2' }
 
 	res.send("User detail");
 });
