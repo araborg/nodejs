@@ -2,6 +2,9 @@ const express = require("express");
 
 const app = express();
 
+// middleware
+app.use(express.json());
+
 app.post("/example", (req, res, next) => {
 	console.log(req.body);
 
