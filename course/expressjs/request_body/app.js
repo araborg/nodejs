@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 app.post("/example", (req, res, next) => {
-	console.log(req);
+	console.log(req.body);
 
 	const data = req.body;
 	console.log(data);
