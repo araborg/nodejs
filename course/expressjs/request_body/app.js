@@ -6,10 +6,11 @@ const app = express();
 app.use(express.json());
 
 app.post("/example", (req, res, next) => {
-	console.log(req.body);
+	// console.log(req.body);
 
 	const data = req.body;
 	console.log(data);
+
 	res.send("This is example response");
 });
 
