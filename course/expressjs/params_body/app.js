@@ -10,6 +10,8 @@ app.get("/users/:userId", (req, res) => {
 	// http://localhost:8000/users/2
 	console.log(req.params); // { userId: '2' }
 
+	// const { userId } = req.params;
+
 	res.send("User detail");
 });
 
@@ -19,5 +21,5 @@ app.listen(8000, () => {
 });
 
 /* 
-
+    userId i.e params is a string and nt a number
 */
