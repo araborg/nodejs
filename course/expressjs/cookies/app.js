@@ -12,7 +12,11 @@ app.get("/example", (req, res) => {
 
 	// to mk d cookies available on d client side
 	res.cookie("name", "Arabambi");
+	res.cookie("age", 43);
 	// check d cookies section on d lower section of postman
+
+	// to clear d cookie
+	res.clearCookie("name");
 
 	res.send("Example route");
 });
