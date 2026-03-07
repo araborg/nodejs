@@ -9,19 +9,13 @@ app.get("/example", (req, res, next) => {
 		"text/plain": () => {
 			res.send("Plain text response");
 		},
-	},
-	res.format({
 		"application/json": () => {
-			res.json({name: "Babs", email: "araborg@gmail.com"});
+			res.json({ name: "Babs", email: "araborg@gmail.com" });
 		},
-	},
-	res.format({
 		"text/html": () => {
 			res.render("pages/home.ejs");
 		},
-	},
-
-);
+	});
 });
 
 // listen 4 d server
