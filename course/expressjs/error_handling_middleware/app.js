@@ -25,6 +25,8 @@ const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send("Response from error middleware");
 };
 
+app.use(errorMiddleware);
+
 // listen 4 d server
 app.listen(8000, () => {
 	console.log("Server is running on port: 8000");
