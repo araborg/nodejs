@@ -5,7 +5,11 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.get("/example", (req, res, next) => {
-	res.format();
+	res.format({
+		"text/plain": () => {
+			res.send("Plain text response");
+		},
+	});
 });
 
 // listen 4 d server
