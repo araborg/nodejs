@@ -8,7 +8,7 @@ app.get("/example", (req, res, next) => {
 	// localhost:8000/home;
 	// res.send("<h1>Heading</h1>");
 
-	res.render("<h1>Heading</h1>");
+	res.render("views/pages/home.ejs");
 });
 
 // listen 4 d server
