@@ -3,6 +3,11 @@ const express = require("express");
 const app = express();
 
 app.get("/example", (req, res) => {
+	// res.status(200);
+	// res.status(201);
+	res.status(400);
+	// res.status(401);
+
 	res.send("This is example page");
 });
 
