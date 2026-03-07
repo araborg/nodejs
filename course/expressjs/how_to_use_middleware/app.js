@@ -10,8 +10,19 @@ const middleware1 = (req, res, next) => {
 const middleware2 = (req, res, next) => {
 	console.log("middleware 2");
 
-	next();
+	res.send("Response from middleware 2");
 };
+
+// const middleware1 = (req, res, next) => {
+// 	console.log("middleware 1");
+
+// 	next();
+// };
+// const middleware2 = (req, res, next) => {
+// 	console.log("middleware 2");
+
+// 	next();
+// };
 const middleware3 = (req, res, next) => {
 	console.log("middleware 3");
 
