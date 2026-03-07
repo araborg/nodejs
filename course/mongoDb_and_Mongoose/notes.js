@@ -1,0 +1,5 @@
+/*
+A database is a storage where we store data.
+
+
+*/
