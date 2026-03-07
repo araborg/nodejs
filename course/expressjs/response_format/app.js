@@ -5,14 +5,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.get("/example", (req, res, next) => {
-	// localhost:8000/home;
-	// res.send("<h1>Heading</h1>");
-
-	// res.render("pages/home.ejs");
-
-	// res.render("test.ejs");
-
-	res.render("test.ejs", { name: "babs", email: "test@gmail.com" });
+	res.format();
 });
 
 // listen 4 d server

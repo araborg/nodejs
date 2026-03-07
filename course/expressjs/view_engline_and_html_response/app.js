@@ -5,7 +5,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.get("/example", (req, res, next) => {
-	// localhost:8000/home;
+	// localhost:8000/example;
 	// res.send("<h1>Heading</h1>");
 
 	// res.render("pages/home.ejs");
