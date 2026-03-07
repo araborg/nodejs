@@ -5,10 +5,10 @@ const app = express();
 app.get("/example", (req, res) => {
 	console.log(req.hostname); // localhost
 	console.log(req.ip); // 127.0.0.1
-	console.log(req.method); // GEt
-	console.log(req.protocol); // GEt
-	console.log(req.secure); // GEt
-	console.log(req.accepts()); // GEt
+	console.log(req.method); // GET
+	console.log(req.protocol); // http
+	console.log(req.secure); // false
+	console.log(req.accepts()); // [ '*/*' ]
 
 	res.send("Example route");
 });
