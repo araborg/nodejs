@@ -1,6 +1,8 @@
 const express = require("express");
+const cookieParser = require("cookie-parser");
 
 const app = express();
+app.use(cookieParser());
 
 app.get("/example", (req, res) => {
 	// http://localhost:8000/example
@@ -19,4 +21,5 @@ app.listen(8000, () => {
 /*
 Cookies r small data stored on client side
 
+npm i cookie-parser
 */
