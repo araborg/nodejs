@@ -1,6 +1,8 @@
 const express = require("express");
 
 app.get("/example", (req, res) => {
+	console.log(req.hostname);
+
 	res.send("Example route");
 });
 
@@ -27,4 +29,5 @@ req.cookies
 req.query
 
 req.params
+
 */
