@@ -2,17 +2,8 @@ const express = require("express");
 
 const app = express();
 
-app.get("/users", (req, res) => {
-	res.send("Users list");
-});
-
-app.get("/users/:userId", (req, res) => {
-	// http://localhost:8000/users/2
-	console.log(req.params); // { userId: '2' }
-
-	// const { userId } = req.params;
-
-	res.send("User detail");
+app.get("/example", (req, res) => {
+	res.send("middleware");
 });
 
 // listen 4 d server
@@ -21,5 +12,21 @@ app.listen(8000, () => {
 });
 
 /* 
-    userId i.e params is a string and nt a number
+    Middleware is a function in wc we access req &
+    res obj. 
+
+    A middleware function can do three types of tasks:
+    (assuming we have 4 middlewares)
+    
+    1. It can call next function to handover request 
+    to next middleware function.
+
+    2. It can direct response back to client, for 
+    example middleware two direct back response to 
+    client hence request will not pass to middleware 
+    three and middleware four.
+
+    3. Middleware can throw an error and error catching 
+    middleware can catch this error.
+
 */
