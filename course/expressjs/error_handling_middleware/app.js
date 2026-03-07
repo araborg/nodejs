@@ -2,8 +2,18 @@ const express = require("express");
 
 const app = express();
 
+const middleware1 = (req, res, next) => {
+	throw new Error("Error from middleware 1");
+};
+
+const middleware2 = (req, res, next) => {
+	console.log("Middleware 2");
+
+	next();
+};
+
 app.get("/example", (req, res) => {
-	res.send("middleware");
+	res.send("Example route");
 });
 
 // listen 4 d server
