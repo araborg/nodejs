@@ -2,8 +2,16 @@ const express = require("express");
 
 const app = express();
 
+const middleware1 = (req, res, next) => {
+	console.log("middleware 1");
+
+	next();
+};
+
+app.use(middleware1);
+
 app.get("/example", (req, res) => {
-	res.send("middleware");
+	res.send("Example route");
 });
 
 // listen 4 d server
