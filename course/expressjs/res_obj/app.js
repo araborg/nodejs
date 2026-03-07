@@ -2,22 +2,30 @@ const express = require("express");
 
 const app = express();
 
+/*
 // redirect
 app.get("/test", (req, res) => {
 	res.send("Test response");
 });
 
 app.get("/example", (req, res) => {
+    res.redirect("/test");
+});
+
+*/
+app.get("/example", (req, res) => {
 	// res.end()
 
 	// res.send("Example route");
 
-	// res.json({
-	// 	name: "Babatunde",
-	// 	email: "babs@gmail.com",
-	// });
+	// res.location("/xyz");
 
-	res.redirect("/test");
+	res.set("title", "express");
+
+	res.json({
+		name: "Babatunde",
+		email: "babs@gmail.com",
+	});
 });
 
 // listen 4 d server
