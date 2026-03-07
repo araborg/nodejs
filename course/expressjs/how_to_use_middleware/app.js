@@ -24,6 +24,9 @@ const middleware4 = (req, res, next) => {
 };
 
 app.use(middleware1);
+app.use(middleware2);
+app.use(middleware3);
+app.use(middleware4);
 
 app.get("/example", (req, res) => {
 	res.send("Example route");
