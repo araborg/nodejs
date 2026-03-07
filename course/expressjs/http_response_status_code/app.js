@@ -8,9 +8,12 @@ app.get("/example", (req, res) => {
 	// res.status(400); // Bad Request
 	// res.status(401); // Unauthorized
 	// res.status(403); // Forbidden
-	res.status(500); // Internal Server Error
+	// res.status(500); // Internal Server Error
 
-	res.send("This is example page");
+	// res.send("This is example page");
+
+	// combining status & send method
+	res.status(200).send("Example Route");
 });
 
 // listen 4 d server
