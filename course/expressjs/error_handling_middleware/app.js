@@ -3,7 +3,10 @@ const express = require("express");
 const app = express();
 
 const middleware1 = (req, res, next) => {
-	throw new Error("Error from middleware 1");
+	// throw new Error("Error from middleware 1");
+
+	// using next fxn to return error
+	next("Error from middleware 1");
 };
 
 const middleware2 = (req, res, next) => {
