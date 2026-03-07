@@ -12,9 +12,18 @@ const middleware2 = (req, res, next) => {
 	next();
 };
 
+app.use(middleware1);
+app.use(middleware2);
+
 app.get("/example", (req, res) => {
 	res.send("Example route");
 });
+
+const errorMiddleware = (error, req, res, next) => {
+	console.log(error);
+
+	res.status(500).send("Response from error middleware");
+};
 
 // listen 4 d server
 app.listen(8000, () => {
