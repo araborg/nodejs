@@ -21,6 +21,9 @@ app.get("/example", (req, res) => {
 	// res.location("/xyz");
 
 	res.set("title", "express");
+	res.set("age", 32);
+
+	res.get("age");
 
 	res.json({
 		name: "Babatunde",
