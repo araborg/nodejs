@@ -4,7 +4,7 @@ const app = express();
 
 app.get("/example", (req, res, next) => {
 	// localhost:8000/home;
-	res.send("Common home route");
+	res.send("example route");
 });
 
 // listen 4 d server
