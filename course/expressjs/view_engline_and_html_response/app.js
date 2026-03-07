@@ -9,7 +9,9 @@ app.get("/example", (req, res, next) => {
 	// res.send("<h1>Heading</h1>");
 
 	// res.render("pages/home.ejs");
+
 	// res.render("test.ejs");
+
 	res.render("test.ejs", { name: "babs", email: "test@gmail.com" });
 });
 
