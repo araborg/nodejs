@@ -10,7 +10,21 @@ app.listen(8000, () => {
 });
 
 /*
-Cookies r small data stored on client side
+Req obj includes:
 
-npm i cookie-parser
+req.baseUrl
+
+req.originalUrl
+
+req.path
+
+req.body
+
+req.body
+
+req.cookies
+
+req.query
+
+req.params
 */
