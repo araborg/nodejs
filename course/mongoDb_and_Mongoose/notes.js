@@ -13,4 +13,17 @@ e.g: MySql, PostgreSql, Oracle, Sqlite
 2. Non relational database - NoSQL
 e.g: MongoDB, CouchDB, CouchBase
 
+To start mongoDB:
+sudo systemctl start mongod
+
+sudo systemctl status mongod
+
+To stop:
+sudo systemctl stop mongod
+
+To restart:
+sudo systemctl restart mongod
+
+
+
 */
