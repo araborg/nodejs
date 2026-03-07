@@ -8,7 +8,10 @@ app.get("/example", (req, res) => {
 	console.log(req.method); // GET
 	console.log(req.protocol); // http
 	console.log(req.secure); // false
+
+	// check under header tab on postman
 	console.log(req.accepts()); // [ '*/*' ]
+	console.log(req.get("Connection-Type")); // [ '*/*' ]
 
 	res.send("Example route");
 });
