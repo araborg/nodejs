@@ -1,7 +1,9 @@
 const express = require("express");
 
+const app = express();
+
 app.get("/example", (req, res) => {
-	console.log(req.hostname);
+	// console.log(req.hostname);
 
 	res.send("Example route");
 });
