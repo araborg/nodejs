@@ -12,9 +12,12 @@ app.get("/example", (req, res) => {
 
 const errorMiddleware = (error, req, res, next) => {
 	// console.log(error);
-	console.log(error.message);
+	console.log(error.message); // xyz is not defined
+	console.log(error.stack);
 
-	res.send("Custom error handling");
+	// res.send("Custom error handling");
+
+	next(error.message);
 };
 
 app.use(errorMiddleware);
