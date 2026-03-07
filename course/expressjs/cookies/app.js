@@ -2,7 +2,6 @@ const express = require("express");
 
 const app = express();
 
-// mk use of app obj
 app.get("/example", (req, res) => {
 	res.send("Example route");
 });
