@@ -6,7 +6,10 @@ const middleware1 = (req, res, next) => {
 	// throw new Error("Error from middleware 1");
 
 	// using next fxn to return error
-	next("Error from middleware 1");
+	// next("Error from middleware 1");
+
+	// in case no error
+	next();
 };
 
 const middleware2 = (req, res, next) => {
