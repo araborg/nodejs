@@ -2,6 +2,20 @@ const express = require("express");
 
 const app = express();
 
+const fs = require("fs");
+app.get("/example", (req, res, next) => {
+	fs.readFile("test.txt", (error, data) => {
+		if (data) {
+			res.send(data);
+		}
+
+		if (error) {
+			next(error);
+		}
+	});
+});
+
+/*
 app.get("/example", (req, res) => {
 	// throw new Error("Test error");
 
@@ -9,6 +23,7 @@ app.get("/example", (req, res) => {
 
 	res.send("Error handling");
 });
+*/
 
 const errorMiddleware = (error, req, res, next) => {
 	// console.log(error);
@@ -17,7 +32,9 @@ const errorMiddleware = (error, req, res, next) => {
 
 	// res.send("Custom error handling");
 
-	next(error.message);
+	// using next()
+	// next(error.message);
+	next(error.stack);
 };
 
 app.use(errorMiddleware);
