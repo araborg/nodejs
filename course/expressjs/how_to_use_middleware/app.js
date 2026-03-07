@@ -70,6 +70,10 @@ const middleware1 = (obj) => {
 	return (req, res, next) => {
 		console.log("middleware 1");
 
+		req.name = obj.name;
+		req.email = obj.email;
+		req.year = obj.year;
+
 		next();
 	};
 };
@@ -84,6 +88,10 @@ app.use(middleware1({ name: "Nodejs", author: "Jahid", year: 2026 }));
 app.use(middleware2);
 
 app.get("/example", (req, res) => {
+	console.log(req.name);
+	console.log(req.email);
+	console.log(req.year);
+
 	res.send("Example route");
 });
 
