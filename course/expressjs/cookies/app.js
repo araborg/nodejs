@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 
 app.get("/example", (req, res) => {
+	// http://localhost:8000/example
+
 	const cookies = req.cookies;
 	console.log(cookies);
 
