@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 
 app.get("/example", (req, res) => {
+	throw new Error("Test error");
+
 	res.send("Error handling");
 });
 
@@ -13,7 +15,7 @@ app.listen(8000, () => {
 
 /* 
     Error Handling:
-    
+
 
 
 */
