@@ -71,7 +71,7 @@ const middleware1 = (obj) => {
 		console.log("middleware 1");
 
 		req.name = obj.name;
-		req.email = obj.email;
+		req.author = obj.author;
 		req.year = obj.year;
 
 		next();
@@ -89,7 +89,7 @@ app.use(middleware2);
 
 app.get("/example", (req, res) => {
 	console.log(req.name);
-	console.log(req.email);
+	console.log(req.author);
 	console.log(req.year);
 
 	res.send("Example route");
