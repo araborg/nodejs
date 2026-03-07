@@ -27,6 +27,7 @@ const middleware4 = (req, res, next) => {
 	next();
 };
 
+// root level middleware
 app.use(middleware1);
 app.use(middleware2);
 app.use(middleware3);
@@ -84,7 +85,9 @@ const middleware2 = (req, res, next) => {
 	next();
 };
 
+// app level middleware
 app.use(middleware1({ name: "Nodejs", author: "Jahid", year: 2026 }));
+
 app.use(middleware2);
 
 app.get("/example", (req, res) => {
