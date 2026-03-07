@@ -5,6 +5,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.get("/example", (req, res, next) => {
+	// to see result go to postman req header and adjust d accept section
 	res.format({
 		"text/plain": () => {
 			res.send("Plain text response");
