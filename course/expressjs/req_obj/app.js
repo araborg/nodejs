@@ -6,6 +6,9 @@ app.get("/example", (req, res) => {
 	console.log(req.hostname); // localhost
 	console.log(req.ip); // 127.0.0.1
 	console.log(req.method); // GEt
+	console.log(req.protocol); // GEt
+	console.log(req.secure); // GEt
+	console.log(req.accepts()); // GEt
 
 	res.send("Example route");
 });
