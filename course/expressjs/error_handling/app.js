@@ -11,9 +11,10 @@ app.get("/example", (req, res) => {
 });
 
 const errorMiddleware = (error, req, res, next) => {
-	console.log(error);
+	// console.log(error);
+	console.log(error.message);
 
-	res.send("Custom error");
+	res.send("Custom error handling");
 };
 
 app.use(errorMiddleware);
