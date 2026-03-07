@@ -78,7 +78,7 @@ const middleware2 = (req, res, next) => {
 	next();
 };
 
-app.use(middleware1);
+app.use(middleware1({ name: "Nodejs", author: "Jahid", year: 2026 }));
 app.use(middleware2);
 
 app.get("/example", (req, res) => {
