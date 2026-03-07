@@ -16,5 +16,28 @@ app.listen(8000, () => {
 
    201: Success & Created
 
-   
+   400: Bad Request
+
+   401: Unauthorized
+
+   403: Forbidden
+
+   500:
+
+   100 - 199:
+
+   200 - 299:
+
+   300 - 399:
+
+   400 - 499
+
+   402
+
+   499
+
+
+
+
+
 */
