@@ -16,7 +16,8 @@ app.get("/example", (req, res) => {
 	// check d cookies section on d lower section of postman
 
 	// to clear d cookie
-	res.clearCookie("name");
+	// res.clearCookie("name");
+	res.clearCookie("email");
 
 	res.send("Example route");
 });
