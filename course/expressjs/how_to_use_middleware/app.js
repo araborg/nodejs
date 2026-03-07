@@ -20,7 +20,7 @@ const middleware3 = (req, res, next) => {
 const middleware4 = (req, res, next) => {
 	console.log("middleware 4");
 
-	// next();
+	next();
 };
 
 app.use(middleware1);
