@@ -3,6 +3,9 @@ const express = require("express");
 const app = express();
 
 app.get("/example", (req, res) => {
+	const cookies = req.cookies;
+	console.log(cookies);
+
 	res.send("Example route");
 });
 
