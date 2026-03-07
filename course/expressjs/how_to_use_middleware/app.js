@@ -66,10 +66,12 @@ app.use(middleware4);
 
 */
 
-const middleware1 = (req, res, next) => {
-	console.log("middleware 1");
+const middleware1 = (obj) => {
+	return (req, res, next) => {
+		console.log("middleware 1");
 
-	next();
+		next();
+	};
 };
 
 const middleware2 = (req, res, next) => {
