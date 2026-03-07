@@ -23,7 +23,8 @@ app.get("/example", (req, res) => {
 	res.set("title", "express");
 	res.set("age", 32);
 
-	res.get("age");
+	const age = res.get("age");
+	console.log(age);
 
 	res.json({
 		name: "Babatunde",
