@@ -3,7 +3,9 @@ const express = require("express");
 const app = express();
 
 app.get("/example", (req, res) => {
-	// console.log(req.hostname);
+	console.log(req.hostname); // localhost
+	console.log(req.ip); // 127.0.0.1
+	console.log(req.method); // GEt
 
 	res.send("Example route");
 });
