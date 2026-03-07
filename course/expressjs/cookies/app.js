@@ -10,6 +10,10 @@ app.get("/example", (req, res) => {
 	const cookies = req.cookies;
 	console.log(cookies);
 
+	// to mk d cookies available on d client side
+	res.cookie("name", "Arabambi");
+	// check d cookies section on d lower section of postman
+
 	res.send("Example route");
 });
 
