@@ -3,10 +3,12 @@ const express = require("express");
 const app = express();
 
 app.get("/example", (req, res) => {
-	// res.status(200);
-	// res.status(201);
-	res.status(400);
-	// res.status(401);
+	// res.status(200); // Ok
+	// res.status(201); // Created
+	// res.status(400); // Bad Request
+	// res.status(401); // Unauthorized
+	// res.status(403); // Forbidden
+	res.status(500); // Internal Server Error
 
 	res.send("This is example page");
 });
