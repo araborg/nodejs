@@ -12,6 +12,8 @@ app.listen(8000, () => {
 });
 
 /* 
+    https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
+
    200: Success
 
    201: Success & Created
@@ -26,13 +28,15 @@ app.listen(8000, () => {
 
    500: Internal Server Error
 
-   100 - 199:
+   100 - 199: Informational Response
 
-   200 - 299:
+   200 - 299: Successful Response
 
-   300 - 399:
+   300 - 399: Redirection Message
 
-   400 - 499
+   400 - 499: Client Error Response
+
+   500 - 599: Server Error Response
 
    402
 
