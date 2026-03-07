@@ -32,4 +32,20 @@ res.app
 res.locals
 
 
+// methods
+res.cookie()
+
+res.clearCookie()
+
+res.send()
+
+res.json()
+
+res.end()
+
+res.format()
+
+res.render()
+
+res.status()
 */
