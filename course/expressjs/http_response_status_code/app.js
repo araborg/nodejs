@@ -22,7 +22,9 @@ app.listen(8000, () => {
 
    403: Forbidden
 
-   500:
+   404: Not found
+
+   500: Internal Server Error
 
    100 - 199:
 
