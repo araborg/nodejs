@@ -2,6 +2,7 @@ const express = require("express");
 
 const app = express();
 
+// redirect
 app.get("/test", (res, req) => {
 	res.setEncoding("Test response");
 });
@@ -11,10 +12,12 @@ app.get("/example", (req, res) => {
 
 	// res.send("Example route");
 
-	res.json({
-		name: "Babatunde",
-		email: "babs@gmail.com",
-	});
+	// res.json({
+	// 	name: "Babatunde",
+	// 	email: "babs@gmail.com",
+	// });
+
+	res.redirect("/test");
 });
 
 // listen 4 d server
