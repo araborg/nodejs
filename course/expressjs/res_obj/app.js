@@ -48,4 +48,15 @@ res.format()
 res.render()
 
 res.status()
+
+res.sendStatus()
+
+res.location()
+
+res.redirect()
+
+res.set()
+
+res.get()
+
 */
