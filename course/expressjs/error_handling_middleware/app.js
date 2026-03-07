@@ -1,6 +1,11 @@
 const express = require("express");
+const cookieParser = require("cookie-parser");
 
 const app = express();
+
+// built-in middleware
+app.use(express.json());
+app.use(cookieParser);
 
 const middleware1 = (req, res, next) => {
 	// throw new Error("Error from middleware 1");
@@ -41,7 +46,7 @@ app.listen(8000, () => {
 /* 
     Error handling middleware
 
-   
+    npm i cookie-parser
 
 
 */
