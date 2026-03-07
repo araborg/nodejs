@@ -3,8 +3,8 @@ const express = require("express");
 const app = express();
 
 // redirect
-app.get("/test", (res, req) => {
-	res.setEncoding("Test response");
+app.get("/test", (req, res) => {
+	res.send("Test response");
 });
 
 app.get("/example", (req, res) => {
