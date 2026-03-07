@@ -12,6 +12,7 @@ app.get("/example", (req, res) => {
 	// check under header tab on postman
 	console.log(req.accepts()); // [ '*/*' ]
 	console.log(req.get("Content-Type")); // application/json
+	console.log(req.get("Accept")); // [ '*/*' ] || application/json
 
 	res.send("Example route");
 });
