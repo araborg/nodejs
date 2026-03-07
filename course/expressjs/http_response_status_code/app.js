@@ -14,7 +14,11 @@ app.get("/example", (req, res) => {
 
 	// combining status & send method
 	// res.status(200).send("Example Route");
-	res.status(200).json({ name: "Babalola" });
+	// res.status(200).json({ name: "Babalola" });
+
+	res.sendStatus(200); //
+	// res.sendStatus(201) //
+	// res.sendStatus(500) //
 });
 
 // listen 4 d server
