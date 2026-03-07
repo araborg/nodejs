@@ -15,6 +15,9 @@ app.get("/example", (req, res, next) => {
 		"text/html": () => {
 			res.render("pages/home.ejs");
 		},
+		default: () => {
+			res.send("Nothing matched");
+		},
 	});
 });
 
