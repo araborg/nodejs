@@ -13,7 +13,8 @@ app.get("/example", (req, res) => {
 	// res.send("This is example page");
 
 	// combining status & send method
-	res.status(200).send("Example Route");
+	// res.status(200).send("Example Route");
+	res.status(200).json({ name: "Babalola" });
 });
 
 // listen 4 d server
