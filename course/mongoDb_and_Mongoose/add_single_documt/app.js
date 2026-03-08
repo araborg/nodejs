@@ -12,12 +12,21 @@ client
 	.then(() => console.log("Database connection successful"))
 	.catch((error) => console.log(error));
 
-const db = client.db("schoolDB");
+// add single documt
+const db = client.db("schoolDb");
 
 const student = db.collection("student");
 
 app.post("/student", (req, res, next) => {
-	student.insertOne();
+	student
+		.insertOne({
+			name: "John Doe",
+			email: "john@gmail.com",
+			age: 22,
+			dept: "CS",
+		})
+		.then(() => res.status(201).send("Student added successfully"))
+		.catch((err) => res.status(500).send(err.message));
 });
 
 // listen 4 d server
