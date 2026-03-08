@@ -19,19 +19,11 @@ client
 // add single documt
 const db = client.db("schoolDb"); // schoolDb is d DB name
 
-const student = db.collection("student"); // student rep each doc
+const student = db.collection("student"); // "student" rep each doc
 
 app.post("/student", (req, res, next) => {
 	// http://localhost:8000/student
-	// student
-	// 	.insertOne({
-	// 		name: "John Doe",
-	// 		email: "john@gmail.com",
-	// 		age: 22,
-	// 		dept: "CS",
-	// 	})
-	// 	.then(() => res.status(201).send("Student added successfully"))
-	// 	.catch((err) => res.status(500).send(err.message));
+
 	// using postman
 	// const { name, email, age, dept } = req.body;
 	// student
