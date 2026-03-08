@@ -1,6 +1,16 @@
 const express = require("express");
+const mongodb = require("mongodb");
 
 const app = express();
+
+const connectionUrl = "mongodb://localhost:27017";
+
+const client = new mongodb.MongoClient(connectionUrl);
+
+client
+	.connect()
+	.then(() => console.log("Database connection successful"))
+	.catch((error) => console.log(error));
 
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send(error.message);
@@ -19,6 +29,10 @@ app.listen(8000, () => {
     Install mongodb: 
     npm i mongodb
     
-    
+    start d mongo db in terminal:
+    sudo systemctl start mongod
+
+    sudo systemctl status mongod
+
 
 */
