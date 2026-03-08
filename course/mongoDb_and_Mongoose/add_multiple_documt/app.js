@@ -20,12 +20,24 @@ const student = db.collection("student");
 
 app.post("/student", (req, res, next) => {
 	// http://localhost:8000/student
+	// student
+	// 	.insertOne({
+	// 		name: "John Doe",
+	// 		email: "john@gmail.com",
+	// 		age: 22,
+	// 		dept: "CS",
+	// 	})
+	// 	.then(() => res.status(201).send("Student added successfully"))
+	// 	.catch((err) => res.status(500).send(err.message));
+
+	const { name, email, age, dept } = req.body;
+
 	student
 		.insertOne({
-			name: "John Doe",
-			email: "john@gmail.com",
-			age: 22,
-			dept: "CS",
+			name: name,
+			email: email,
+			age: age,
+			dept: dept,
 		})
 		.then(() => res.status(201).send("Student added successfully"))
 		.catch((err) => res.status(500).send(err.message));
