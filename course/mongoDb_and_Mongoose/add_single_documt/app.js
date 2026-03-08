@@ -54,5 +54,6 @@ app.listen(8000, () => {
 
     go to mongoDB compass and post this
     mongodb://localhost:27017
-    
+    to see what u cr8ed
+
 */
