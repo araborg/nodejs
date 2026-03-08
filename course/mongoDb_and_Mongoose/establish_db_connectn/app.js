@@ -30,6 +30,7 @@ app.listen(8000, () => {
     npm i mongodb
     
     start d mongo db in terminal:
+
     sudo systemctl start mongod
 
     sudo systemctl status mongod

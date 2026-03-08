@@ -56,7 +56,7 @@ app.post("/student", (req, res, next) => {
 		// .insertMany([{}, {}])
 		.insertMany(req.body)
 		.then(() => res.status(201).send("Students added successfully"))
-		.catch((err) => res.status(500).send(err, message));
+		.catch((err) => res.status(500).send(err.message));
 });
 
 // listen 4 d server
