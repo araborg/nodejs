@@ -18,16 +18,15 @@ const db = client.db("schoolDb");
 
 const student = db.collection("student");
 
-app.get("/student", (req, res, next) => {
+app.post("/student", (req, res, next) => {
 	// http://localhost:8000/student
-	const missingStudent = student
-		.findOne({
-			name: "John Doe",
-		})
-		.then(() => res.status(201).send("Student found successfully"))
-		.catch((err) => res.status(500).send(err.message));
-
-	console.log(missingStudent);
+	// const missingStudent = student
+	// 	.findOne({
+	// 		name: "John Doe",
+	// 	})
+	// 	.then(() => res.status(201).send("Student found successfully"))
+	// 	.catch((err) => res.status(500).send(err.message));
+	// console.log(missingStudent.json());
 });
 
 // listen 4 d server
