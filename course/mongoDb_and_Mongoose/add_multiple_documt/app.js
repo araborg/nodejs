@@ -7,19 +7,19 @@ const app = express();
 app.use(express.json());
 
 // connect to db
-const connectionUrl = "mongodb://localhost:27017";
+// const connectionUrl = "mongodb://localhost:27017";
 
-const client = new mongodb.MongoClient(connectionUrl);
+// const client = new mongodb.MongoClient(connectionUrl);
 
-client
-	.connect()
-	.then(() => console.log("Database connection successful"))
-	.catch((error) => console.log(error));
+// client
+// 	.connect()
+// 	.then(() => console.log("Database connection successful"))
+// 	.catch((error) => console.log(error));
 
 // add single documt
-const db = client.db("schoolDb"); // schoolDb is d DB name
+// const db = client.db("schoolDb"); // schoolDb is d DB name
 
-const student = db.collection("student"); // "student" rep each doc
+// const student = db.collection("student"); // "student" rep each doc
 
 app.post("/student", (req, res, next) => {
 	/*
@@ -51,12 +51,11 @@ app.post("/student", (req, res, next) => {
         
     insert many documents:
     */
-
-	student
-		// .insertMany([{}, {}])
-		.insertMany(req.body)
-		.then(() => res.status(201).send("Students added successfully"))
-		.catch((err) => res.status(500).send(err, message));
+	// student
+	// 	// .insertMany([{}, {}])
+	// 	.insertMany(req.body)
+	// 	.then(() => res.status(201).send("Students added successfully"))
+	// 	.catch((err) => res.status(500).send(err, message));
 });
 
 // listen 4 d server
