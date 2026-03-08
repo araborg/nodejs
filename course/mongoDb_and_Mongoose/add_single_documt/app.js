@@ -3,6 +3,7 @@ const mongodb = require("mongodb");
 
 const app = express();
 
+// connect to db
 const connectionUrl = "mongodb://localhost:27017";
 
 const client = new mongodb.MongoClient(connectionUrl);
