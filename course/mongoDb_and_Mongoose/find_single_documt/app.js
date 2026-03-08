@@ -18,14 +18,16 @@ const db = client.db("schoolDb");
 
 const student = db.collection("student");
 
-app.post("/student", (req, res, next) => {
+app.get("/student", (req, res, next) => {
 	// http://localhost:8000/student
-	student
+	const missingStudent = student
 		.findOne({
 			name: "John Doe",
 		})
-		.then(() => res.status(201).send("Student added successfully"))
+		.then(() => res.status(201).send("Student found successfully"))
 		.catch((err) => res.status(500).send(err.message));
+
+	console.log(missingStudent);
 });
 
 // listen 4 d server
@@ -34,33 +36,7 @@ app.listen(8000, () => {
 });
 
 /* 
-    Dababase Connection:
-
-    Install mongodb: 
-    npm i mongodb
-    
-    start d mongo db in terminal:
-    sudo systemctl start mongod
-
-    sudo systemctl status mongod
-
-    mongodb://localhost:27017
-
-    go to postman and using post method with url:
-    http://localhost:8000/student
-
-    go to mongoDB compass and post this
-    mongodb://localhost:27017
-    to see what u cr8ed
-
-    Click add new connection btn
-
-    paste d url:
-    mongodb://localhost:27017
-
-    click connect btn
-
-    U will see d DB u created (schoolDb) on d left side 
+   Find 1 document:
     
 
 */
