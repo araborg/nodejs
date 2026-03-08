@@ -3,6 +3,7 @@ const mongodb = require("mongodb");
 
 const app = express();
 
+// connect to db
 const connectionUrl = "mongodb://localhost:27017";
 
 const client = new mongodb.MongoClient(connectionUrl);
@@ -12,11 +13,23 @@ client
 	.then(() => console.log("Database connection successful"))
 	.catch((error) => console.log(error));
 
-const errorMiddleware = (error, req, res, next) => {
-	res.status(500).send(error.message);
-};
+// add single documt
+const db = client.db("schoolDb");
 
-app.use(errorMiddleware);
+const student = db.collection("student");
+
+app.post("/student", (req, res, next) => {
+	// http://localhost:8000/student
+	student
+		.insertOne({
+			name: "John Doe",
+			email: "john@gmail.com",
+			age: 22,
+			dept: "CS",
+		})
+		.then(() => res.status(201).send("Student added successfully"))
+		.catch((err) => res.status(500).send(err.message));
+});
 
 // listen 4 d server
 app.listen(8000, () => {
@@ -24,15 +37,7 @@ app.listen(8000, () => {
 });
 
 /* 
-    Dababase Connection:
-
-    Install mongodb: 
-    npm i mongodb
+   
     
-    start d mongo db in terminal:
-    sudo systemctl start mongod
 
-    sudo systemctl status mongod
-
-    mongodb://localhost:27017
 */
