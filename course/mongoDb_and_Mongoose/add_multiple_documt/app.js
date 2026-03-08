@@ -25,7 +25,8 @@ app.post("/student", (req, res, next) => {
 	/*
 	http://localhost:8000/student
 
-	using postman:
+	using postman to insert one & many docs:
+    
 	console.log(req.body);
 
 	const { name, email, age, dept } = req.body;
