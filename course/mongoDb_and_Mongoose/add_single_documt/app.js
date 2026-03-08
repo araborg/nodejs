@@ -19,6 +19,7 @@ const db = client.db("schoolDb");
 const student = db.collection("student");
 
 app.post("/student", (req, res, next) => {
+	// http://localhost:8000/student
 	student
 		.insertOne({
 			name: "John Doe",
