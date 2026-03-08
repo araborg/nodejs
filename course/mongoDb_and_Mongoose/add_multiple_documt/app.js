@@ -37,6 +37,12 @@ app.listen(8000, () => {
 });
 
 /* 
+   Using postman to add document
+
+   Go to Body
+
+   Click Raw and choose JSON
+
    
     
 
