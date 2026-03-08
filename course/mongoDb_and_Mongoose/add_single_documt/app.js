@@ -56,4 +56,14 @@ app.listen(8000, () => {
     mongodb://localhost:27017
     to see what u cr8ed
 
+    Click add new connection btn
+
+    paste d url:
+    mongodb://localhost:27017
+
+    click connect btn
+
+    U will see d DB u created (schoolDb) on d left side 
+    
+
 */
