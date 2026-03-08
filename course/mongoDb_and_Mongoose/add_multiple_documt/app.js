@@ -23,7 +23,6 @@ const student = db.collection("student"); // "student" rep each doc
 
 app.post("/student", (req, res, next) => {
 	// http://localhost:8000/student
-
 	// using postman
 	// const { name, email, age, dept } = req.body;
 	// student
@@ -36,15 +35,18 @@ app.post("/student", (req, res, next) => {
 	// 	.then(() => res.status(201).send("Student added successfully"))
 	// 	.catch((err) => res.status(500).send(err.message));
 
-	// insert many documents
-
-	// console.log(req.body);
-
 	student
-		// .insertMany([{}, {}])
-		.insertMany(req.body)
-		.then(() => res.status(201).send("Students added successfully"))
-		.catch((err) => res.status(500).send(err, message));
+		.insertOne(req.body)
+		.then(() => res.status(201).send("Student added successfully"))
+		.catch((err) => res.status(500).send(err.message));
+
+	// insert many documents
+	// console.log(req.body);
+	// student
+	// 	// .insertMany([{}, {}])
+	// 	.insertMany(req.body)
+	// 	.then(() => res.status(201).send("Students added successfully"))
+	// 	.catch((err) => res.status(500).send(err, message));
 });
 
 // listen 4 d server
