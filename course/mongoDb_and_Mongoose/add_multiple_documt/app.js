@@ -3,7 +3,7 @@ const mongodb = require("mongodb");
 
 const app = express();
 
-// ds is import to receive data 4rm postman
+// ds is import to receive json data 4rm postman
 app.use(express.json());
 
 // connect to db
