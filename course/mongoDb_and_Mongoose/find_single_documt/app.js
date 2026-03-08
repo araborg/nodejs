@@ -1,0 +1,69 @@
+const express = require("express");
+const mongodb = require("../find_single_documt /node_modules/mongodb/mongodb");
+
+const app = express();
+
+// connect to db
+const connectionUrl = "mongodb://localhost:27017";
+
+const client = new mongodb.MongoClient(connectionUrl);
+
+client
+	.connect()
+	.then(() => console.log("Database connection successful"))
+	.catch((error) => console.log(error));
+
+// add single documt
+const db = client.db("schoolDb");
+
+const student = db.collection("student");
+
+app.post("/student", (req, res, next) => {
+	// http://localhost:8000/student
+	student
+		.insertOne({
+			name: "John Doe",
+			email: "john@gmail.com",
+			age: 22,
+			dept: "CS",
+		})
+		.then(() => res.status(201).send("Student added successfully"))
+		.catch((err) => res.status(500).send(err.message));
+});
+
+// listen 4 d server
+app.listen(8000, () => {
+	console.log("Server is running on port: 8000");
+});
+
+/* 
+    Dababase Connection:
+
+    Install mongodb: 
+    npm i mongodb
+    
+    start d mongo db in terminal:
+    sudo systemctl start mongod
+
+    sudo systemctl status mongod
+
+    mongodb://localhost:27017
+
+    go to postman and using post method with url:
+    http://localhost:8000/student
+
+    go to mongoDB compass and post this
+    mongodb://localhost:27017
+    to see what u cr8ed
+
+    Click add new connection btn
+
+    paste d url:
+    mongodb://localhost:27017
+
+    click connect btn
+
+    U will see d DB u created (schoolDb) on d left side 
+    
+
+*/
