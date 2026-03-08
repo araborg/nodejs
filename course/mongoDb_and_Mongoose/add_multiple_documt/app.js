@@ -17,9 +17,9 @@ client
 	.catch((error) => console.log(error));
 
 // add single documt
-const db = client.db("schoolDb");
+const db = client.db("schoolDb"); // schoolDb is d DB name
 
-const student = db.collection("student");
+const student = db.collection("student"); // student rep each doc
 
 app.post("/student", (req, res, next) => {
 	// http://localhost:8000/student
