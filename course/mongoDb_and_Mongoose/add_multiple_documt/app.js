@@ -22,29 +22,32 @@ const db = client.db("schoolDb"); // schoolDb is d DB name
 const student = db.collection("student"); // "student" rep each doc
 
 app.post("/student", (req, res, next) => {
-	// http://localhost:8000/student
+	/*
+	http://localhost:8000/student
 
-	// using postman:
-	// console.log(req.body);
+	using postman:
+	console.log(req.body);
 
-	// const { name, email, age, dept } = req.body;
+	const { name, email, age, dept } = req.body;
 
-	// student
-	// 	.insertOne({
-	// 		name: name,
-	// 		email: email,
-	// 		age: age,
-	// 		dept: dept,
-	// 	})
-	// 	.then(() => res.status(201).send("Student added successfully"))
-	// 	.catch((err) => res.status(500).send(err.message));
+	student
+		.insertOne({
+			name: name,
+			email: email,
+			age: age,
+			dept: dept,
+		})
+		.then(() => res.status(201).send("Student added successfully"))
+		.catch((err) => res.status(500).send(err.message));
 
-	// student
-	// 	.insertOne(req.body)
-	// 	.then(() => res.status(201).send("Student added successfully"))
-	// 	.catch((err) => res.status(500).send(err.message));
+	student
+		.insertOne(req.body)
+		.then(() => res.status(201).send("Student added successfully"))
+		.catch((err) => res.status(500).send(err.message));
 
-	// insert many documents
+        
+    insert many documents:
+    */
 
 	student
 		// .insertMany([{}, {}])
