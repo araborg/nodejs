@@ -23,8 +23,12 @@ const student = db.collection("student"); // "student" rep each doc
 
 app.post("/student", (req, res, next) => {
 	// http://localhost:8000/student
-	// using postman
+
+	// using postman:
+	// console.log(req.body);
+
 	// const { name, email, age, dept } = req.body;
+
 	// student
 	// 	.insertOne({
 	// 		name: name,
@@ -40,8 +44,8 @@ app.post("/student", (req, res, next) => {
 	// 	.then(() => res.status(201).send("Student added successfully"))
 	// 	.catch((err) => res.status(500).send(err.message));
 
-	insert many documents
-	console.log(req.body);
+	// insert many documents
+
 	student
 		// .insertMany([{}, {}])
 		.insertMany(req.body)
