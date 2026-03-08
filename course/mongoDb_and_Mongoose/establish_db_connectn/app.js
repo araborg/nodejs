@@ -2,10 +2,6 @@ const express = require("express");
 
 const app = express();
 
-// built-in middleware
-app.use(express.json());
-app.use(cookieParser());
-
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send(error.message);
 };
