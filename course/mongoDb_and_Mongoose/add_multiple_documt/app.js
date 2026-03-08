@@ -43,7 +43,23 @@ app.listen(8000, () => {
 
    Click Raw and choose JSON
 
-   
+   Add your obj in d body section
+
+   Obj format using vscode:
+   {
+        name: "John Doe",
+        email: "john@gmail.com",
+        age: 22,
+        dept: "CS",
+    }
+
+    Obj format using postman:
+    {
+        "name": "John Doe",
+        "email": "john@gmail.com",
+        "age": 22,
+        "dept": "CS"
+    }
     
 
 */
