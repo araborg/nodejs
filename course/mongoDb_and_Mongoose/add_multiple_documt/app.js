@@ -32,19 +32,18 @@ app.post("/student", (req, res, next) => {
 	// 	})
 	// 	.then(() => res.status(201).send("Student added successfully"))
 	// 	.catch((err) => res.status(500).send(err.message));
-
 	// using postman
-	const { name, email, age, dept } = req.body;
-
-	student
-		.insertOne({
-			name: name,
-			email: email,
-			age: age,
-			dept: dept,
-		})
-		.then(() => res.status(201).send("Student added successfully"))
-		.catch((err) => res.status(500).send(err.message));
+	// const { name, email, age, dept } = req.body;
+	// student
+	// 	.insertOne({
+	// 		name: name,
+	// 		email: email,
+	// 		age: age,
+	// 		dept: dept,
+	// 	})
+	// 	.then(() => res.status(201).send("Student added successfully"))
+	// 	.catch((err) => res.status(500).send(err.message));
+	// insert many documents
 });
 
 // listen 4 d server
