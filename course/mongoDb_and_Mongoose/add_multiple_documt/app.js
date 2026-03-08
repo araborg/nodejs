@@ -26,7 +26,7 @@ app.post("/student", (req, res, next) => {
 	http://localhost:8000/student
 
 	using postman to insert one & many docs:
-    
+
 	console.log(req.body);
 
 	const { name, email, age, dept } = req.body;
@@ -40,6 +40,8 @@ app.post("/student", (req, res, next) => {
 		})
 		.then(() => res.status(201).send("Student added successfully"))
 		.catch((err) => res.status(500).send(err.message));
+
+    Or:
 
 	student
 		.insertOne(req.body)
@@ -86,6 +88,30 @@ app.listen(8000, () => {
         "age": 22,
         "dept": "CS"
     }
+
+    Adding many documts at once:
+    [
+        {
+            "name": "John Doe",
+            "email": "john1@gmail.com",
+            "age": 22,
+            "dept": "CS"
+        },
+
+        {
+            "name": "John Doe2",
+            "email": "john2@gmail.com",
+            "age": 42,
+            "dept": "Music"
+        },
+
+        {
+            "name": "John Doe3",
+            "email": "john3@gmail.com",
+            "age": 92,
+            "dept": "History"
+        }
+    ]
     
 
 */
