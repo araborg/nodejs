@@ -3,6 +3,9 @@ const mongodb = require("mongodb");
 
 const app = express();
 
+// ds is import to receive data 4rm postman
+app.use(express.json());
+
 // connect to db
 const connectionUrl = "mongodb://localhost:27017";
 
@@ -30,6 +33,7 @@ app.post("/student", (req, res, next) => {
 	// 	.then(() => res.status(201).send("Student added successfully"))
 	// 	.catch((err) => res.status(500).send(err.message));
 
+	// using postman
 	const { name, email, age, dept } = req.body;
 
 	student
