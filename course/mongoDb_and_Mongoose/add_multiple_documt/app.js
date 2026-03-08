@@ -1,5 +1,5 @@
 const express = require("express");
-const mongodb = require("../find_single_documt /node_modules/mongodb/mongodb");
+const mongodb = require("mongodb");
 
 const app = express();
 
@@ -7,56 +7,57 @@ const app = express();
 app.use(express.json());
 
 // connect to db
-// const connectionUrl = "mongodb://localhost:27017";
+const connectionUrl = "mongodb://localhost:27017";
 
-// const client = new mongodb.MongoClient(connectionUrl);
+const client = new mongodb.MongoClient(connectionUrl);
 
-// client
-// 	.connect()
-// 	.then(() => console.log("Database connection successful"))
-// 	.catch((error) => console.log(error));
+client
+	.connect()
+	.then(() => console.log("Database connection successful"))
+	.catch((error) => console.log(error));
 
 // add single documt
-// const db = client.db("schoolDb"); // schoolDb is d DB name
+const db = client.db("schoolDb"); // schoolDb is d DB name
 
-// const student = db.collection("student"); // "student" rep each doc
+const student = db.collection("student"); // "student" rep each doc
 
 app.post("/student", (req, res, next) => {
-	/*
-	http://localhost:8000/student
+    /*
+        http://localhost:8000/student
 
-	using postman to insert one & many docs:
+        using postman to insert one & many docs:
 
-	console.log(req.body);
+        console.log(req.body);
 
-	const { name, email, age, dept } = req.body;
+        const { name, email, age, dept } = req.body;
 
-	student
-		.insertOne({
-			name: name,
-			email: email,
-			age: age,
-			dept: dept,
-		})
-		.then(() => res.status(201).send("Student added successfully"))
-		.catch((err) => res.status(500).send(err.message));
+        student
+            .insertOne({
+                name: name,
+                email: email,
+                age: age,
+                dept: dept,
+            })
+            .then(() => res.status(201).send("Student added successfully"))
+            .catch((err) => res.status(500).send(err.message));
 
-    Or:
+        Or:
 
-	student
-		.insertOne(req.body)
-		.then(() => res.status(201).send("Student added successfully"))
-		.catch((err) => res.status(500).send(err.message));
+        student
+            .insertOne(req.body)
+            .then(() => res.status(201).send("Student added successfully"))
+            .catch((err) => res.status(500).send(err.message));
 
-        
-    insert many documents:
+            
+        insert many documents:
     */
-	// student
-	// 	// .insertMany([{}, {}])
-	// 	.insertMany(req.body)
-	// 	.then(() => res.status(201).send("Students added successfully"))
-	// 	.catch((err) => res.status(500).send(err, message));
-});
+   
+// student
+// 	// .insertMany([{}, {}])
+// 	.insertMany(req.body)
+// 	.then(() => res.status(201).send("Students added successfully"))
+// 	.catch((err) => res.status(500).send(err, message));
+// });
 
 // listen 4 d server
 app.listen(8000, () => {
