@@ -22,7 +22,7 @@ const db = client.db("schoolDb"); // schoolDb is d DB name
 const student = db.collection("student"); // "student" rep each doc
 
 app.post("/student", (req, res, next) => {
-    /*
+	/*
         http://localhost:8000/student
 
         using postman to insert one & many docs:
@@ -51,13 +51,13 @@ app.post("/student", (req, res, next) => {
             
         insert many documents:
     */
-   
-// student
-// 	// .insertMany([{}, {}])
-// 	.insertMany(req.body)
-// 	.then(() => res.status(201).send("Students added successfully"))
-// 	.catch((err) => res.status(500).send(err, message));
-// });
+
+	student
+		// .insertMany([{}, {}])
+		.insertMany(req.body)
+		.then(() => res.status(201).send("Students added successfully"))
+		.catch((err) => res.status(500).send(err, message));
+});
 
 // listen 4 d server
 app.listen(8000, () => {
