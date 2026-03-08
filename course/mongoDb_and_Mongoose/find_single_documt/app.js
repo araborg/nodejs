@@ -21,11 +21,8 @@ const student = db.collection("student");
 app.post("/student", (req, res, next) => {
 	// http://localhost:8000/student
 	student
-		.insertOne({
+		.findOne({
 			name: "John Doe",
-			email: "john@gmail.com",
-			age: 22,
-			dept: "CS",
 		})
 		.then(() => res.status(201).send("Student added successfully"))
 		.catch((err) => res.status(500).send(err.message));
