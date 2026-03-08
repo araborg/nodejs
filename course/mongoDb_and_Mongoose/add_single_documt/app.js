@@ -48,4 +48,11 @@ app.listen(8000, () => {
     sudo systemctl status mongod
 
     mongodb://localhost:27017
+
+    go to postman and using post method with url:
+    http://localhost:8000/student
+
+    go to mongoDB compass and post this
+    mongodb://localhost:27017
+    
 */
