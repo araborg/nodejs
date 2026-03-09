@@ -60,18 +60,13 @@ app.put("/student", (req, res, next) => {
 
 	student
 		// .findOneAndUpdate({ email }, { $set: { dept: dept } }) // 2 objs
-		.findOneAndUpdate(
-			{ email }, // req.query
+		.updateMany(
+			{ age }, // req.query
 
 			// { $set: { dept: dept } },
-			{ $set: { dept: dept, age: age } }, // req.body
-
-			// { returnDocument: "before" },
-			{ returnDocument: "after" },
+			{ $set: { dept: dept } }, // req.body
 		) // 3 objs
 		.then((data) => {
-			console.log(data);
-
 			res.status(200)
 				//
 				.json({
@@ -89,7 +84,7 @@ app.listen(8000, () => {
 });
 
 /* 
-   
+   Find 1 document:
     
 
 */
