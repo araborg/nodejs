@@ -36,7 +36,7 @@ app.post("/student", (req, res, next) => {
 app.get("/student", (req, res, next) => {
 	student
 		.findOne({ name: "John Doe" })
-		.then(() => res.status(200).send("Found one student"))
+		.then((data) => res.status(200).json(data)) // notice we use data here
 		.catch((err) => res.status(500).send(err.message));
 });
 
