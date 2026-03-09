@@ -67,14 +67,14 @@ app.put("/student", (req, res, next) => {
 			{ $set: { dept } }, // req.body
 		) // 3 objs
 		.then((data) => {
-			console.log(data);
+			// console.log(data);
 
 			res.status(200)
 				//
 				.json({
 					message: "Students updated successfully",
 
-					updatedStudents: [data],
+					updatedStudents: data,
 				});
 		})
 		.catch((error) => res.status(500).json({ message: error.message }));
