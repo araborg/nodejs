@@ -44,6 +44,8 @@ app.get("/student", (req, res, next) => {
 	// 	.catch((err) => res.status(500).send(err.message));
 
 	// using postman url
+	// http://localhost:8000/student?email=john1@gmail.com
+
 	const { email } = req.query; // req.query & not req.body
 	console.log(email);
 
