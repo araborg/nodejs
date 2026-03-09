@@ -122,6 +122,7 @@ app.put("/student", (req, res, next) => {
 		.catch((error) => res.status(500).json({ message: error.message }));
 });
 
+/*
 // delete a student
 app.delete("/student", (req, res, next) => {
 	// http://localhost:8000/student?email=john1@gmail.com
@@ -133,6 +134,8 @@ app.delete("/student", (req, res, next) => {
 		.then(() => res.status(200).send("Student successfully deleted"))
 		.catch((err) => res.status(500).send({ message: err.message }));
 });
+
+*/
 
 // delete many students
 app.delete("/student", (req, res, next) => {
