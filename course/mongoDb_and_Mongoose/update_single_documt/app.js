@@ -55,9 +55,11 @@ app.put("/student", (req, res, next) => {
 	// http://localhost:8000/student?email=john2@gmail.com
 	const { email } = req.query;
 
+	// updating 1 item
 	// { "dept": "Yoruba" }
 	// const { dept } = req.body;
 
+	// updating 2 or more items
 	//    { "dept":"Yoruba", "age":100 }
 	const { dept, age } = req.body;
 
@@ -78,7 +80,7 @@ app.put("/student", (req, res, next) => {
 				.status(200)
 				.json({
 					message: "Student updated successfully",
-					updatedStudent: data.value,
+					updatedStudent: data,
 				});
 		})
 		.catch((error) => res.status(500).json({ message: error.message }));
