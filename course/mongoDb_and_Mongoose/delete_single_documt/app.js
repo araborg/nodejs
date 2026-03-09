@@ -50,6 +50,48 @@ app.get("/student", (req, res, next) => {
 
 // update a student
 app.put("/student", (req, res, next) => {
+	// note d diff: req.query & req.body?
+
+	// http://localhost:8000/student?email=john2@gmail.com
+	const { email } = req.query;
+
+	// updating 1 item
+	// { "dept": "Yoruba" }
+	// const { dept } = req.body;
+
+	// updating 2 or more items
+	//    { "dept":"Yoruba", "age":100 }
+	const { dept, age } = req.body;
+
+	student
+		// .findOneAndUpdate({ email }, { $set: { dept: dept } }) // 2 objs
+		.findOneAndUpdate(
+			{ email },
+
+			//
+			// { $set: { dept: dept } },
+			{ $set: { dept: dept, age: age } },
+
+			//
+			// { returnDocument: "before" },
+			{ returnDocument: "after" },
+		) // 3 objs
+		.then((data) => {
+			console.log(data);
+
+			res
+				//
+				.status(200)
+				.json({
+					message: "Student updated successfully",
+					updatedStudent: data,
+				});
+		})
+		.catch((error) => res.status(500).json({ message: error.message }));
+});
+
+// update many students
+app.put("/student", (req, res, next) => {
 	// http://localhost:8000/student?age=92
 
 	// note d diff: req.query & req.body?
