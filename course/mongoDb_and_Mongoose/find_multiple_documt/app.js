@@ -33,6 +33,7 @@ app.post("/student", (req, res, next) => {
 		.catch((err) => res.status(500).send(err.message));
 });
 
+/*
 // find one student
 app.get("/student", (req, res, next) => {
 	// http://localhost:8000/student
@@ -53,6 +54,7 @@ app.get("/student", (req, res, next) => {
 		.then((data) => res.status(200).json(data)) // notice we use data here
 		.catch((err) => res.status(500).send(err.message));
 });
+*/
 
 // find students
 app.get("/student", (req, res, next) => {
