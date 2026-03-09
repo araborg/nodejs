@@ -136,11 +136,11 @@ app.delete("/student", (req, res, next) => {
 
 // delete many students
 app.delete("/student", (req, res, next) => {
-	const { email } = req.query;
+	const { dept } = req.query;
 
 	student
-		.deleteMany()
-		.then()
+		.deleteMany({ dept: dept })
+		.then(() => res.status(200).send("Students successfully deleted"))
 		.catch((err) => req.status(500).send({ message: err.message }));
 });
 
