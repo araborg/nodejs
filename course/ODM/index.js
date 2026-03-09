@@ -1,11 +1,14 @@
 const express = require("express");
+const mongoose = require("mongoose");
 
 const app = express();
 
 // ds is import to receive json data 4rm postman
 app.use(express.json());
 
-const connectionUrl = "mongodb://localhost:27017";
+const connectionUrl = "mongodb://localhost:27017/schoolDb";
+
+mongoose.connect(connectionUrl);
 
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
