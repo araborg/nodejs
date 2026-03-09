@@ -29,50 +29,20 @@ app.post("/student", (req, res, next) => {
 
 	student
 		.insertMany(req.body)
-		.then(() => res.status(201).send("Student added successfully"))
+		// .then(() => res.status(201).send("Student added successfully"))
+		.then((data) => res.status(201).json(data))
 		.catch((err) => res.status(500).send(err.message));
 });
-
-// /*
-// find one student
-app.get("/student", (req, res, next) => {
-	// http://localhost:8000/student
-
-	// student
-	// 	// .findOne({ name: "John Doe2" })
-	// 	.findOne({ email: "john3@gmail.com" })
-	// 	.then((data) => res.status(200).json(data)) // notice we use data here
-	// 	.catch((err) => res.status(500).send(err.message));
-
-	// using postman url
-	const { email } = req.query; // req.query & not req.body
-	// console.log(email);
-
-	// const { age } = req.query; // req.query & not req.body
-
-	student
-		// .findOne({ name: "John Doe2" })
-		.findOne({ email: email })
-		// .findOne({ age: parseInt(age) })
-		.then((data) => res.status(200).json(data)) // notice we use data here
-		.catch((err) => res.status(500).send(err.message));
-});
-// */
 
 // find students
 app.get("/student", (req, res, next) => {
-	// http://localhost:8000/student?age=22
-
-	const { age } = req.query;
-
-	console.log(typeof age); // string
-	console.log(typeof parseInt(age)); // string
+	const { dept } = req.query; // req.query & not req.body
+	// console.log(email);
 
 	student
-		.find({ age: parseInt(age) }) // mk use of a commmon value e.g age, subject, gender
-		.toArray() // note ds method
-		.then((data) => res.status(200).json(data))
-		.catch((err) => res.status(500).send(err, message));
+		.find({ dept: dept })
+		.then((data) => res.status(200).json(data)) // notice we use data here
+		.catch((err) => res.status(500).send(err.message));
 });
 
 // listen 4 d server
