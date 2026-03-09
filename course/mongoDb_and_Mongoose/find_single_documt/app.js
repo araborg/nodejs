@@ -24,7 +24,7 @@ const student = db.collection("student");
 // add multiple students
 app.post("/student", (req, res, next) => {
 	// http://localhost:8000/student
-	console.log(req.body);
+	// console.log(req.body);
 
 	student
 		.insertMany(req.body)
@@ -34,7 +34,10 @@ app.post("/student", (req, res, next) => {
 
 // find one student
 app.get("/student", (req, res, next) => {
-	student.findOne({});
+	student
+		.findOne({ name: "John Doe" })
+		.then(() => res.status(200).send("Found one student"))
+		.catch((err) => res.status(500).send(err.message));
 });
 
 // listen 4 d server
