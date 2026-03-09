@@ -14,6 +14,8 @@ mongoose
 	.then(() => console.log("Database connection successful"))
 	.catch((error) => console.log(error));
 
+const studentSchema = mongoose.Schema({});
+
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
 };
