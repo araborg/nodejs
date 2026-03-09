@@ -56,22 +56,30 @@ app.put("/student", (req, res, next) => {
 	const { email } = req.query;
 
 	// { "dept": "Yoruba" }
-	const { dept } = req.body;
+	// const { dept } = req.body;
+
+	//    { "dept":"Yoruba", "age":100 }
+	const { dept, age } = req.body;
 
 	student
 		// .findOneAndUpdate({ email }, { $set: { dept: dept } }) // 2 objs
 		.findOneAndUpdate(
 			{ email },
-			{ $set: { dept: dept } },
+			// { $set: { dept: dept } },
+			{ $set: { dept: dept, age: age } },
+			// { returnDocument: "before" },
 			{ returnDocument: "after" },
 		) // 3 objs
 		.then((data) => {
 			console.log(data);
 
-			res.status(200).json({
-				message: "Student updated successfully",
-				updatedStudent: data.value,
-			});
+			res
+				//
+				.status(200)
+				.json({
+					message: "Student updated successfully",
+					updatedStudent: data.value,
+				});
 		})
 		.catch((error) => res.status(500).json({ message: error.message }));
 });
