@@ -24,6 +24,7 @@ const student = db.collection("student");
 // add multiple students
 app.post("/student", (req, res, next) => {
 	// http://localhost:8000/student
+
 	// console.log(req.body);
 
 	student
@@ -34,8 +35,10 @@ app.post("/student", (req, res, next) => {
 
 // find one student
 app.get("/student", (req, res, next) => {
+	// http://localhost:8000/student
+
 	student
-		.findOne({ name: "John Doe" })
+		.findOne({ name: "John Doe2" })
 		.then((data) => res.status(200).json(data)) // notice we use data here
 		.catch((err) => res.status(500).send(err.message));
 });
