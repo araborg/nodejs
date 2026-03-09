@@ -20,13 +20,10 @@ const student = db.collection("student");
 
 app.post("/student", (req, res, next) => {
 	// http://localhost:8000/student
-	// const missingStudent = student
-	// 	.findOne({
-	// 		name: "John Doe",
-	// 	})
-	// 	.then(() => res.status(201).send("Student found successfully"))
-	// 	.catch((err) => res.status(500).send(err.message));
-	// console.log(missingStudent.json());
+	student
+		.insertMany(req.body)
+		.then(() => res.status(201).send("Student found successfully"))
+		.catch((err) => res.status(500).send(err.message));
 });
 
 // listen 4 d server
