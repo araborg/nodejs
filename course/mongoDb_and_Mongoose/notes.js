@@ -39,6 +39,12 @@ sudo dpkg -i mongodb-compass_1.49.2_amd64.deb
 Wthat is ODM?
 ODM: Object Data Modeling. It is a db concept
 
+Here O stands for object and this object means 
+JavaScript object.
+
+It is much more easier if we can think of 
+everything as object in JavaScript.
+
 
 Benefits of mongoose:
 1. Abstraction from low level MongoDB driver
