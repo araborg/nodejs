@@ -46,12 +46,14 @@ app.get("/student", (req, res, next) => {
 
 	// using postman url
 	const { email } = req.query; // req.query & not req.body
-	console.log(email);
+	// console.log(email);
+
+	// const { age } = req.query; // req.query & not req.body
 
 	student
 		// .findOne({ name: "John Doe2" })
-		// .findOne({ email: email })
-		.findOne({ age: parseInt(age) })
+		.findOne({ email: email })
+		// .findOne({ age: parseInt(age) })
 		.then((data) => res.status(200).json(data)) // notice we use data here
 		.catch((err) => res.status(500).send(err.message));
 });
