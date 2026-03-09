@@ -21,14 +21,20 @@ const db = client.db("schoolDb");
 
 const student = db.collection("student");
 
+// add multiple students
 app.post("/student", (req, res, next) => {
 	// http://localhost:8000/student
 	console.log(req.body);
 
 	student
 		.insertMany(req.body)
-		.then(() => res.status(201).send("Student found successfully"))
+		.then(() => res.status(201).send("Student added successfully"))
 		.catch((err) => res.status(500).send(err.message));
+});
+
+// find one student
+app.get("/student", (req, res, next) => {
+	student.findOne({});
 });
 
 // listen 4 d server
