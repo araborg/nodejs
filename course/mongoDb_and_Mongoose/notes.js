@@ -43,9 +43,9 @@ ODM: Object Data Modeling
 Benefits of mongoose:
 1. Abstraction from low level MongoDB driver
 
-2. 
+2. Relationship between NoSQL data
 
-3. 
+3. Provide schema validation
 
 4. 
 
@@ -58,7 +58,7 @@ That means we are setting a layer between NodeJS application and MongoDB, which 
 
 makes our life more easier.
 
-Relationship between NoSQL data we already talked about.
+ we already talked about.
 
 MongoDB is a non-relational database, but still we need relationship between this data and mongoose
 
@@ -66,7 +66,7 @@ will help us to maintain this relationship.
 
 I'll show the relationship when we do our final project.
 
-Provide schema validation.
+.
 
 Earlier, we added name email as an department to student database.
 
