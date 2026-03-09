@@ -143,7 +143,9 @@ app.delete("/student", (req, res, next) => {
 
 	student
 		.deleteMany({ dept: dept })
-		.then(() => res.status(200).send("Students successfully deleted"))
+		.then(() =>
+			res.status(200).send({ message: "Students successfully deleted" }),
+		)
 		.catch((err) => req.status(500).send({ message: err.message }));
 });
 
