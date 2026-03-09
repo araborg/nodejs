@@ -51,7 +51,11 @@ app.get("/student", (req, res, next) => {
 // update a student
 app.put("/student", (req, res, next) => {
 	// note d diff: req.query & req.body?
+
+	// http://localhost:8000/student?dept=music
 	const { email } = req.query;
+
+	// { "dept": "Yoruba" }
 	const { dept } = req.body;
 
 	student
