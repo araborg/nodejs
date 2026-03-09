@@ -58,7 +58,10 @@ app.get("/student", (req, res, next) => {
 
 // find students
 app.get("/student", (req, res, next) => {
+	// http://localhost:8000/student?age=22
+
 	const { age } = req.query;
+
 	console.log(typeof age); // string
 	console.log(typeof parseInt(age)); // string
 
