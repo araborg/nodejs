@@ -139,6 +139,8 @@ app.delete("/student", (req, res, next) => {
 
 // delete many students
 app.delete("/student", (req, res, next) => {
+	// http://localhost:8000/student?dept=CS
+
 	const { dept } = req.query;
 
 	student
