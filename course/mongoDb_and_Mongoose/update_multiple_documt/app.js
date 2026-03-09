@@ -64,15 +64,13 @@ app.put("/student", (req, res, next) => {
 			{ age }, // req.query
 
 			// { $set: { dept: dept } },
-			{ $set: { dept: dept } }, // req.body
+			{ $set: { dept } }, // req.body
 		) // 3 objs
 		.then((data) => {
 			res.status(200)
 				//
 				.json({
 					message: "Student updated successfully",
-
-					updatedStudent: data,
 				});
 		})
 		.catch((error) => res.status(500).json({ message: error.message }));
