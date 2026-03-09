@@ -1,0 +1,12 @@
+{
+	"name": "mongoose-connection",
+	"version": "1.0.0",
+	"description": "connecting to mongodb using mongoose",
+	"license": "ISC",
+	"author": "araborg2026",
+	"type": "commonjs",
+	"main": "index.js",
+	"scripts": {
+		"start": "nodemon ./index.js"
+	}
+}
