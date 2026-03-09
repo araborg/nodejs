@@ -36,6 +36,8 @@ app.post("/student", (req, res, next) => {
 
 // find students
 app.get("/student", (req, res, next) => {
+	// http://localhost:8000/student?dept=CS
+
 	const { dept } = req.query; // req.query & not req.body
 	console.log(dept);
 
@@ -45,6 +47,9 @@ app.get("/student", (req, res, next) => {
 		.then((data) => res.status(200).json(data)) // notice we use data here
 		.catch((err) => res.status(500).send(err.message));
 });
+
+// update a student
+app.put("/student", (req, res, next) => {});
 
 // listen 4 d server
 app.listen(8000, () => {
