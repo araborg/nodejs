@@ -49,7 +49,9 @@ app.get("/student", (req, res, next) => {
 });
 
 // update a student
-app.put("/student", (req, res, next) => {});
+app.put("/student", (req, res, next) => {
+	student.findOneAndUpdate({});
+});
 
 // listen 4 d server
 app.listen(8000, () => {
