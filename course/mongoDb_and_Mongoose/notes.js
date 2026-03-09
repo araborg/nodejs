@@ -47,9 +47,9 @@ Benefits of mongoose:
 
 3. Provide schema validation
 
-4. 
+4. Object data mapping
 
-5. 
+5. 40% less code
 
 
 Number one .
@@ -84,9 +84,9 @@ For example name can be string, s can be number etcetera.
 
 We'll talk about schema in upcoming video.
 
-Object data mapping which I already talked about some time ago.
+ which I already talked about some time ago.
 
-And finally we write around 40% less code if we use mongoose.
+And finally we write around  if we use mongoose.
 
 
 
