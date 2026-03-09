@@ -72,11 +72,11 @@ app.put("/student", (req, res, next) => {
 		.then((data) => {
 			console.log(data);
 
-			res
+			res.status(200)
 				//
-				.status(200)
 				.json({
 					message: "Student updated successfully",
+
 					updatedStudent: data,
 				});
 		})
