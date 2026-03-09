@@ -33,4 +33,19 @@ https://www.mongodb.com/try/download/compass
 
 sudo dpkg -i mongodb-compass_1.49.2_amd64.deb
 
+
+========================================
+
+Wthat is ODM?
+
+
+
+
+
+
+
+
+
+
+
 */
