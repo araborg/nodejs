@@ -66,7 +66,7 @@ app.get("/student", (req, res, next) => {
 	console.log(typeof parseInt(age)); // string
 
 	student
-		.find({ age: parseInt(age) })
+		.find({ age: parseInt(age) }) // mk use of a commmon value e.g age, subject, gender
 		.toArray()
 		.then((data) => res.status(200).json(data))
 		.catch((err) => res.status(500).send(err, message));
