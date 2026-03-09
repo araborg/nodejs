@@ -37,8 +37,19 @@ app.post("/student", (req, res, next) => {
 app.get("/student", (req, res, next) => {
 	// http://localhost:8000/student
 
+	// student
+	// 	// .findOne({ name: "John Doe2" })
+	// 	.findOne({ email: "john3@gmail.com" })
+	// 	.then((data) => res.status(200).json(data)) // notice we use data here
+	// 	.catch((err) => res.status(500).send(err.message));
+
+	// using postman url
+	const { email } = req.body;
+	console.log(email);
+
 	student
-		.findOne({ name: "John Doe2" })
+		// .findOne({ name: "John Doe2" })
+		.findOne({ email: email })
 		.then((data) => res.status(200).json(data)) // notice we use data here
 		.catch((err) => res.status(500).send(err.message));
 });
