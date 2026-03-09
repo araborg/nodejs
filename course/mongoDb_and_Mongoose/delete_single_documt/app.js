@@ -124,9 +124,11 @@ app.put("/student", (req, res, next) => {
 
 // delete a student
 app.delete("/student", (req, res, next) => {
+	const { email } = req.body;
+
 	student
-		.findOneAndDelete()
-		.then()
+		.findOneAndDelete({ email: email })
+		.then(() => res.status(200).send("Student successfully deleted"))
 		.catch((err) => res.status(500).send({ message: err.message }));
 });
 
