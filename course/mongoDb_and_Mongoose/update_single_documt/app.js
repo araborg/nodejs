@@ -50,7 +50,18 @@ app.get("/student", (req, res, next) => {
 
 // update a student
 app.put("/student", (req, res, next) => {
-	student.findOneAndUpdate({});
+	// note d diff: req.query & req.body?
+	const { email } = req.query;
+	const { dept } = req.body;
+
+	student
+		.findOneAndUpdate({ email }, { $set: { dept: dept } }) // 2 objs
+		.then((data) => {
+			console.log(data);
+
+			res.status(200).json({ message: "Student updated successfully" });
+		})
+		.catch((error) => res.status(500).json({ message: error.message }));
 });
 
 // listen 4 d server
