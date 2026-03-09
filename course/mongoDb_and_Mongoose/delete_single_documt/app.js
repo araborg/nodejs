@@ -124,7 +124,7 @@ app.put("/student", (req, res, next) => {
 
 // delete a student
 app.delete("/student", (req, res, next) => {
-	// http://localhost:8000/student?email=john2@gmail.com
+	// http://localhost:8000/student?email=john1@gmail.com
 
 	const { email } = req.query;
 
