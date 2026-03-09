@@ -5,6 +5,8 @@ const app = express();
 // ds is import to receive json data 4rm postman
 app.use(express.json());
 
+const connectionUrl = "mongodb://localhost:27017";
+
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
 };
@@ -17,7 +19,7 @@ app.listen(8000, () => {
 });
 
 /* 
-   Find 1 document:
+   Mongoose
     
 
 */
