@@ -55,13 +55,14 @@ app.put("/student", (req, res, next) => {
 	// note d diff: req.query & req.body?
 
 	const { age } = req.query;
+	console.log(typeof age);
 
 	const { dept } = req.body;
 
 	student
 		// .findOneAndUpdate({ email }, { $set: { dept: dept } }) // 2 objs
 		.updateMany(
-			{ age }, // req.query
+			{ age: parseInt(age) }, // req.query
 
 			// { $set: { dept: dept } },
 			{ $set: { dept } }, // req.body
@@ -72,7 +73,7 @@ app.put("/student", (req, res, next) => {
 			res.status(200)
 				//
 				.json({
-					message: "Student updated successfully",
+					message: "Students updated successfully",
 				});
 		})
 		.catch((error) => res.status(500).json({ message: error.message }));
