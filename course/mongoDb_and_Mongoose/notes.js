@@ -45,6 +45,14 @@ JavaScript object.
 It is much more easier if we can think of 
 everything as object in JavaScript.
 
+NodejsApp ------------------> mongoose 
+    |                             |
+    | Object                      |
+    | mapping                     |
+    |                             |
+    V                             V
+mongodb <----------------------mongoDriver
+
 
 Benefits of mongoose:
 1. Abstraction from low level MongoDB driver
