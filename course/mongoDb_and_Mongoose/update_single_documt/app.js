@@ -67,8 +67,12 @@ app.put("/student", (req, res, next) => {
 		// .findOneAndUpdate({ email }, { $set: { dept: dept } }) // 2 objs
 		.findOneAndUpdate(
 			{ email },
+
+			//
 			// { $set: { dept: dept } },
 			{ $set: { dept: dept, age: age } },
+
+			//
 			// { returnDocument: "before" },
 			{ returnDocument: "after" },
 		) // 3 objs
