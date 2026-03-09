@@ -18,7 +18,10 @@ const studentSchema = mongoose.Schema({
 	name: String,
 	email: String,
 	age: Number,
+	dept: String,
 });
+
+mongoose.Model("student", studentSchema);
 
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
