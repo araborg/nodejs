@@ -131,7 +131,7 @@ app.delete("/student", (req, res, next) => {
 
 	student
 		.findOneAndDelete({ email: email })
-		.then(() => res.status(200).send("Student successfully deleted"))
+		.then(() => res.status(200).send({ message: "Students successfully deleted" })
 		.catch((err) => res.status(500).send({ message: err.message }));
 });
 
