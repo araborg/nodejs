@@ -124,7 +124,10 @@ app.put("/student", (req, res, next) => {
 
 // delete a student
 app.delete("/student", (req, res, next) => {
-	student.findOneAndDelete();
+	student
+		.findOneAndDelete()
+		.then()
+		.catch((err) => res.status(500).send({ message: err.message }));
 });
 
 // listen 4 d server
