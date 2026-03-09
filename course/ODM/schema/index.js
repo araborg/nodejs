@@ -14,7 +14,11 @@ mongoose
 	.then(() => console.log("Database connection successful"))
 	.catch((error) => console.log(error));
 
-const studentSchema = mongoose.Schema({});
+const studentSchema = mongoose.Schema({
+	name: String,
+	email: String,
+	age: Number,
+});
 
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
