@@ -47,24 +47,13 @@ app.get("/student", (req, res, next) => {
 	// http://localhost:8000/student?email=john1@gmail.com
 
 	const { email } = req.query; // req.query & not req.body
-	console.log(email);
+	// console.log(email);
 
 	student
 		// .findOne({ name: "John Doe2" })
 		.findOne({ email: email })
 		.then((data) => res.status(200).json(data)) // notice we use data here
 		.catch((err) => res.status(500).send(err.message));
-});
-
-// find students
-app.get("/student", (req, res, next) => {
-	const { age } = req.query;
-
-	student
-		.find({ age: age })
-		.toArray()
-		.then((data) => res.status(200).json(data))
-		.catch((err) => res.status(500).send(err, message));
 });
 
 // listen 4 d server
