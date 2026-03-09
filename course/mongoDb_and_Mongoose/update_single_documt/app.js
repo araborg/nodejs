@@ -37,10 +37,11 @@ app.post("/student", (req, res, next) => {
 // find students
 app.get("/student", (req, res, next) => {
 	const { dept } = req.query; // req.query & not req.body
-	// console.log(email);
+	console.log(dept);
 
 	student
 		.find({ dept: dept })
+		.toArray()
 		.then((data) => res.status(200).json(data)) // notice we use data here
 		.catch((err) => res.status(500).send(err.message));
 });
