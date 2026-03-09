@@ -59,10 +59,11 @@ app.get("/student", (req, res, next) => {
 // find students
 app.get("/student", (req, res, next) => {
 	const { age } = req.query;
-	console.log(typeof age);
+	console.log(typeof age); // string
+	console.log(typeof parseInt(age)); // string
 
 	student
-		.find({ age: age })
+		.find({ age: parseInt(age) })
 		.toArray()
 		.then((data) => res.status(200).json(data))
 		.catch((err) => res.status(500).send(err, message));
