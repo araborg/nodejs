@@ -134,6 +134,9 @@ app.delete("/student", (req, res, next) => {
 		.catch((err) => res.status(500).send({ message: err.message }));
 });
 
+// delete many students
+app.delete("/student", (req, res, next) => {}
+
 // listen 4 d server
 app.listen(8000, () => {
 	console.log("Server is running on port: 8000");
