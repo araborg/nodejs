@@ -135,7 +135,7 @@ app.delete("/student", (req, res, next) => {
 });
 
 // delete many students
-app.delete("/student", (req, res, next) => {}
+app.delete("/student", (req, res, next) => {});
 
 // listen 4 d server
 app.listen(8000, () => {
