@@ -67,6 +67,8 @@ app.put("/student", (req, res, next) => {
 			{ $set: { dept } }, // req.body
 		) // 3 objs
 		.then((data) => {
+			console.log(data);
+
 			res.status(200)
 				//
 				.json({
