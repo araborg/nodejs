@@ -54,9 +54,9 @@ app.put("/student", (req, res, next) => {
 
 	// note d diff: req.query & req.body?
 
-	const { email } = req.query;
+	const { age } = req.query;
 
-	const { dept, age } = req.body;
+	const { dept } = req.body;
 
 	student
 		// .findOneAndUpdate({ email }, { $set: { dept: dept } }) // 2 objs
