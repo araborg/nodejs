@@ -37,7 +37,7 @@ sudo dpkg -i mongodb-compass_1.49.2_amd64.deb
 ========================================
 
 Wthat is ODM?
-ODM: Object Data Modeling
+ODM: Object Data Modeling. It is a db concept
 
 
 Benefits of mongoose:
