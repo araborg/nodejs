@@ -50,17 +50,16 @@ app.get("/student", (req, res, next) => {
 
 // update a student
 app.put("/student", (req, res, next) => {
-	// http://localhost:8000/student?email=john2@gmail.com
+	// http://localhost:8000/student?age=92
 
 	// note d diff: req.query & req.body?
 
 	const { age } = req.query;
-	console.log(typeof age);
+	// console.log(typeof age);
 
 	const { dept } = req.body;
 
 	student
-		// .findOneAndUpdate({ email }, { $set: { dept: dept } }) // 2 objs
 		.updateMany(
 			{ age: parseInt(age) }, // req.query
 
@@ -74,6 +73,8 @@ app.put("/student", (req, res, next) => {
 				//
 				.json({
 					message: "Students updated successfully",
+
+					updatedStudents: [data],
 				});
 		})
 		.catch((error) => res.status(500).json({ message: error.message }));
