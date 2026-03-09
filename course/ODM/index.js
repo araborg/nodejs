@@ -8,7 +8,10 @@ app.use(express.json());
 
 const connectionUrl = "mongodb://localhost:27017/schoolDb";
 
-mongoose.connect(connectionUrl);
+mongoose
+	.connect(connectionUrl)
+	.then(() => console.log("Database connection successful"))
+	.catch((error) => console.log(error));
 
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
