@@ -30,20 +30,7 @@ Benefits of mongoose:
 
 
 
-What to install:
-npm init
 
-nodemon:
-npm i nodemon
-
-express:
-npm i express
-
-mongodb:
-npm i mongodb
-
-mongoose:
-npm i mongoose
 
 
 

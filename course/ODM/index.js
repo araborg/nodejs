@@ -25,7 +25,21 @@ app.listen(8000, () => {
 });
 
 /* 
-   Mongoose
-    
+    Mongoose
+        
+    What to install:
+    npm init
+
+    nodemon:
+    npm i nodemon
+
+    express:
+    npm i express
+
+    mongodb:
+    npm i mongodb
+
+    mongoose:
+    npm i mongoose
 
 */
