@@ -122,6 +122,11 @@ app.put("/student", (req, res, next) => {
 		.catch((error) => res.status(500).json({ message: error.message }));
 });
 
+// delete a student
+app.delete("/student", (req, res, next) => {
+	student.findOneAndDelete();
+});
+
 // listen 4 d server
 app.listen(8000, () => {
 	console.log("Server is running on port: 8000");
