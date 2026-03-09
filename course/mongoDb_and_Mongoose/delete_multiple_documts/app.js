@@ -135,7 +135,14 @@ app.delete("/student", (req, res, next) => {
 });
 
 // delete many students
-app.delete("/student", (req, res, next) => {});
+app.delete("/student", (req, res, next) => {
+	const { email } = req.query;
+
+	student
+		.deleteMany()
+		.then()
+		.catch((err) => req.status(500).send({ message: err.message }));
+});
 
 // listen 4 d server
 app.listen(8000, () => {
