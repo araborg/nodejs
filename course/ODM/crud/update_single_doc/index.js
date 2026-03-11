@@ -90,7 +90,8 @@ app.put("/student/single/:id", async (req, res, next) => {
 		// { "dept" : "Pharmacy" }
 		const { dept } = req.body;
 
-		const studentObj = await Student.findById(id);
+		// const studentObj = await Student.findById(id);
+		const studentObj = await Student.findOne({ _id: id }); // _id is d key coming 4rm mongodb
 		studentObj.dept = dept;
 
 		studentObj.save();
