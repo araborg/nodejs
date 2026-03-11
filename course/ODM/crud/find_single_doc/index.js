@@ -134,9 +134,9 @@ app.get("/student/single", async (req, res, next) => {
 	try {
 		const { email } = req.query;
 
-		await Student.findOne({ email });
+		const student = await Student.findOne({ email: email });
 
-		res.status(200).json({ message: "Student found successfully" });
+		res.status(200).json({ data: student });
 	} catch (error) {
 		res.status(500).json({ error: error.message });
 	}
