@@ -83,13 +83,13 @@ app.put("/student/single", async (req, res, next) => {
 // update a student using id
 app.put("/student/single/:id", async (req, res, next) => {
 	try {
-		const { email } = req.query;
+		const { id } = req.params;
 
 		const { dept } = req.body;
 
 		// console.log(email, dept);
 
-		await Student.findOneAndUpdate({ email: email }, { dept: dept }); // 2 objs
+		const studentObj = await Student.findById(id);
 
 		res.status(200).json({ message: "Student updated successfully" });
 	} catch (error) {
