@@ -24,7 +24,22 @@ const studentSchema = mongoose.Schema({
 const Student = mongoose.Model("student", studentSchema);
 
 // add single student
-app.post("/student/single", (req, res, next) => {});
+app.post("/student/single", async (req, res, next) => {
+	try {
+		const { name, email, age, dept } = req.body;
+
+		const newStudent = new Student({
+			name: name,
+			email: email,
+			age: age,
+			dept: dept,
+		});
+
+		await newStudent.save();
+	} catch (error) {
+		res.status(500).json({ message: error.message });
+	}
+});
 
 // add multiple student
 app.post("/student/multiple", (req, res, next) => {});
