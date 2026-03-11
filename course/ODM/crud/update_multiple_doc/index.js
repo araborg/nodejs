@@ -113,12 +113,15 @@ app.put("/student/multiple", async (req, res, next) => {
 		// const { dept } = req.query;
 		// const { age } = req.body;
 
+		// await Student.updateMany({ dept: dept }, { age: age });
+
 		// http://localhost:8000/student/multiple?age=52
 		const { age } = req.query;
 		const { dept } = req.body;
 
-		// await Student.updateMany({ dept: dept }, { age: parseInt(age) });
-		await Student.updateMany({ age: parseInt(age) }, { dept: dept });
+		// // console.log(typeof age); // string
+
+		await Student.updateMany({ age: age }, { dept: dept });
 
 		res.status(200).json({ message: "Students updated successfully" });
 	} catch (error) {
