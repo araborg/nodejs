@@ -46,7 +46,12 @@ app.post("/student/single", async (req, res, next) => {
 });
 
 // add multiple student
-app.post("/student/multiple", (req, res, next) => {});
+app.post("/student/multiple", (req, res, next) => {
+	try {
+	} catch (error) {
+		res.send(500).json({ message: error.message });
+	}
+});
 
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
