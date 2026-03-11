@@ -46,8 +46,12 @@ app.post("/student/single", async (req, res, next) => {
 });
 
 // add multiple student
-app.post("/student/multiple", (req, res, next) => {
+app.post("/student/multiple", async (req, res, next) => {
 	try {
+		// await Student.inser
+		await Student.insertMany(req.body);
+
+		res.status(200).json({ message: "Students added successfully" });
 	} catch (error) {
 		res.send(500).json({ message: error.message });
 	}
