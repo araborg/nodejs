@@ -104,6 +104,14 @@ app.put("/student/single/:id", async (req, res, next) => {
 	}
 });
 
+// update many student
+app.put("/student/multiple", (req, res, next) => {
+	try {
+	} catch (error) {
+		res.status(500).json({ message: error.message });
+	}
+});
+
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
 };
