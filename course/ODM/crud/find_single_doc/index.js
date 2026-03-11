@@ -132,6 +132,8 @@ app.put("/student/multiple", async (req, res, next) => {
 // get a student
 app.get("/student/single", async (req, res, next) => {
 	try {
+		// http://localhost:8000/student/single?email=oloko_oluwole@gmail.com
+
 		const { email } = req.query;
 
 		const student = await Student.findOne({ email: email });
@@ -146,8 +148,9 @@ app.get("/student/single", async (req, res, next) => {
 app.get("/student/single/:studentId", async (req, res, next) => {
 	try {
 		const { id } = req.params;
+		console.log(id);
 
-		const student = await Student.findOne({ _id: id });
+		const student = await Student.findById({ _id: id });
 
 		res.status(200).json({ data: student });
 	} catch (error) {
