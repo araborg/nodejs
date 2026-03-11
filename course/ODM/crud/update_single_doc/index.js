@@ -90,6 +90,9 @@ app.put("/student/single/:id", async (req, res, next) => {
 		// console.log(email, dept);
 
 		const studentObj = await Student.findById(id);
+		studentObj.dept = dept;
+
+		studentObj.save();
 
 		res.status(200).json({ message: "Student updated successfully" });
 	} catch (error) {
