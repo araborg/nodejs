@@ -92,6 +92,8 @@ app.put("/student/single/:id", async (req, res, next) => {
 
 		// const studentObj = await Student.findById(id);
 		const studentObj = await Student.findOne({ _id: id }); // _id is d key coming 4rm mongodb
+		// findOne can take oda obj keys & nt only id
+
 		studentObj.dept = dept;
 
 		studentObj.save();
