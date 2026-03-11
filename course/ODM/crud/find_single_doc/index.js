@@ -129,6 +129,15 @@ app.put("/student/multiple", async (req, res, next) => {
 	}
 });
 
+// get a student
+app.get("/student/single", async (req, res, next) => {
+	try {
+		res.status(200).json({ message: "Student found successfully" });
+	} catch (error) {
+		res.status(500).json({ error: error.message });
+	}
+});
+
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
 };
