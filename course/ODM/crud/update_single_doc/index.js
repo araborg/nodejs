@@ -62,9 +62,15 @@ app.post("/student/multiple", async (req, res, next) => {
 // update a student
 app.put("/student/single", async (req, res, next) => {
 	try {
+		// http://localhost:8000/student/single?email=student_2@gmail.com
+
+		// { "dept":"Medicine&Surgery" }
+
 		const { email } = req.query;
 
 		const { dept } = req.body;
+
+		// console.log(email, dept);
 
 		await Student.findOneAndUpdate({ email: email }, { dept: dept }); // 2 objs
 
