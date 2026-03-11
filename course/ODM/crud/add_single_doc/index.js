@@ -21,7 +21,7 @@ const studentSchema = mongoose.Schema({
 	dept: String,
 });
 
-const Student = mongoose.Model("student", studentSchema);
+const Student = mongoose.model("student", studentSchema);
 
 // add single student
 app.post("/student/single", async (req, res, next) => {
@@ -36,6 +36,8 @@ app.post("/student/single", async (req, res, next) => {
 		});
 
 		await newStudent.save();
+
+		res.status(200).json({ message: "Student added successfully" });
 	} catch (error) {
 		res.status(500).json({ message: error.message });
 	}
