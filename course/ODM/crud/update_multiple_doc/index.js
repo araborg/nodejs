@@ -107,10 +107,17 @@ app.put("/student/single/:id", async (req, res, next) => {
 // update many student
 app.put("/student/multiple", async (req, res, next) => {
 	try {
-		const { dept } = req.query;
-		const { age } = req.body;
+		// notice how space word (Computer Science) was passed
+		// http://localhost:8000/student/multiple?dept=Computer Science
 
-		await Student.updateMany({ dept: dept }, { age: parseInt(age) });
+		// const { dept } = req.query;
+		// const { age } = req.body;
+
+		const { age } = req.query;
+		const { dept } = req.body;
+
+		// await Student.updateMany({ dept: dept }, { age: parseInt(age) });
+		await Student.updateMany({ age: parseInt(age) }, { dept: dept });
 
 		res.status(200).json({ message: "Students updated successfully" });
 	} catch (error) {
