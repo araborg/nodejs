@@ -66,7 +66,7 @@ app.put("/student/single", async (req, res, next) => {
 
 		// { "dept":"Medicine&Surgery" }
 
-		const { email } = req.query;
+		const { email } = req.query; // query uses ?
 
 		const { dept } = req.body;
 
@@ -83,11 +83,12 @@ app.put("/student/single", async (req, res, next) => {
 // update a student using id
 app.put("/student/single/:id", async (req, res, next) => {
 	try {
-		const { id } = req.params;
+		// http://localhost:8000/student/single/69b11fcc4ee66372b62fa5d9
 
+		const { id } = req.params; // params uses id
+
+		// { "dept" : "Pharmacy" }
 		const { dept } = req.body;
-
-		// console.log(email, dept);
 
 		const studentObj = await Student.findById(id);
 		studentObj.dept = dept;
