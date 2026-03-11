@@ -142,6 +142,19 @@ app.get("/student/single", async (req, res, next) => {
 	}
 });
 
+// get a student using id
+app.get("/student/single/:studentId", async (req, res, next) => {
+	try {
+		const { id } = req.params;
+
+		const student = await Student.findOne({ _id: id });
+
+		res.status(200).json({ data: student });
+	} catch (error) {
+		res.status(500).json({ error: error.message });
+	}
+});
+
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
 };
