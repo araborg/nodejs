@@ -68,7 +68,7 @@ app.put("/student/single", async (req, res, next) => {
 
 		await Student.findOneAndUpdate({ email: email }, { dept: dept }); // 2 objs
 
-		res.send(200).json({ message: "Student updated successfully" });
+		res.status(200).json({ message: "Student updated successfully" });
 	} catch (error) {
 		res.status(500).json({ message: error.message });
 	}
