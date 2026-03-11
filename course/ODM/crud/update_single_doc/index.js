@@ -62,6 +62,11 @@ app.post("/student/multiple", async (req, res, next) => {
 // update a student
 app.put("/student/single", async (req, res, next) => {
 	try {
+		const { email } = req.query;
+
+		const { dept } = req.body;
+
+		await Student.findOneAndUpdate({ email: email }, { dept: dept }); // 2 objs
 	} catch (error) {
 		res.status(500).json({ message: error.message });
 	}
