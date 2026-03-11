@@ -87,7 +87,7 @@ app.put("/student/single/:id", async (req, res, next) => {
 
 		const { id } = req.params; // params uses id
 
-		// { "dept" : "Pharmacy" }
+		// { "dept" : "Chemistry" }
 		const { dept } = req.body;
 
 		// const studentObj = await Student.findById(id);
