@@ -14,6 +14,7 @@ mongoose
 	.then(() => console.log("Database connection successful"))
 	.catch((error) => console.log(error));
 
+// Schema
 const studentSchema = mongoose.Schema({
 	name: String,
 	email: String,
