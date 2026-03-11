@@ -107,6 +107,11 @@ app.put("/student/single/:id", async (req, res, next) => {
 // update many student
 app.put("/student/multiple", async (req, res, next) => {
 	try {
+		const { dept } = req.query;
+		const { age } = req.body;
+
+		await Student.updateMany({ dept: dept }, { age: parseInt(age) });
+
 		res.status(200).json({ message: "Students updated successfully" });
 	} catch (error) {
 		res.status(500).json({ message: error.message });
