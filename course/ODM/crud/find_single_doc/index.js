@@ -151,6 +151,11 @@ app.get("/student/single/:studentId", async (req, res, next) => {
 		// const { id } = req.params;
 		// const student = await Student.findById({ _id: id });
 
+		// it will work unless we used id in d route
+		// app.get("/student/single/:id", async (req, res, next) => {}
+
+		// http://localhost:8000/student/single/69b1232f0e7cc3c6c6909075
+
 		const { studentId } = req.params;
 
 		const student = await Student.findById({ _id: studentId });
