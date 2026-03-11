@@ -105,8 +105,9 @@ app.put("/student/single/:id", async (req, res, next) => {
 });
 
 // update many student
-app.put("/student/multiple", (req, res, next) => {
+app.put("/student/multiple", async (req, res, next) => {
 	try {
+		res.status(200).json({ message: "Students updated successfully" });
 	} catch (error) {
 		res.status(500).json({ message: error.message });
 	}
