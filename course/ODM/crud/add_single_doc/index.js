@@ -26,6 +26,8 @@ const Student = mongoose.model("student", studentSchema);
 // add single student
 app.post("/student/single", async (req, res, next) => {
 	try {
+		// http://localhost:8000/student/single
+
 		const { name, email, age, dept } = req.body;
 
 		const newStudent = new Student({
