@@ -113,6 +113,7 @@ app.put("/student/multiple", async (req, res, next) => {
 		// const { dept } = req.query;
 		// const { age } = req.body;
 
+		// http://localhost:8000/student/multiple?age=52
 		const { age } = req.query;
 		const { dept } = req.body;
 
