@@ -23,6 +23,12 @@ const studentSchema = mongoose.Schema({
 
 const Student = mongoose.Model("student", studentSchema);
 
+// add single student
+app.post("/student/single", (req, res, next) => {});
+
+// add multiple student
+app.post("/student/multiple", (req, res, next) => {});
+
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
 };
