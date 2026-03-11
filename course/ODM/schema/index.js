@@ -21,7 +21,8 @@ const studentSchema = mongoose.Schema({
 	dept: String,
 });
 
-const Student = mongoose.Model("student", studentSchema);
+const Student = mongoose.model("student", studentSchema); // this
+// const Student = mongoose.Model("student", studentSchema);// not this
 
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
