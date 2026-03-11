@@ -147,10 +147,13 @@ app.get("/student/single", async (req, res, next) => {
 // get a student using id
 app.get("/student/single/:studentId", async (req, res, next) => {
 	try {
-		const { id } = req.params;
-		console.log(id);
+		// ds didn't work
+		// const { id } = req.params;
+		// const student = await Student.findById({ _id: id });
 
-		const student = await Student.findById({ _id: id });
+		const { studentId } = req.params;
+
+		const student = await Student.findById({ _id: studentId });
 
 		res.status(200).json({ data: student });
 	} catch (error) {
