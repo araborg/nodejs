@@ -158,7 +158,7 @@ app.get("/student/single/:studentId", async (req, res, next) => {
 
 		const { studentId } = req.params;
 
-		console.log(studentId);
+		// console.log(studentId);
 
 		const student = await Student.findById({ _id: studentId });
 
@@ -169,6 +169,12 @@ app.get("/student/single/:studentId", async (req, res, next) => {
 });
 
 // get multiple student
+app.get("/student/multiple", async (req, res, next) => {
+	try {
+	} catch (error) {
+		res.status(500).json({ error: error.message });
+	}
+});
 
 // get multiple student using
 
