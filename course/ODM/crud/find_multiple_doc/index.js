@@ -171,11 +171,11 @@ app.get("/student/single/:studentId", async (req, res, next) => {
 // get multiple student
 app.get("/student/multiple", async (req, res, next) => {
 	try {
-		const { dept } = req.query;
-		console.log(dept);
+		// http://localhost:8000/student/multiple?dept=Computer Science
 
-		// const students = await Student.find({ dept: dept });
-		const students = await Student.find({ dept });
+		const { dept } = req.query;
+
+		const students = await Student.find({ dept: dept });
 
 		res.status(200).json({ data: students });
 	} catch (error) {
