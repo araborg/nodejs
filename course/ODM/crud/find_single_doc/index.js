@@ -168,19 +168,6 @@ app.get("/student/single/:studentId", async (req, res, next) => {
 	}
 });
 
-// get multiple student
-app.get("/student/multiple", async (req, res, next) => {
-	try {
-		const { dept } = req.query;
-
-		const students = await Student.find({ dept: dept });
-
-		res.status(200).json({ data: students });
-	} catch (error) {
-		res.status(500).json({ error: error.message });
-	}
-});
-
 // get multiple student using
 
 const errorMiddleware = (error, req, res, next) => {
