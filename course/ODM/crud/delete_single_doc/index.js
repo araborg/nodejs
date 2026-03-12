@@ -234,6 +234,8 @@ app.delete("/student/single/:id", async (req, res, next) => {
 // delete multiple students
 app.delete("/student/multiple", async (req, res, next) => {
 	try {
+		// http://localhost:8000/student/multiple?dept=Computer Science
+
 		const { dept } = req.query;
 
 		await Student.deleteMany({ dept: dept });
