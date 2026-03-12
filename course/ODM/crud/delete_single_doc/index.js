@@ -232,7 +232,17 @@ app.delete("/student/single/:id", async (req, res, next) => {
 });
 
 // delete multiple students
-app.delete("/student/single/:id", async (req, res, next) => {});
+app.delete("/student/single/:id", async (req, res, next) => {
+	try {
+		const { dept } = req.query;
+
+		await Student.deleteMany({ dept: dept });
+
+		res.status(200).json({ message: "" });
+	} catch (error) {
+		res.status(500).json({ message: error.message });
+	}
+});
 
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
