@@ -206,7 +206,6 @@ app.delete("/student/single", async (req, res, next) => {
 		res.status(200).json({ message: student });
 
 		// await Student.findOneAndDelete({ email });
-
 		// res.status(200).json({ message: "Student deleted successfully" });
 	} catch (error) {
 		res.status(500).json({ message: error.message });
