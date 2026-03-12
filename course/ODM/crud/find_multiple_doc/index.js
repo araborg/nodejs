@@ -173,9 +173,26 @@ app.get("/student/multiple", async (req, res, next) => {
 	try {
 		// http://localhost:8000/student/multiple?dept=Computer Science
 
-		const { dept } = req.query;
+		// const { dept } = req.query;
 
-		const students = await Student.find({ dept: dept });
+		// const students = await Student.find({ dept: dept });
+		const students = await Student.find({}); // to get all d documts irrespective of query
+
+		res.status(200).json({ data: students });
+	} catch (error) {
+		res.status(500).json({ error: error.message });
+	}
+});
+
+// get multiple students irrespective of query
+app.get("/student/multiple", async (req, res, next) => {
+	try {
+		// http://localhost:8000/student/multiple?dept=Computer Science
+
+		// const { dept } = req.query;
+
+		// const students = await Student.find({ dept: dept });
+		const students = await Student.find({}); // to get all d documts irrespective of query
 
 		res.status(200).json({ data: students });
 	} catch (error) {
