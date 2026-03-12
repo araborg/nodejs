@@ -231,6 +231,9 @@ app.delete("/student/single/:id", async (req, res, next) => {
 	}
 });
 
+// delete multiple students
+app.delete("/student/single/:id", async (req, res, next) => {});
+
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
 };
