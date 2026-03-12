@@ -168,8 +168,6 @@ app.get("/student/single/:studentId", async (req, res, next) => {
 	}
 });
 
-// get multiple student using
-
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
 };
