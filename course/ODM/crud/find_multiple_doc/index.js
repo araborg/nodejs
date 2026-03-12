@@ -187,7 +187,7 @@ app.get("/student/single/:studentId", async (req, res, next) => {
 // get multiple students irrespective of query
 app.get("/student/multiple", async (req, res, next) => {
 	try {
-		// http://localhost:8000/student
+		// http://localhost:8000/student/multiple
 
 		const students = await Student.find({});
 
