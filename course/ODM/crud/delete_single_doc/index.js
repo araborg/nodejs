@@ -197,7 +197,18 @@ app.get("/student/multiple", async (req, res, next) => {
 	}
 });
 
-// get multiple student using
+// delete signel student
+app.delete("/student/single", async (req, res, next) => {
+	try {
+		const { email } = req.query;
+
+		const student = await Student.findOneAndDelete({ email });
+
+		res.status(200).json({ message: student });
+	} catch (error) {
+		res.status(500).json({ message: error.message });
+	}
+});
 
 const errorMiddleware = (error, req, res, next) => {
 	res.status(500).send((err) => err.message);
