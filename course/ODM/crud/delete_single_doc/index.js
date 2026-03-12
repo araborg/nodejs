@@ -219,12 +219,12 @@ app.delete("/student/single/:id", async (req, res, next) => {
 	try {
 		// http://localhost:8000/student/single?email=oloko_oluwole@gmail.com
 
-		const { id } = req.query;
+		const { id } = req.params;
 
-		const student = await Student.findByIdAndDelete({ id });
+		// const student = await Student.findByIdAndDelete({ _id: id });
+		const student = await Student.findByIdAndDelete(id);
 		res.status(200).json({ message: student });
 
-		// await Student.findOneAndDelete({ email });
 		// res.status(200).json({ message: "Student deleted successfully" });
 	} catch (error) {
 		res.status(500).json({ message: error.message });
