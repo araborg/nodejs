@@ -197,7 +197,7 @@ app.get("/student/multiple", async (req, res, next) => {
 	}
 });
 
-// delete signel student
+// delete single student
 app.delete("/student/single", async (req, res, next) => {
 	try {
 		// http://localhost:8000/student/single?email=oloko_oluwole@gmail.com
@@ -205,6 +205,23 @@ app.delete("/student/single", async (req, res, next) => {
 		const { email } = req.query;
 
 		const student = await Student.findOneAndDelete({ email });
+		res.status(200).json({ message: student });
+
+		// await Student.findOneAndDelete({ email });
+		// res.status(200).json({ message: "Student deleted successfully" });
+	} catch (error) {
+		res.status(500).json({ message: error.message });
+	}
+});
+
+// delete single student by id
+app.delete("/student/single/:id", async (req, res, next) => {
+	try {
+		// http://localhost:8000/student/single?email=oloko_oluwole@gmail.com
+
+		const { id } = req.query;
+
+		const student = await Student.findByIdAndDelete({ id });
 		res.status(200).json({ message: student });
 
 		// await Student.findOneAndDelete({ email });
