@@ -232,13 +232,15 @@ app.delete("/student/single/:id", async (req, res, next) => {
 });
 
 // delete multiple students
-app.delete("/student/single/:id", async (req, res, next) => {
+app.delete("/student/multiple", async (req, res, next) => {
 	try {
 		const { dept } = req.query;
 
 		await Student.deleteMany({ dept: dept });
 
-		res.status(200).json({ message: "" });
+		res.status(200).json({
+			message: "Corressponding students deleted successfully",
+		});
 	} catch (error) {
 		res.status(500).json({ message: error.message });
 	}
