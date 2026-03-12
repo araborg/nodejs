@@ -200,6 +200,8 @@ app.get("/student/multiple", async (req, res, next) => {
 // delete signel student
 app.delete("/student/single", async (req, res, next) => {
 	try {
+		// http://localhost:8000/student/single?email=oloko_oluwole@gmail.com
+
 		const { email } = req.query;
 
 		const student = await Student.findOneAndDelete({ email });
