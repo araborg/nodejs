@@ -252,9 +252,7 @@ app.delete("/student/multiple", async (req, res, next) => {
 // delete all students irrespective of queries/params
 app.delete("/student/all", async (req, res, next) => {
 	try {
-		// http://localhost:8000/student/multiple?dept=Computer Science
-
-		const { dept } = req.query;
+		// http://localhost:8000/student/all
 
 		// ds deletes all d student with d dept passed as query
 		await Student.deleteMany({});
