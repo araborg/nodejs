@@ -254,12 +254,10 @@ app.delete("/student/all", async (req, res, next) => {
 	try {
 		// http://localhost:8000/student/all
 
-		// ds deletes all d student with d dept passed as query
 		await Student.deleteMany({});
-		// await Student = {}
 
 		res.status(200).json({
-			message: "Corressponding students deleted successfully",
+			message: "All students deleted successfully",
 		});
 	} catch (error) {
 		res.status(500).json({ message: error.message });
