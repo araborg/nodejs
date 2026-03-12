@@ -239,7 +239,8 @@ app.delete("/student/multiple", async (req, res, next) => {
 		const { dept } = req.query;
 
 		// ds deletes all d student with d dept passed as query
-		await Student.deleteMany({ dept: dept });
+		// await Student.deleteMany({ dept: dept });
+		await Student.delete({});
 
 		res.status(200).json({
 			message: "Corressponding students deleted successfully",
