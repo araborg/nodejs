@@ -239,8 +239,26 @@ app.delete("/student/multiple", async (req, res, next) => {
 		const { dept } = req.query;
 
 		// ds deletes all d student with d dept passed as query
-		// await Student.deleteMany({ dept: dept });
-		await Student.delete({});
+		await Student.deleteMany({ dept: dept });
+
+		res.status(200).json({
+			message: "Corressponding students deleted successfully",
+		});
+	} catch (error) {
+		res.status(500).json({ message: error.message });
+	}
+});
+
+// delete all students irrespective of queries/params
+app.delete("/student/all", async (req, res, next) => {
+	try {
+		// http://localhost:8000/student/multiple?dept=Computer Science
+
+		const { dept } = req.query;
+
+		// ds deletes all d student with d dept passed as query
+		await Student.deleteMany({});
+		// await Student = {}
 
 		res.status(200).json({
 			message: "Corressponding students deleted successfully",
