@@ -217,7 +217,7 @@ app.delete("/student/single", async (req, res, next) => {
 // delete single student by id
 app.delete("/student/single/:id", async (req, res, next) => {
 	try {
-		// http://localhost:8000/student/single?email=oloko_oluwole@gmail.com
+		// http://localhost:8000/student/single/69b1232f0e7cc3c6c6909077
 
 		const { id } = req.params;
 
