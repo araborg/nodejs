@@ -169,20 +169,20 @@ app.get("/student/single/:studentId", async (req, res, next) => {
 });
 
 // get multiple student
-app.get("/student/multiple", async (req, res, next) => {
-	try {
-		// http://localhost:8000/student/multiple?dept=Computer Science
+// app.get("/student/multiple", async (req, res, next) => {
+// 	try {
+// 		// http://localhost:8000/student/multiple?dept=Computer Science
 
-		const { dept } = req.query;
+// 		const { dept } = req.query;
 
-		// const students = await Student.find({ dept: dept });
-		const students = await Student.find({ dept });
+// 		// const students = await Student.find({ dept: dept });
+// 		const students = await Student.find({ dept });
 
-		res.status(200).json({ data: students });
-	} catch (error) {
-		res.status(500).json({ error: error.message });
-	}
-});
+// 		res.status(200).json({ data: students });
+// 	} catch (error) {
+// 		res.status(500).json({ error: error.message });
+// 	}
+// });
 
 // get multiple students irrespective of query
 app.get("/student/multiple", async (req, res, next) => {
