@@ -10,9 +10,10 @@ app.get("/example", (req, res) => {
 	const cookies = req.cookies;
 	console.log(cookies);
 
-	// to mk d cookies available on d client side
+	// to mk d cookies available on d client side:
 	// res.cookie("name", "Arabambi");
 	// res.cookie("age", 43);
+
 	// check d cookies section on d lower section of postman
 
 	// to clear d cookie

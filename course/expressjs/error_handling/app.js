@@ -1,8 +1,9 @@
 const express = require("express");
 
+const fs = require("fs");
+
 const app = express();
 
-const fs = require("fs");
 app.get("/example", (req, res, next) => {
 	fs.readFile("test.txt", (error, data) => {
 		if (data) {
