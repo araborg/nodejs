@@ -13,11 +13,11 @@ client
 	.then(() => console.log("Database connection successful"))
 	.catch((error) => console.log(error));
 
-// add single documt
 const db = client.db("schoolDb");
 
 const student = db.collection("student");
 
+// add/cr8 a single student
 app.post("/student", (req, res, next) => {
 	// http://localhost:8000/student
 	student

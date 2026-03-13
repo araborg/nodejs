@@ -1,10 +1,32 @@
 /*
 Add/Cr8 a doc:
 mongodb methods:
+const express = require("express");
+const mongodb = require("mongodb");
+
+const app = express();
+
+// connect to db
+const connectionUrl = "mongodb://localhost:27017";
+
+const client = new mongodb.MongoClient(connectionUrl);
+
+client
+	.connect()
+	.then(() => console.log("Database connection successful"))
+	.catch((error) => console.log(error));
+
+// add single documt
+const db = client.db("schoolDb");
+
+const student = db.collection("student");
+
+insertOne
 
 
 
 mongoose methods:
+const mongoose = require("mongoose");
 
 
 
