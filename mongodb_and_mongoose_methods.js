@@ -354,10 +354,10 @@ findByIdAndDelete():
     res.status(200).json({ message: student });
 
     
-Delete multiple docs:
----------------------
-
 mongodb methods:
+----------------
+
+Delete multiple docs:
 
 deleteMany():
 
@@ -372,6 +372,7 @@ deleteMany():
 
 
 mongoose methods:
+-----------------
 
 deleteMany():
 
@@ -384,7 +385,7 @@ deleteMany():
 // delete all students irrespective of queries/params
 deleteMany({}):
 
-await Student.deleteMany({});
+await Student.deleteMany({}); // empty {}
 
 
 ====================================
