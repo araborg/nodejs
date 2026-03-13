@@ -141,9 +141,9 @@ await Student.insertMany(req.body);
 
 
 mongodb methods:
+----------------
 
 Read a doc:
------------
 
 findOne():
 
@@ -151,7 +151,6 @@ findOne():
     const { email } = req.query; 
 
     student
-		// .findOne({ name: "John Doe2" })
 		.findOne({ email: email })
 		.then((data) => res.status(200).json(data)) // notice we use data here
 		.catch((err) => res.status(500).send(err.message));
