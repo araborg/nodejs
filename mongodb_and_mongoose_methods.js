@@ -24,7 +24,12 @@ client
 // name your db
 const db = client.db("schoolDb");
 
+// collectns/doc
 const student = db.collection("student");
+
+ds can be:
+const users = db.collection("users");
+const books = db.collection("books"); etc
 
 insertOne():
     student
