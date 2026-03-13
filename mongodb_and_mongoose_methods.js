@@ -208,8 +208,10 @@ const students = await Student.find({}); // empty {}
 
 ====================================
 
-Update a doc:
 mongodb methods:
+----------------
+
+Update a doc:
 
 findOneAndUpdate() with $set:{}:
 
