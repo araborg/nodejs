@@ -2,8 +2,6 @@
 Mongodb and Monggose methods:
 =============================
 
-Add/Cr8 a doc:
-
 mongodb methods:
 
 const express = require("express");
@@ -31,7 +29,10 @@ ds can be:
 const users = db.collection("users");
 const books = db.collection("books"); etc
 
+Add/Cr8 a doc:
+
 insertOne():
+
     student
 		.insertOne({
 			name: "John Doe",
@@ -40,7 +41,10 @@ insertOne():
 			dept: "CS",
 		})
 
+Or: 
+    student.insertOne(req.body)
 
+    
 mongoose methods:
 
 const express = require("express");
