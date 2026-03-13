@@ -60,6 +60,8 @@ app.use(express.json());
 // connect to db: note d  diff
 const connectionUrl = "mongodb://localhost:27017/schoolDb";
 
+// d name of d db was added to d url
+
 mongoose
 	.connect(connectionUrl)
 	.then(() => console.log("Database connection successful"))
