@@ -28,8 +28,8 @@ app.post("/student/single", async (req, res, next) => {
 	try {
 		// http://localhost:8000/student/single
 
-		const { name, email, age, dept } = req.body;
-		console.log(name);
+		// const { name, email, age, dept } = req.body;
+		// console.log(name);
 
 		// cr8 d obj inside d route
 		// const newStudent = new Student({
@@ -56,8 +56,8 @@ const errorMiddleware = (error, req, res, next) => {
 app.use(errorMiddleware);
 
 // listen 4 d server
-app.listen(8000, () => {
-	console.log("Server is running on port: 8000");
+app.listen(7000, () => {
+	console.log("Server is running on port: 7000");
 });
 
 /* 

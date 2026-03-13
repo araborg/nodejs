@@ -1,5 +1,6 @@
 /*
 Add/Cr8 a doc:
+
 mongodb methods:
 
 const express = require("express");
@@ -32,8 +33,8 @@ insertOne:
 		})
 
 
-
 mongoose methods:
+
 const express = require("express");
 const mongoose = require("mongoose");
 
@@ -59,6 +60,8 @@ const studentSchema = mongoose.Schema({
 
 const Student = mongoose.model("student", studentSchema);
 
+
+    // req.body comes from postman
     const { name, email, age, dept } = req.body;
 
     // cr8 d obj inside d route
@@ -69,6 +72,11 @@ const Student = mongoose.model("student", studentSchema);
         dept: dept,
     });
 
+    await newStudent.save();
+    
+    // This will also work:
+    const newStudent = new Student(req.body);
+    
     await newStudent.save();
 
 --------------------
