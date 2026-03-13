@@ -34,7 +34,7 @@ app.post("/student", (req, res, next) => {
 });
 
 // find one student
-app.get("/student", (req, res, next) => {
+app.get("/student/:id", (req, res, next) => {
 	// http://localhost:8000/student
 
 	// student
@@ -46,12 +46,14 @@ app.get("/student", (req, res, next) => {
 	// using postman url
 	// http://localhost:8000/student?email=john1@gmail.com
 
-	const { email } = req.query; // req.query & not req.body
+	// const { email } = req.query; // req.query & not req.body
+	const { id } = req.params; // req.query & not req.body
 	// console.log(email);
 
 	student
 		// .findOne({ name: "John Doe2" })
-		.findOne({ email: email })
+		// .findOne({ email: email })
+		.findById({ email: email })
 		.then((data) => res.status(200).json(data)) // notice we use data here
 		.catch((err) => res.status(500).send(err.message));
 });
