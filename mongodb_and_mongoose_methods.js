@@ -217,7 +217,7 @@ findOneAndUpdate() with $set:{}:
 
 	const { email } = req.query;
 
-	// updating 2 or more items
+	// updating 1 or more items
 	const { dept, age } = req.body;
 
 	student
@@ -233,13 +233,15 @@ findOneAndUpdate() with $set:{}:
 				.status(200)
 				.json({
 					message: "Student updated successfully",
-					updatedStudent: data,
+
+					updatedStudent: data, // returns d updated student
 				});
 		})
 		.catch((error) => res.status(500).json({ message: error.message }));
 
 
 mongoose methods:
+-----------------
 
 findOneAndUpdate():
 
@@ -250,7 +252,7 @@ findOneAndUpdate():
     await Student.findOneAndUpdate({ email: email }, { dept: dept }); // 2 objs
 
 
-findOne():
+findOne() and save():
 // findOne can take oda obj keys & nt only id
 
     const { id } = req.params; // params uses id
@@ -268,11 +270,11 @@ findOne():
 
     res.status(200).json({ message: "Student updated successfully" });
 
---------------------
+    
+mongodb methods:
+----------------
 
 Update multiple docs:
-
-mongodb methods:
 
 updateMany(): 
 
