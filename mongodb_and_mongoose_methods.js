@@ -129,8 +129,16 @@ findOne():
 --------------------
 
 Read multiple doc:
+
 mongodb methods:
 
+find().toArray():
+
+    student
+		.find({ age: parseInt(age) }) // mk use of a commmon value e.g age, subject, gender
+		.toArray() // note ds method
+		.then((data) => res.status(200).json(data))
+		.catch((err) => res.status(500).send(err, message));
 
 
 mongoose methods:

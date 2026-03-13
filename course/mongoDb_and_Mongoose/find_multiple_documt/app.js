@@ -65,8 +65,8 @@ app.get("/student", (req, res, next) => {
 
 	const { age } = req.query;
 
-	console.log(typeof age); // string
-	console.log(typeof parseInt(age)); // string
+	// console.log(typeof age); // string
+	console.log(typeof parseInt(age)); // number
 
 	student
 		.find({ age: parseInt(age) }) // mk use of a commmon value e.g age, subject, gender
