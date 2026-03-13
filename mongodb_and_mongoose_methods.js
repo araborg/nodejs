@@ -286,6 +286,21 @@ findOneAndDelete():
 
 mongoose methods:
 
+findOneAndDelete():
+
+    const { email } = req.query;
+
+    const student = await Student.findOneAndDelete({ email });
+    res.status(200).json({ message: student });
+
+
+findByIdAndDelete():
+    const { id } = req.params;
+
+    // const student = await Student.findByIdAndDelete({ _id: id });
+    const student = await Student.findByIdAndDelete(id);
+    
+    res.status(200).json({ message: student });
 
 
 
@@ -294,11 +309,31 @@ mongoose methods:
 Delete multiple docs:
 mongodb methods:
 
+deleteMany():
 
+    const { dept } = req.query;
 
+	student
+		.deleteMany({ dept: dept })
+		.then(() =>
+			res.status(200).send({ message: "Students successfully deleted" }),
+		)
+		.catch((err) => req.status(500).send({ message: err.message }));
+
+        
 mongoose methods:
+deleteMany():
+
+    const { dept } = req.query;
+
+    // ds deletes all d student with d dept passed as query
+    await Student.deleteMany({ dept: dept });
 
 
+// delete all students irrespective of queries/params
+deleteMany({}):
+
+await Student.deleteMany({});
 
 
 ====================================
