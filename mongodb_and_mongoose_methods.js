@@ -159,7 +159,9 @@ findOne():
 findById():
 student.findById(): does not work with mongodb
 
+
 mongoose methods:
+-----------------
 
 findOne():
 
@@ -168,6 +170,9 @@ findOne():
     const student = await Student.findOne({ email: email });
 
 findById():
+
+    const {studentId} = req.params
+    
     const student = await Student.findById({ _id: studentId });
 
 --------------------
