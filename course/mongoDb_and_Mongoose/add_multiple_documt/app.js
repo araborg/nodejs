@@ -53,7 +53,7 @@ app.post("/student", (req, res, next) => {
     */
 
 	student
-		// .insertMany([{}, {}])
+		// .insertMany([{}, {}]) // adding students 4rm code editor
 		.insertMany(req.body)
 		.then(() => res.status(201).send("Students added successfully"))
 		.catch((err) => res.status(500).send(err.message));

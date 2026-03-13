@@ -23,7 +23,7 @@ const db = client.db("schoolDb");
 
 const student = db.collection("student");
 
-insertOne:
+insertOne():
     student
 		.insertOne({
 			name: "John Doe",
@@ -60,7 +60,7 @@ const studentSchema = mongoose.Schema({
 
 const Student = mongoose.model("student", studentSchema);
 
-
+save():
     // req.body comes from postman
     const { name, email, age, dept } = req.body;
 
@@ -82,8 +82,15 @@ const Student = mongoose.model("student", studentSchema);
 --------------------
 
 Add/Cr8 multiple docs:
+
 mongodb methods:
 
+insertMany():
+    student
+		// .insertMany([{}, {}]) // adding students 4rm code editor
+		.insertMany(req.body)
+		.then(() => res.status(201).send("Students added successfully"))
+		.catch((err) => res.status(500).send(err.message));
 
 
 mongoose methods:
