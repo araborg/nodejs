@@ -117,6 +117,9 @@ findOne():
 		.catch((err) => res.status(500).send(err.message));
 
 
+findById():
+student.findById(): does not work with mongodb
+
 mongoose methods:
 
 findOne():
@@ -156,6 +159,30 @@ find():
 
 Update a doc:
 mongodb methods:
+
+	const { email } = req.query;
+
+	// updating 2 or more items
+	const { dept, age } = req.body;
+
+	student
+		.findOneAndUpdate(
+			{ email },
+
+			{ $set: { dept: dept, age: age } },
+
+			{ returnDocument: "after" },
+		) // 3 objs
+		.then((data) => {
+
+			res
+				.status(200)
+				.json({
+					message: "Student updated successfully",
+					updatedStudent: data,
+				});
+		})
+		.catch((error) => res.status(500).json({ message: error.message }));
 
 
 
