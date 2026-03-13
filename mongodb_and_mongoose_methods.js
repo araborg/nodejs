@@ -110,14 +110,22 @@ insertMany():
 
 
 mongoose methods:
+-----------------
 
 insertMany():
 
 Student.insertMany(
     {
-        name: "Student 4",
-        email: "student_4@gmail.com",
-        age: 72,
+        name: "Student 1",
+        email: "student_1@gmail.com",
+        age: 22,
+        dept: "Computer Science",
+    }, 
+
+    {
+        name: "Student 2",
+        email: "student_2@gmail.com",
+        age: 30,
         dept: "Computer Science",
     }
 ):
