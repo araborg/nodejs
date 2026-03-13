@@ -188,7 +188,13 @@ findOneAndUpdate() with $set:{}:
 
 mongoose methods:
 
+findOneAndUpdate():
 
+    const { email } = req.query; // query uses ?
+
+    const { dept } = req.body;
+
+    await Student.findOneAndUpdate({ email: email }, { dept: dept }); // 2 objs
 
 
 --------------------
