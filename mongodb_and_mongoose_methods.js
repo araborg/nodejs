@@ -95,7 +95,9 @@ insertMany():
 
 mongoose methods:
 
+insertMany():
 
+await Student.insertMany(req.body);
 
 
 ====================================
@@ -103,11 +105,25 @@ mongoose methods:
 Read a doc:
 mongodb methods:
 
+findOne():
+
+    // req.query & not req.body
+    const { email } = req.query; 
+
+    student
+		// .findOne({ name: "John Doe2" })
+		.findOne({ email: email })
+		.then((data) => res.status(200).json(data)) // notice we use data here
+		.catch((err) => res.status(500).send(err.message));
 
 
 mongoose methods:
 
+findOne():
 
+    const { email } = req.query;
+
+    const student = await Student.findOne({ email: email });
 
 
 --------------------
