@@ -128,6 +128,8 @@ await Student.insertMany(req.body);
 ====================================
 
 Read a doc:
+-----------
+
 mongodb methods:
 
 findOne():
