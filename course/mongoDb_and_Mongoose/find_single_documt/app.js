@@ -64,6 +64,17 @@ an already connected database based on its unique identifier.
 
 This will not work:
 
+// find one student
+app.get("/student/:id", (req, res, next) => {
+
+	const { id } = req.params; // req.query & not req.body
+
+	student
+		.findById({ _id: id })
+		.then((data) => res.status(200).json({ data: data })) // notice we use data here
+		.catch((err) => res.status(500).send(err.message));
+});
+
 
 
 */
