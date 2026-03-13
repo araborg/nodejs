@@ -5,6 +5,7 @@ const fs = require("fs");
 const app = express();
 
 app.get("/example", (req, res, next) => {
+	//
 	fs.readFile("test.txt", (error, data) => {
 		if (data) {
 			res.send(data);
