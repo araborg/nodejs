@@ -341,6 +341,7 @@ findOneAndDelete():
     const { email } = req.query;
 
     const student = await Student.findOneAndDelete({ email });
+
     res.status(200).json({ message: student });
 
 
@@ -352,9 +353,10 @@ findByIdAndDelete():
     
     res.status(200).json({ message: student });
 
---------------------
-
+    
 Delete multiple docs:
+---------------------
+
 mongodb methods:
 
 deleteMany():
