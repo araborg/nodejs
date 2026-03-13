@@ -172,14 +172,14 @@ findOne():
 findById():
 
     const {studentId} = req.params
-    
+
     const student = await Student.findById({ _id: studentId });
 
---------------------
-
-Read multiple doc:
-
+    
 mongodb methods:
+----------------
+    
+Read multiple doc:
 
 find().toArray():
 
