@@ -90,16 +90,16 @@ save():
 
     await newStudent.save();
     
-    // This will also work:
+    // This will also work: i.e recieving obj 4rm postman
     const newStudent = new Student(req.body);
     
     await newStudent.save();
 
---------------------
-
-Add/Cr8 multiple docs:
-
+    
 mongodb methods:
+    
+Add/Cr8 multiple docs:
+----------------------
 
 insertMany():
     student
@@ -112,6 +112,15 @@ insertMany():
 mongoose methods:
 
 insertMany():
+
+Student.insertMany(
+    {
+        name: "Student 4",
+        email: "student_4@gmail.com",
+        age: 72,
+        dept: "Computer Science",
+    }
+):
 
 await Student.insertMany(req.body);
 
