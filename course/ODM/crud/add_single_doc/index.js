@@ -30,6 +30,7 @@ app.post("/student/single", async (req, res, next) => {
 
 		const { name, email, age, dept } = req.body;
 
+		// cr8 d obj inside d route
 		const newStudent = new Student({
 			name: name,
 			email: email,
