@@ -13,6 +13,7 @@ client
 	.then(() => console.log("Database connection successful"))
 	.catch((error) => console.log(error));
 
+// name your db
 const db = client.db("schoolDb");
 
 const student = db.collection("student");

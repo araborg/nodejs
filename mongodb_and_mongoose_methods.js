@@ -17,7 +17,7 @@ client
 	.then(() => console.log("Database connection successful"))
 	.catch((error) => console.log(error));
 
-// add single documt
+// name your db
 const db = client.db("schoolDb");
 
 const student = db.collection("student");
@@ -59,7 +59,17 @@ const studentSchema = mongoose.Schema({
 
 const Student = mongoose.model("student", studentSchema);
 
+    const { name, email, age, dept } = req.body;
 
+    // cr8 d obj inside d route
+    const newStudent = new Student({
+        name: name,
+        email: email,
+        age: age,
+        dept: dept,
+    });
+
+    await newStudent.save();
 
 --------------------
 
