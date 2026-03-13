@@ -187,7 +187,7 @@ find().toArray():
 		.find({ age: parseInt(age) }) 
 		.toArray() // note ds method
 		.then((data) => res.status(200).json(data))
-		.catch((err) => res.status(500).send(err, message));
+		.catch((err) => res.status(500).send(err.message));
 
 
 mongoose methods:
