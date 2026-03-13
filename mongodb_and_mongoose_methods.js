@@ -131,7 +131,6 @@ findOne():
 findById():
     const student = await Student.findById({ _id: studentId });
 
-
 --------------------
 
 Read multiple doc:
@@ -159,7 +158,6 @@ find():
 find({}):
 
 const students = await Student.find({});
-
 
 
 ====================================
@@ -193,7 +191,6 @@ findOneAndUpdate() with $set:{}:
 		.catch((error) => res.status(500).json({ message: error.message }));
 
 
-
 mongoose methods:
 
 findOneAndUpdate():
@@ -223,14 +220,13 @@ findOne():
 
     res.status(200).json({ message: "Student updated successfully" });
 
-
 --------------------
 
 Update multiple docs:
 
-updateMany(): 
-
 mongodb methods:
+
+updateMany(): 
 
 	const { age } = req.query;
 
@@ -302,8 +298,6 @@ findByIdAndDelete():
     
     res.status(200).json({ message: student });
 
-
-
 --------------------
 
 Delete multiple docs:
@@ -320,8 +314,9 @@ deleteMany():
 		)
 		.catch((err) => req.status(500).send({ message: err.message }));
 
-        
+
 mongoose methods:
+
 deleteMany():
 
     const { dept } = req.query;
@@ -337,8 +332,6 @@ await Student.deleteMany({});
 
 
 ====================================
-
-
 
 
 */
