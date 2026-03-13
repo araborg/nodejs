@@ -30,7 +30,9 @@ ds can be:
 const users = db.collection("users");
 const books = db.collection("books"); etc
 
+
 Add/Cr8 a doc:
+--------------
 
 insertOne():
 
@@ -77,6 +79,7 @@ const studentSchema = mongoose.Schema({
 const Student = mongoose.model("student", studentSchema);
 
 save():
+
     // req.body comes from postman
     const { name, email, age, dept } = req.body;
 
@@ -113,6 +116,7 @@ mongoose methods:
 -----------------
 
 insertMany():
+-------------
 
 Student.insertMany(
     {
