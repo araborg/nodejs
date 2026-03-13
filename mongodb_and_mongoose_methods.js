@@ -202,6 +202,26 @@ findOneAndUpdate():
 Update multiple docs:
 mongodb methods:
 
+	const { age } = req.query;
+
+	const { dept } = req.body;
+
+	student
+		.updateMany(
+			{ age: parseInt(age) }, // req.query
+
+			{ $set: { dept: dept } },
+		) // 3 objs
+		.then((data) => {
+			res
+                .status(200)
+                .json({
+					message: "Students updated successfully",
+
+					updatedStudents: data,
+				});
+		})
+		.catch((error) => res.status(500).json({ message: error.message }));
 
 
 mongoose methods:

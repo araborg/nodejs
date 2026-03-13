@@ -48,7 +48,7 @@ app.get("/student", (req, res, next) => {
 		.catch((err) => res.status(500).send(err.message));
 });
 
-// update a student
+// update many student
 app.put("/student", (req, res, next) => {
 	// http://localhost:8000/student?age=92
 
