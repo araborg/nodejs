@@ -301,6 +301,7 @@ updateMany():
 
 
 mongoose methods:
+-----------------
 
 updateMany():
 
@@ -317,8 +318,10 @@ updateMany():
 
 ====================================
 
-Delete a doc:
 mongodb methods:
+----------------
+
+Delete a doc:
 
 findOneAndDelete():
 
@@ -331,6 +334,7 @@ findOneAndDelete():
 
 
 mongoose methods:
+-----------------
 
 findOneAndDelete():
 
