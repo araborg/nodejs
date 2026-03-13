@@ -160,6 +160,8 @@ find():
 Update a doc:
 mongodb methods:
 
+findOneAndUpdate() with $set:{}:
+
 	const { email } = req.query;
 
 	// updating 2 or more items
@@ -174,7 +176,6 @@ mongodb methods:
 			{ returnDocument: "after" },
 		) // 3 objs
 		.then((data) => {
-
 			res
 				.status(200)
 				.json({
@@ -183,7 +184,6 @@ mongodb methods:
 				});
 		})
 		.catch((error) => res.status(500).json({ message: error.message }));
-
 
 
 mongoose methods:
