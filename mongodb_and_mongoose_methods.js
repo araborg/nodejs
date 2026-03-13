@@ -191,8 +191,10 @@ find().toArray():
 
 
 mongoose methods:
+----------------
 
 find():
+
     const { dept } = req.query;
 
     const students = await Student.find({ dept: dept });
@@ -201,7 +203,7 @@ find():
 // get multiple students irrespective of query using empty obj
 find({}):
 
-const students = await Student.find({});
+const students = await Student.find({}); // empty {}
 
 
 ====================================
