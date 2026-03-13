@@ -1,6 +1,7 @@
 /*
 Add/Cr8 a doc:
 mongodb methods:
+
 const express = require("express");
 const mongodb = require("mongodb");
 
@@ -21,13 +22,42 @@ const db = client.db("schoolDb");
 
 const student = db.collection("student");
 
-insertOne
+insertOne:
+    student
+		.insertOne({
+			name: "John Doe",
+			email: "john@gmail.com",
+			age: 22,
+			dept: "CS",
+		})
 
 
 
 mongoose methods:
+const express = require("express");
 const mongoose = require("mongoose");
 
+const app = express();
+
+// ds is import to receive json data 4rm postman
+app.use(express.json());
+
+// connect to db: note d  diff
+const connectionUrl = "mongodb://localhost:27017/schoolDb";
+
+mongoose
+	.connect(connectionUrl)
+	.then(() => console.log("Database connection successful"))
+	.catch((error) => console.log(error));
+
+const studentSchema = mongoose.Schema({
+	name: String,
+	email: String,
+	age: Number,
+	dept: String,
+});
+
+const Student = mongoose.model("student", studentSchema);
 
 
 
