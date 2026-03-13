@@ -154,6 +154,13 @@ find():
 
     const students = await Student.find({ dept: dept });
 
+    
+// get multiple students irrespective of query using empty obj
+find({}):
+
+const students = await Student.find({});
+
+
 
 ====================================
 
@@ -267,6 +274,14 @@ updateMany():
 Delete a doc:
 mongodb methods:
 
+findOneAndDelete():
+
+    const { email } = req.query;
+
+	student
+		.findOneAndDelete({ email: email })
+		.then(() => res.status(200).send("Student successfully deleted"))
+		.catch((err) => res.status(500).send({ message: err.message }));
 
 
 mongoose methods:
