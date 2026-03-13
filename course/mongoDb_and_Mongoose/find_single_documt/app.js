@@ -31,8 +31,8 @@ app.post("/student", (req, res, next) => {
 });
 
 // find one student
-// app.get("/student/:id", (req, res, next) => {
-app.get("/student", (req, res, next) => {
+app.get("/student/:id", (req, res, next) => {
+	// app.get("/student", (req, res, next) => {
 	// http://localhost:8000/student
 
 	// student
@@ -58,6 +58,17 @@ app.get("/student", (req, res, next) => {
 		.then((data) => res.status(200).json({ data: data })) // notice we use data here
 		.catch((err) => res.status(500).send(err.message));
 });
+
+/*
+Que:
+Can findById method be used for mongodb connect
+
+Ans:
+No, the findById method cannot be used to connect to MongoDB. It is used to retrieve a single document from an already connected database based on its unique identifier 
+
+
+
+*/
 
 // listen 4 d server
 app.listen(8000, () => {
