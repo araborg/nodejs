@@ -29,14 +29,17 @@ app.post("/student/single", async (req, res, next) => {
 		// http://localhost:8000/student/single
 
 		const { name, email, age, dept } = req.body;
+		console.log(name);
 
 		// cr8 d obj inside d route
-		const newStudent = new Student({
-			name: name,
-			email: email,
-			age: age,
-			dept: dept,
-		});
+		// const newStudent = new Student({
+		// 	name: name,
+		// 	email: email,
+		// 	age: age,
+		// 	dept: dept,
+		// });
+
+		const newStudent = new Student(req.body);
 
 		await newStudent.save();
 
