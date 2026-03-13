@@ -249,7 +249,17 @@ mongodb methods:
 
 mongoose methods:
 
+updateMany():
 
+    const { age } = req.query;
+
+    const { dept } = req.body;
+
+    // console.log(typeof age); // string
+
+    await Student.updateMany({ age: age }, { dept: dept });
+
+    res.status(200).json({ message: "Students updated successfully" });
 
 
 ====================================
