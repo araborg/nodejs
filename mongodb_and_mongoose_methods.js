@@ -105,6 +105,7 @@ Add/Cr8 multiple docs:
 ----------------------
 
 insertMany():
+
     student
 		// .insertMany([{}, {}]) // adding students 4rm code editor
 		.insertMany(req.body)
@@ -116,7 +117,6 @@ mongoose methods:
 -----------------
 
 insertMany():
--------------
 
 Student.insertMany(
     {
@@ -139,10 +139,11 @@ await Student.insertMany(req.body);
 
 ====================================
 
-Read a doc:
------------
 
 mongodb methods:
+
+Read a doc:
+-----------
 
 findOne():
 
