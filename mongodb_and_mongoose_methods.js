@@ -125,7 +125,10 @@ findOne():
 
     const student = await Student.findOne({ email: email });
 
+findById():
+    const student = await Student.findById({ _id: studentId });
 
+    
 --------------------
 
 Read multiple doc:
@@ -143,7 +146,8 @@ find().toArray():
 
 mongoose methods:
 
-
+insertMany()
+await Student.insertMany(req.body);
 
 
 ====================================
