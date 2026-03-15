@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require("path");
 
 const PORT = 8000;
 
@@ -16,6 +17,7 @@ mongoose
 
 // view engine
 app.set("view engine", "ejs");
+app.set(express.static(path.join(__dirname, "public")));
 
 // routes
 app.get("/", (req, res, next) => {
