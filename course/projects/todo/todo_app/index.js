@@ -34,6 +34,14 @@ app.get("/add-todo", (req, res, next) => {
 	}
 });
 
+app.get("/update-todo", (req, res, next) => {
+	try {
+		res.render("newTodo");
+	} catch (error) {
+		res.status(500).json({ message: error.message });
+	}
+});
+
 // listen to server
 app.listen(PORT, () => {
 	console.log(`Server is running on port: ${PORT}`);
