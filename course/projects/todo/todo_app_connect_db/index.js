@@ -10,7 +10,7 @@ const connectionUrl = "mongodb://localhost:27/todoDb";
 
 mongoose
 	.connect(connectionUrl)
-	.then()
+	.then(() => console.log("Database connection successfull"))
 	.catch((err) => console.log(err));
 
 // view engine
