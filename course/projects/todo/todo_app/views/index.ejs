@@ -1,46 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<%- include("partials/header") %>
+<div class="table-container">
+	<h2 class="todo-title">Todo List</h2>
 
-		<link rel="stylesheet" href="css/styles.css" />
+	<div>
+		<!-- /add-todo is coming 4rm d node route -->
+		<a href="/add-todo" class="btn">Add Todo</a>
+	</div>
 
-		<title>Todo App</title>
-	</head>
-	<body>
-		<div class="table-container">
-			<h2 class="todo-title">Todo List</h2>
+	<br />
 
-			<div>
-				<!-- /add-todo is coming 4rm d node route -->
-				<a href="/add-todo" class="btn">Add Todo</a>
-			</div>
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Created at</th>
+			<th>Updated at</th>
+			<th>Action</th>
+		</tr>
 
-			<br />
+		<tr>
+			<td>Test todo title</td>
+			<td>Test todo Description</td>
+			<td>Created time</td>
+			<td>Updated time</td>
 
-			<table>
-				<tr>
-					<th>Title</th>
-					<th>Description</th>
-					<th>Created at</th>
-					<th>Updated at</th>
-					<th>Action</th>
-				</tr>
+			<td>
+				<a href="/update-todo" class="btn">Edit</a>
 
-				<tr>
-					<td>Test todo title</td>
-					<td>Test todo Description</td>
-					<td>Created time</td>
-					<td>Updated time</td>
-
-					<td>
-						<a href="/update-todo" class="btn">Edit</a>
-
-						<a href="/delete-todo" class="btn">Delete</a>
-					</td>
-				</tr>
-			</table>
-		</div>
-	</body>
-</html>
+				<a href="/delete-todo" class="btn">Delete</a>
+			</td>
+		</tr>
+	</table>
+</div>
+<%- include("partials/footer") %>
