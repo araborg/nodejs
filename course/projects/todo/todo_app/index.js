@@ -36,7 +36,7 @@ app.get("/add-todo", (req, res, next) => {
 
 app.get("/update-todo", (req, res, next) => {
 	try {
-		res.render("newTodo");
+		res.render("updateTodo");
 	} catch (error) {
 		res.status(500).json({ message: error.message });
 	}
