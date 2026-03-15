@@ -1,0 +1,16 @@
+{
+  "name": "todo_app",
+  "version": "1.0.0",
+  "description": "a todo app",
+  "repository": {
+    "type": "git",
+    "url": "araborg"
+  },
+  "license": "ISC",
+  "author": "araborg",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
