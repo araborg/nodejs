@@ -17,15 +17,6 @@ mongoose
 // view engine
 app.set("view engine", "ejs");
 
-// routes
-app.get("/", (req, res, next) => {
-	try {
-		res.render("index");
-	} catch (error) {
-		res.status(500).json({ message: error.message });
-	}
-});
-
 // listen to server
 app.listen(PORT, () => {
 	console.log(`Server is running on port: ${PORT}`);
