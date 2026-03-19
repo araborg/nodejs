@@ -1,3 +1,5 @@
+const { kMaxLength } = require("buffer");
+const { timeStamp } = require("console");
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
@@ -14,6 +16,30 @@ mongoose
 	.connect(connectionUrl)
 	.then(() => console.log("Database connection successfull"))
 	.catch((err) => console.log(err.message));
+
+// Schema
+/*
+const todoSchema = mongoose.Schema({
+	desc: String,
+    });
+    
+    */
+const todoSchema = mongoose.Schema(
+	{
+		// title: String,
+
+		// title: { type: String, required: true, unique: true, kMaxLength: 20, minLenth: 5, trim: true,},
+
+		title: {
+			type: String,
+			required: true,
+		},
+
+		desc: String,
+	},
+
+	{ timeStamp: true },
+);
 
 // view engine
 app.set("view engine", "ejs");
