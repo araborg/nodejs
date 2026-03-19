@@ -4,8 +4,10 @@ const router = express.Router();
 
 const Todo = require("../models/Todo");
 
+const todo = require("../controllers/todo");
+
 // pages
-router.get("/");
+router.get("/", todo.homeController);
 
 router.get("/add-todo", (req, res, next) => {
 	try {
