@@ -4,7 +4,7 @@ const router = express.Router();
 const Todo = require("../models/Todo");
 
 // pages
-app.get("/", async (req, res, next) => {
+router.get("/", async (req, res, next) => {
 	try {
 		const todos = await Todo.find({}).sort({ createdAt: -1 });
 
@@ -16,7 +16,7 @@ app.get("/", async (req, res, next) => {
 	}
 });
 
-app.get("/add-todo", (req, res, next) => {
+router.get("/add-todo", (req, res, next) => {
 	try {
 		res.render("newTodo", { title: "New todo" });
 	} catch (error) {
@@ -24,7 +24,7 @@ app.get("/add-todo", (req, res, next) => {
 	}
 });
 
-app.get("/update-todo", (req, res, next) => {
+router.get("/update-todo", (req, res, next) => {
 	try {
 		res.render("updateTodo", { title: "Update todo" });
 	} catch (error) {
@@ -32,7 +32,7 @@ app.get("/update-todo", (req, res, next) => {
 	}
 });
 
-app.get("/delete-todo", (req, res, next) => {
+router.get("/delete-todo", (req, res, next) => {
 	try {
 		res.render("deleteTodo", { title: "Delete todo" });
 	} catch (error) {
@@ -41,7 +41,7 @@ app.get("/delete-todo", (req, res, next) => {
 });
 
 // routes
-app.post("/add-todo", async (req, res, next) => {
+router.post("/add-todo", async (req, res, next) => {
 	try {
 		const { title, desc } = req.body;
 
