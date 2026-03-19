@@ -14,6 +14,8 @@ const connectMongodb = require("./init/mongodb");
 
 const Todo = require("./models/Todo");
 
+const todoRoute = require("./routes/todo");
+
 // init app
 const app = express();
 
@@ -49,6 +51,7 @@ connectMongodb();
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public"))); // app.use()
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/", todoRoute);
 
 // // pages
 // app.get("/", async (req, res, next) => {

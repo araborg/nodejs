@@ -58,3 +58,5 @@ router.post("/add-todo", async (req, res, next) => {
 		res.status(500).json({ message: error.message });
 	}
 });
+
+module.exports = router;
