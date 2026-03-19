@@ -91,6 +91,8 @@ app.post("/add-todo", async (req, res, next) => {
 		const newTodo = new Todo({ title, desc });
 
 		await newTodo.save();
+
+		res.redirect("/");
 	} catch (error) {
 		res.status(500).json({ message: error.message });
 	}
