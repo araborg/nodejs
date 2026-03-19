@@ -40,7 +40,7 @@ const todoSchema = mongoose.Schema(
 		desc: String,
 	},
 
-	{ timeStamp: true },
+	{ timestamps: true },
 );
 
 const Todo = mongoose.model("todoApp", todoSchema);
@@ -51,9 +51,11 @@ app.use(express.static(path.join(__dirname, "public"))); // app.use()
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // pages
-app.get("/", (req, res, next) => {
+app.get("/", async (req, res, next) => {
 	try {
-		res.render("index", { title: "List todo" });
+		const todos = await Todo.find({});
+
+		res.render("index", { title: "List todo", todos: todos });
 	} catch (error) {
 		res.status(500).json({ message: error.message });
 	}

@@ -19,16 +19,23 @@
 		</tr>
 
 		<tr>
-			<td>Test todo title</td>
-			<td>Test todo Description</td>
-			<td>Created time</td>
-			<td>Updated time</td>
+            <!-- todos is coming 4rm: server side
+            const todos = await Todo.find({}); 
+            -->
+            <% for(let i=0; i < todos.length; i++) { %>
+                <td> <%= todos[i].title %></td>
+                <!-- <td> <%= %></td> -->
+                <td>Test todo Description</td>
+                <td>Created time</td>
+                <td>Updated time</td>
 
-			<td>
-				<a href="/update-todo" class="btn">Edit</a>
+                <td>
+                    <a href="/update-todo" class="btn">Edit</a>
 
-				<a href="/delete-todo" class="btn">Delete</a>
-			</td>
+                    <a href="/delete-todo" class="btn">Delete</a>
+                </td>
+
+            <% } %>
 		</tr>
 	</table>
 </div>
