@@ -23,10 +23,10 @@
             const todos = await Todo.find({}); 
             -->
             <% for(let i=0; i < todos.length; i++) { %>
-                <td> <%= todos[i].title %></td>
-                <td> <%= todos[i].desc %></td>
-                <td> <%= todos[i].createdAt %></td>
-                <td> <%= todos[i].updatedAt %></td>
+                <td><%= todos[i].title %></td>
+                <td><%= todos[i].desc %></td>
+                <td><%= todos[i].createdAt %></td>
+                <td><%= todos[i].updatedAt %></td>
                 
                 <!-- <td> <%= %></td> -->
 
@@ -36,8 +36,8 @@
                     <a href="/delete-todo" class="btn">Delete</a>
                 </td>
 
+            </tr>
             <% } %>
-		</tr>
 	</table>
 </div>
 <%- include("partials/footer") %>
