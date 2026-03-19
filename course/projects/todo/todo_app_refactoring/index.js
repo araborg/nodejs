@@ -10,16 +10,18 @@ const moment = require("moment");
 
 const PORT = 8000;
 
+const connectMongodb = require("./init/mongodb");
+
 // init app
 const app = express();
 
-// db init
-const connectionUrl = "mongodb://localhost:27017/todoDb";
+// mongodb connection
+connectMongodb();
 
-mongoose
-	.connect(connectionUrl)
-	.then(() => console.log("Database connection successfull"))
-	.catch((err) => console.log(err.message));
+// mongoose
+// 	.connect(connectionUrl)
+// 	.then(() => console.log("Database connection successfull"))
+// 	.catch((err) => console.log(err.message));
 
 // Schema
 const todoSchema = mongoose.Schema(
