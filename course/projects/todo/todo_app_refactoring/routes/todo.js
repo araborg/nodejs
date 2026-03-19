@@ -1,3 +1,8 @@
+const express = require("express");
+const router = express.Router();
+
+const Todo = require("../models/Todo");
+
 // pages
 app.get("/", async (req, res, next) => {
 	try {
