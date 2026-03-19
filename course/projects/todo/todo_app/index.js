@@ -88,6 +88,10 @@ app.post("/add-todo", async (req, res, next) => {
 	try {
 		const { title, desc } = req.body;
 
+		if (!title) {
+			return res.status(400).json({ message: "Title is required" });
+		}
+
 		const newTodo = new Todo({ title, desc });
 
 		await newTodo.save();
