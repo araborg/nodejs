@@ -24,24 +24,24 @@ connectMongodb();
 // 	.catch((err) => console.log(err.message));
 
 // Schema
-const todoSchema = mongoose.Schema(
-	{
-		// title: String,
+// const todoSchema = mongoose.Schema(
+// 	{
+// 		// title: String,
 
-		// title: { type: String, required: true, unique: true, kMaxLength: 20, minLenth: 5, trim: true,},
+// 		// title: { type: String, required: true, unique: true, kMaxLength: 20, minLenth: 5, trim: true,},
 
-		title: {
-			type: String,
-			required: true,
-		},
+// 		title: {
+// 			type: String,
+// 			required: true,
+// 		},
 
-		desc: String,
-	},
+// 		desc: String,
+// 	},
 
-	{ timestamps: true },
-);
+// 	{ timestamps: true },
+// );
 
-const Todo = mongoose.model("todoApp", todoSchema);
+// const Todo = mongoose.model("todoApp", todoSchema);
 
 // view engine
 app.set("view engine", "ejs");
