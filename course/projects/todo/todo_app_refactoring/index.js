@@ -3,11 +3,10 @@ const path = require("path");
 
 const bodyParser = require("body-parser");
 
-const PORT = 8000;
-
 const connectMongodb = require("./init/mongodb");
-
 const todoRoute = require("./routes/todo");
+
+const PORT = 8000;
 
 // init app
 const app = express();
