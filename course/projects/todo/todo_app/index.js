@@ -87,6 +87,10 @@ app.get("/delete-todo", (req, res, next) => {
 app.post("/add-todo", async (req, res, next) => {
 	try {
 		const { title, desc } = req.body;
+
+		const newTodo = new Todo({ title, desc });
+
+		await newTodo.save();
 	} catch (error) {
 		res.status(500).json({ message: error.message });
 	}
