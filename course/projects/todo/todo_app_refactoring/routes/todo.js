@@ -1,22 +1,11 @@
 const express = require("express");
-const moment = require("moment");
 
 const router = express.Router();
 
 const Todo = require("../models/Todo");
 
 // pages
-router.get("/", async (req, res, next) => {
-	try {
-		const todos = await Todo.find({}).sort({ createdAt: -1 });
-
-		res.locals.moment = moment;
-
-		res.render("index", { title: "List todo", todos: todos });
-	} catch (error) {
-		res.status(500).json({ message: error.message });
-	}
-});
+router.get("/");
 
 router.get("/add-todo", (req, res, next) => {
 	try {
