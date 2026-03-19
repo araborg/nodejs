@@ -7,7 +7,7 @@ const todo = require("../controllers/todo");
 // pages
 router.get("/", todo.homeController);
 
-router.get("/add-todo", todo.addTodoController);
+router.get("/add-todo", todo.addTodoFormController);
 
 router.get("/update-todo", todo.updateTodoFormController);
 
