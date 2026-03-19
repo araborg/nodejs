@@ -4,6 +4,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 
+const bodyParser = require("body-parser");
+
 const PORT = 8000;
 
 // init app
@@ -46,8 +48,9 @@ const Todo = mongoose.model("todoApp", todoSchema);
 // view engine
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public"))); // app.use()
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// routes
+// pages
 app.get("/", (req, res, next) => {
 	try {
 		res.render("index", { title: "List todo" });
@@ -75,6 +78,15 @@ app.get("/update-todo", (req, res, next) => {
 app.get("/delete-todo", (req, res, next) => {
 	try {
 		res.render("deleteTodo", { title: "Delete todo" });
+	} catch (error) {
+		res.status(500).json({ message: error.message });
+	}
+});
+
+// routes
+app.post("/add-todo", async (req, res, next) => {
+	try {
+		const { title, desc } = req.body;
 	} catch (error) {
 		res.status(500).json({ message: error.message });
 	}
