@@ -24,10 +24,11 @@
             -->
             <% for(let i=0; i < todos.length; i++) { %>
                 <td> <%= todos[i].title %></td>
+                <td> <%= todos[i].desc %></td>
+                <td> <%= todos[i].createdAt %></td>
+                <td> <%= todos[i].updatedAt %></td>
+                
                 <!-- <td> <%= %></td> -->
-                <td>Test todo Description</td>
-                <td>Created time</td>
-                <td>Updated time</td>
 
                 <td>
                     <a href="/update-todo" class="btn">Edit</a>
