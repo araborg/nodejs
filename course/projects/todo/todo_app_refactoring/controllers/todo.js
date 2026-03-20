@@ -24,7 +24,6 @@ const addTodoFormController = (req, res, next) => {
 const updateTodoFormController = async (req, res, next) => {
 	try {
 		const { id } = req.query;
-		console.log(id);
 
 		const todo = await Todo.findById(id);
 
@@ -87,6 +86,8 @@ const updateTodoController = async (req, res, next) => {
 const deleteTodoController = async (req, res, next) => {
 	try {
 		const { id, confirm } = req.query;
+
+		console.log(id);
 
 		if (confirm === "yes") {
 			await Todo.findByIdAndDelete(id);
