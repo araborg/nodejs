@@ -10,6 +10,9 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+console.log(process.env.CONNECTION_URL); //mongodb://localhost:....
+console.log(process.env.PORT); // 8000
+
 // init app
 const app = express();
 
