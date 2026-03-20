@@ -1,6 +1,13 @@
+/*
+    Controller has models & fxns
+*/
+
 const Todo = require("../models/Todo");
 const moment = require("moment");
+// moment: A JavaScript date library for parsing,
+// validating, manipulating, and formatting dates.
 
+// show all todos
 const homeController = async (req, res, next) => {
 	try {
 		const todos = await Todo.find({}).sort({ createdAt: -1 });
