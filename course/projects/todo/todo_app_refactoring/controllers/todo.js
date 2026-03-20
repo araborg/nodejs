@@ -28,7 +28,7 @@ const updateTodoFormController = async (req, res, next) => {
 
 		const todo = await Todo.findById(id);
 
-		res.render("updateTodo", { title: "Update todo" });
+		res.render("updateTodo", { title: "Update todo", todo });
 	} catch (error) {
 		res.status(500).json({ message: error.message });
 	}
