@@ -75,6 +75,8 @@ const updateTodoController = async (req, res, next) => {
 		todo.desc = desc;
 
 		await todo.save();
+
+		res.redirect("/");
 	} catch (error) {
 		res.status(500).json({ message: error.message });
 	}
