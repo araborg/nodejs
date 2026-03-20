@@ -70,6 +70,11 @@ const updateTodoController = async (req, res, next) => {
 		if (!todo) {
 			return res.status(404).json({ message: "Todo not found" });
 		}
+
+		todo.title = title;
+		todo.desc = desc;
+
+		await todo.save();
 	} catch (error) {
 		res.status(500).json({ message: error.message });
 	}
