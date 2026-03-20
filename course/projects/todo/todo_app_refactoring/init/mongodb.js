@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 // db init
-const connectionUrl = "mongodb://localhost:27017/todoDb";
+// const connectionUrl = "mongodb://localhost:27017/todoDb";
 
 const connectMongodb = async () => {
 	try {
-		await mongoose.connect(connectionUrl);
+		await mongoose.connect(process.env.CONNECTION_URL);
 
 		console.log("Database connection successfull");
 	} catch (error) {
