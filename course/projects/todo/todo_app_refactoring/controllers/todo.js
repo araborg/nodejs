@@ -60,6 +60,16 @@ const addTodoController = async (req, res, next) => {
 	}
 };
 
+const updateTodoController = async (req, res, next) => {
+	try {
+		const { id } = req.params;
+
+		const { title, desc } = req.body;
+	} catch (error) {
+		res.status(500).json({ message: error.message });
+	}
+};
+
 module.exports = {
 	homeController,
 	addTodoFormController,
