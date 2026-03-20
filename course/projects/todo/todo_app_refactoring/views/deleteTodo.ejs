@@ -8,8 +8,13 @@
 		<p>
 			Are yo sure, you want to delete this todo?
 
-			<a class="btn" href="/confirm-delete?id=<=% id %>">Yes</a>
-			<a class="btn" href="/confirm-delete?id=<=% id %>">No</a>
+			<a class="btn" href="/confirm-delete?id=<=% id %>&confirm=yes">
+				Yes
+			</a>
+
+			<a class="btn" href="/confirm-delete?id=<=% id %>&confirm=no">
+				No
+			</a>
 		</p>
 	</div>
 </div>
