@@ -3,6 +3,7 @@
 */
 
 const Todo = require("../models/Todo");
+
 const moment = require("moment");
 /* moment: A JavaScript date library for parsing,
 validating, manipulating, and formatting dates. */
@@ -93,8 +94,6 @@ const updateTodoController = async (req, res, next) => {
 const deleteTodoController = async (req, res, next) => {
 	try {
 		const { id, confirm } = req.query;
-
-		console.log(id);
 
 		if (confirm === "yes") {
 			await Todo.findByIdAndDelete(id);
