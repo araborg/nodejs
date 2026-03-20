@@ -30,7 +30,7 @@
                 <td><%= moment(todos[i].createdAt).format("MMMM Do, YYYY, HH:mm:ss") %></td>
                 <td><%= moment(todos[i].updatedAt).format("MMMM Do, YYYY, HH:mm:ss") %></td>
                 <td>
-                    <a href="/update-todo" class="btn">Edit</a>
+                    <a href="/update-todo?id=<%= todo[i]_id %>" class="btn">Edit</a>
                     <a href="/delete-todo" class="btn">Delete</a>
                 </td>
 
