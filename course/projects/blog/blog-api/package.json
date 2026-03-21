@@ -1,25 +1,32 @@
 {
-  "name": "blog-api",
-  "version": "1.0.0",
-  "description": "blog-api, restful blog api",
-  "keywords": [
-    "blog-api",
-    "restful",
-    "api"
-  ],
-  "homepage": "https://github.com/github.com/araborg#readme",
-  "bugs": {
-    "url": "https://github.com/github.com/araborg/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/github.com/araborg.git"
-  },
-  "license": "ISC",
-  "author": "araborg",
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+	"name": "blog-api",
+	"version": "1.0.0",
+	"description": "blog-api, restful blog api",
+	"keywords": [
+		"blog-api",
+		"restful",
+		"api"
+	],
+	"homepage": "https://github.com/araborg#readme",
+	"bugs": {
+		"url": "https://github.com/araborg/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/araborg.git"
+	},
+	"license": "ISC",
+	"author": "araborg",
+	"type": "commonjs",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"body-parser": "^2.2.2",
+		"dotenv": "^17.3.1",
+		"express": "^5.2.1",
+		"mongoose": "^9.3.1",
+		"nodemon": "^3.1.14"
+	}
 }
