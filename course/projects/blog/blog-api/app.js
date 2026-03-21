@@ -4,8 +4,13 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+const connectMongodb = require("./init/mongodb");
+
 // init app
 const app = express();
+
+// connect db
+connectMongodb();
 
 // 3rd party middleware
 app.use(express.json({ limit: "500mb" }));
