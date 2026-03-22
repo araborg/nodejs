@@ -1,6 +1,8 @@
 const { User } = require("../models");
 
 const signup = async (req, res, next) => {
+	// http://localhost:2000/api/v1/auth/signup
+
 	try {
 		const { name, email, password, role } = req.body;
 
