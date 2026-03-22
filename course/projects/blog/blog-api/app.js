@@ -6,6 +6,8 @@ dotenv.config();
 
 const connectMongodb = require("./init/mongodb");
 
+const { authRoute } = require("./routes");
+
 // init app
 const app = express();
 
