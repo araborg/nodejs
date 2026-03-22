@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const { connectionUrl } = require("../config/keys");
 
 const connectMongodb = async () => {
