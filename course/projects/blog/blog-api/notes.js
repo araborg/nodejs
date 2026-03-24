@@ -22,7 +22,7 @@ npm i express-validator
 
 Hash your password using bcrypt:
 
-npm i bcrypt
+npm i bcryptjs
 A library to help you hash passwords.
 
 
