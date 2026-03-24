@@ -20,9 +20,10 @@ POST /api/v1/auth/signup 201 146.581 ms - 42
 Install express validator 4 validatn:
 npm i express-validator
 
+Hash your password using bcrypt:
 
-
-
+npm i bcrypt
+A library to help you hash passwords.
 
 
 
