@@ -23,7 +23,7 @@ app.use(morgan("dev"));
 app.use("/api/v1/auth", authRoute);
 
 // not found route
-app.use("*", notfound);
+// app.use("*", notfound);
 
 // error handling middleware
 app.use(errorHandler);
