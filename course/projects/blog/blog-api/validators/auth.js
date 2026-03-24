@@ -15,3 +15,5 @@ const signupValidator = [
 		.notEmpty()
 		.withMessage("Password is required"),
 ];
+
+module.exports = { signupValidator };
