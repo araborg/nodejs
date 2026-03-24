@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const { errorHandler } = require("./middlewares");
+const notFound = require("./controllers/notfound");
 
 dotenv.config();
 
@@ -25,7 +26,7 @@ app.use(morgan("dev"));
 app.use("/api/v1/auth", authRoute);
 
 // not found route
-app.use("*");
+// app.use("*", notFound);
 
 // error handling middleware
 app.use(errorHandler);
