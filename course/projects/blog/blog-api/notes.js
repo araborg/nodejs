@@ -17,7 +17,7 @@ like this:
 POST /api/v1/auth/signup 201 146.581 ms - 42
 
 
-Install express validator:
+Install express validator 4 validatn:
 npm i express-validator
 
 
