@@ -1,5 +1,7 @@
 const { User } = require("../models");
 
+const hashPassword = require("../utils/hashpassword");
+
 const signup = async (req, res, next) => {
 	// http://localhost:2000/api/v1/auth/signup
 
@@ -43,7 +45,9 @@ const signup = async (req, res, next) => {
 			throw new Error("Email already exist");
 		}
 
-		const newUser = new User({ name, email, password, role });
+		const hashPassword = await hashPassword(password);
+
+		const newUser = new User({ name, email, password: hashPassword, role });
 
 		await newUser.save();
 
