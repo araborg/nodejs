@@ -2,6 +2,16 @@ const { check } = require("express-validator");
 
 const signupValidator = [
 	check("name").notEmpty().withMessage("Name is required"),
-	check("email"),
-	check("password"),
+
+	check("email")
+		.isEmail()
+		.withMessage("Invalid email")
+		.notEmpty()
+		.withMessage("Email is required"),
+
+	check("password")
+		.isLength({ min: 6 })
+		.withMessage("Password should be 6 character long")
+		.notEmpty()
+		.withMessage("Password is required"),
 ];
