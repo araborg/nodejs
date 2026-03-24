@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
+const { errorHandler } = require("./middlewares");
 
 dotenv.config();
 
@@ -22,5 +23,8 @@ app.use(morgan("dev"));
 
 // route section
 app.use("/api/v1/auth", authRoute);
+
+// error handling middleware
+app.use(errorHandler);
 
 module.exports = app;
