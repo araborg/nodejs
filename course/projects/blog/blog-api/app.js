@@ -24,6 +24,9 @@ app.use(morgan("dev"));
 // route section
 app.use("/api/v1/auth", authRoute);
 
+// not found route
+app.use("*");
+
 // error handling middleware
 app.use(errorHandler);
 

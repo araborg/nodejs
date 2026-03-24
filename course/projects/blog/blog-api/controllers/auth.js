@@ -4,7 +4,10 @@ const signup = async (req, res, next) => {
 	// http://localhost:2000/api/v1/auth/signup
 
 	try {
-		throw new Error("Test Error");
+		// Testing Error:
+		// res.code = 400
+		// throw new Error("Test Error");
+
 		const { name, email, password, role } = req.body;
 
 		const newUser = new User({ name, email, password, role });
