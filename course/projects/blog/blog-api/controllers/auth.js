@@ -10,6 +10,7 @@ const signup = async (req, res, next) => {
 
 		const { name, email, password, role } = req.body;
 
+		// errors for the user fields
 		if (!name) {
 			res.code = 400;
 
