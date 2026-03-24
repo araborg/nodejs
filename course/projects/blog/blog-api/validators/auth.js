@@ -1,3 +1,7 @@
 const { check } = require("express-validator");
 
-const signupValidator = [check("name"), check("email"), check("password")];
+const signupValidator = [
+	check("name").notEmpty().withMessage("Name is required"),
+	check("email"),
+	check("password"),
+];
