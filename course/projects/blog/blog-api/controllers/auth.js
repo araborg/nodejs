@@ -35,6 +35,11 @@ const signup = async (req, res, next) => {
 		// 	throw new Error("Password should be 6 character long");
 		// }
 
+		const isEmailExist = await User.findOne({ email });
+
+		if (isEmailExist) {
+		}
+
 		const newUser = new User({ name, email, password, role });
 
 		await newUser.save();
