@@ -45,9 +45,14 @@ const signup = async (req, res, next) => {
 			throw new Error("Email already exist");
 		}
 
-		const hashPassword = await hashPassword(password);
+		const hashedPassword = await hashPassword(password);
 
-		const newUser = new User({ name, email, password: hashPassword, role });
+		const newUser = new User({
+			name,
+			email,
+			password: hashedPassword,
+			role,
+		});
 
 		await newUser.save();
 
