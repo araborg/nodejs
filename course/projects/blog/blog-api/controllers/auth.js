@@ -76,4 +76,26 @@ const signin = async (req, res, next) => {
 	}
 };
 
-module.exports = { signup, signin };
+const verifyCode = async (req, res, next) => {
+	try {
+		const { email } = req.body;
+
+		const user = await User.findOne({ email });
+
+		if (!user) {
+			res.code = 404;
+
+			throw new Error("User not found");
+		}
+
+		if (user.isVerified) {
+			res.code = 400;
+
+			throw new Error("User already verified");
+		}
+	} catch (error) {
+		next(error);
+	}
+};
+
+module.exports = { signup, signin, verifyCode };
