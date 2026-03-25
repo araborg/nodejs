@@ -8,5 +8,6 @@ const validate = require("../validators/validate");
 
 // routes
 router.post("/signup", signupValidator, validate, authController.signup);
+router.post("/signin", authController.signin);
 
 module.exports = router;

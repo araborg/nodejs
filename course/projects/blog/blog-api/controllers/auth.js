@@ -39,4 +39,11 @@ const signup = async (req, res, next) => {
 	}
 };
 
-module.exports = { signup };
+const signin = async (req, res, next) => {
+	try {
+	} catch (error) {
+		next(error);
+	}
+};
+
+module.exports = { signup, signin };
