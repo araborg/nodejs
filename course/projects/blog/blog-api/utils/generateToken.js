@@ -10,3 +10,9 @@ const generateToken = (user) => {
 };
 
 module.exports = generateToken;
+
+/*
+Run this command:
+node -e "console.log(require('crypto').randomBytes(64).toString('hex'));"
+
+*/
