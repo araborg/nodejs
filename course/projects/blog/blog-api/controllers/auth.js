@@ -41,6 +41,15 @@ const signup = async (req, res, next) => {
 
 const signin = async (req, res, next) => {
 	try {
+		const { email, password } = req.body;
+
+		const user = await User.findOne({ email });
+
+		if (!user) {
+			res.code = 401;
+
+			throw new Error("Invalid credentials");
+		}
 	} catch (error) {
 		next(error);
 	}
