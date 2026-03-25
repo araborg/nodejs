@@ -78,6 +78,8 @@ const signin = async (req, res, next) => {
 };
 
 const verifyCode = async (req, res, next) => {
+	// http://localhost:2000/api/v1/auth/send-verification-email
+
 	try {
 		const { email } = req.body;
 
@@ -102,6 +104,12 @@ const verifyCode = async (req, res, next) => {
 		await user.save();
 
 		// send email
+
+		res.status(200).json({
+			code: 200,
+			status: true,
+			message: "User verification cod sent successfully",
+		});
 	} catch (error) {
 		next(error);
 	}
