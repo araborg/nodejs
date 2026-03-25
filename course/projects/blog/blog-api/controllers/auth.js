@@ -3,6 +3,7 @@ const { User } = require("../models");
 const hashPassword = require("../utils/hashpassword");
 const comparePassword = require("../utils/comparePassword");
 const generateToken = require("../utils/generateToken");
+const generateCode = require("../utils/generateCode");
 
 const signup = async (req, res, next) => {
 	// http://localhost:2000/api/v1/auth/signup
@@ -93,6 +94,14 @@ const verifyCode = async (req, res, next) => {
 
 			throw new Error("User already verified");
 		}
+
+		const code = generateCode(6);
+
+		user.verificationCode = code;
+
+		await user.save();
+
+		// send email
 	} catch (error) {
 		next(error);
 	}
