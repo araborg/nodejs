@@ -11,3 +11,15 @@ router.post("/signup", signupValidator, validate, authController.signup);
 router.post("/signin", signinValidator, validate, authController.signin);
 
 module.exports = router;
+
+/*
+
+    {
+        "name": "user_1",
+        "email":"user_1@gmail.com",
+        "password": "123456",
+        "role": 3
+    }
+
+
+*/
