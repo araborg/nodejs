@@ -32,6 +32,11 @@ verify your tokem: go to
 jwt.io
 
 
+Install nodemailer
+Send emails from Node.js – easy as cake! 
+
+npm i nodemailer
+
 
 
 
