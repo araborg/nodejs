@@ -25,7 +25,7 @@ const sendEmail = async ({ emailTo, subject, code, content }) => {
 
                 <p><strong>Code: </strong> ${code}</p>
 
-                <p>Dear ${user.name}
+                <p>Dear Friend </p>
  
                 <p><strong>Congratulations!</strong></p>
 
