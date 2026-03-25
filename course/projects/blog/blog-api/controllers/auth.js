@@ -1,6 +1,7 @@
 const { User } = require("../models");
 
 const hashPassword = require("../utils/hashpassword");
+const comparePassword = require("../utils/comparePassword");
 
 const signup = async (req, res, next) => {
 	// http://localhost:2000/api/v1/auth/signup
@@ -50,6 +51,20 @@ const signin = async (req, res, next) => {
 
 			throw new Error("Invalid credentials");
 		}
+
+		const match = await comparePassword(password, user.password);
+
+		if (!match) {
+			res.code = 401;
+
+			throw new Error("Invalid credentials (password)");
+		}
+
+		res.status(200).json({
+			code: 200,
+			status: true,
+			message: "User signin successful",
+		});
 	} catch (error) {
 		next(error);
 	}
