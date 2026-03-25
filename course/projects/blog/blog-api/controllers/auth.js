@@ -4,6 +4,7 @@ const hashPassword = require("../utils/hashpassword");
 const comparePassword = require("../utils/comparePassword");
 const generateToken = require("../utils/generateToken");
 const generateCode = require("../utils/generateCode");
+const sendEmail = require("../utils/sendEmail");
 
 const signup = async (req, res, next) => {
 	// http://localhost:2000/api/v1/auth/signup
@@ -104,6 +105,12 @@ const verifyCode = async (req, res, next) => {
 		await user.save();
 
 		// send email
+		await sendEmail({
+			emailTo: user.email,
+			subject: "Email verificaion code",
+			code: code,
+			conent: "Verify your account",
+		});
 
 		res.status(200).json({
 			code: 200,
