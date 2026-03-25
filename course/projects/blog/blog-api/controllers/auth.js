@@ -109,13 +109,13 @@ const verifyCode = async (req, res, next) => {
 			emailTo: user.email,
 			subject: "Email verificaion code",
 			code: code,
-			conent: "Verify your account",
+			content: "Verify your account",
 		});
 
 		res.status(200).json({
 			code: 200,
 			status: true,
-			message: "User verification cod sent successfully",
+			message: "User verification code sent successfully",
 		});
 	} catch (error) {
 		next(error);
