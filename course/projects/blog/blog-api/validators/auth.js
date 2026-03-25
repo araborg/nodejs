@@ -23,7 +23,7 @@ const signinValidator = [
 		.notEmpty()
 		.withMessage("Email is required"),
 
-	check("password").withMessage("Password is required"),
+	check("password").notEmpty().withMessage("Password is required"),
 ];
 
 module.exports = { signupValidator, signinValidator };
