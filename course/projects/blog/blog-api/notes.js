@@ -28,6 +28,10 @@ A library to help you hash passwords.
 Generate a token:
 npm i jsonwebtoken
 
+verify your tokem: go to
+jwt.io
+
+
 
 
 
