@@ -14,7 +14,9 @@ const sendEmail = async ({ emailTo, subject, code, content }) => {
 		subject: subject,
 		html: `
             <div>
-                <h3>Use this below code to </h3>
+                <h3>Use this below code to ${content}</h3>
+
+                <p><strong>Code: </strong> ${code}</p>
             </div>
         `,
 	};
