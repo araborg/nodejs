@@ -2,6 +2,7 @@ const { User } = require("../models");
 
 const hashPassword = require("../utils/hashpassword");
 const comparePassword = require("../utils/comparePassword");
+const generateToken = require("../utils/generateToken");
 
 const signup = async (req, res, next) => {
 	// http://localhost:2000/api/v1/auth/signup
@@ -62,10 +63,13 @@ const signin = async (req, res, next) => {
 			throw new Error("Invalid credentials (password)");
 		}
 
+		const token = generateToken(user);
+
 		res.status(200).json({
 			code: 200,
 			status: true,
 			message: "User signin successful",
+			data: { token },
 		});
 	} catch (error) {
 		next(error);
