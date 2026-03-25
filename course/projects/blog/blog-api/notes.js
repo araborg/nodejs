@@ -25,7 +25,8 @@ Hash your password using bcrypt:
 npm i bcryptjs
 A library to help you hash passwords.
 
-
+Generate a token:
+npm i jsonwebtoken
 
 
 
