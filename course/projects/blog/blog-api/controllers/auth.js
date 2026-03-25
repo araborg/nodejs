@@ -41,6 +41,8 @@ const signup = async (req, res, next) => {
 };
 
 const signin = async (req, res, next) => {
+	// http://localhost:2000/api/v1/auth/signin
+
 	try {
 		const { email, password } = req.body;
 
