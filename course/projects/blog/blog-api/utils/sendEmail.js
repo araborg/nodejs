@@ -20,6 +20,7 @@ const sendEmail = async ({ emailTo, subject, code, content }) => {
 		subject: subject,
 		html: `
             <div>
+            
                 <h3>Use this below code to ${content}</h3>
 
                 <p><strong>Code: </strong> ${code}</p>
@@ -40,7 +41,12 @@ const sendEmail = async ({ emailTo, subject, code, content }) => {
                 (With all the big smiles in the world, we officially 
                 welcome you into the Techy Jaunt family) </p>
  
-We have seniors and mentors across different fields such as Product Management, Data Analysis, UI & UX, Frontend, Backend Development, Blockchain Web development , Cybersecurity, Digital Marketing, AI/ Machine Learning, Ethical Hacking, Data Science, Virtual Assistant & brand design waiting to mentor you.
+                <p> We have seniors and mentors across different fields 
+                such as Product Management, Data Analysis, UI & UX, 
+                Frontend, Backend Development, Blockchain Web development , 
+                Cybersecurity, Digital Marketing, AI/ Machine Learning, 
+                Ethical Hacking, Data Science, Virtual Assistant & brand 
+                design waiting to mentor you. </p>
 
             </div>
         `,
