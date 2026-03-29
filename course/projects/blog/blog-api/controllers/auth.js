@@ -149,7 +149,7 @@ const verifyUser = async (req, res, next) => {
 			throw new Error("Invalid code");
 		}
 
-		user.isverified = true;
+		user.isVerified = true;
 		user.verificationCode = null;
 
 		await user.save();
