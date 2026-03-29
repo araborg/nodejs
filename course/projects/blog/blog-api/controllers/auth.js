@@ -274,6 +274,18 @@ const changePassword = async (req, res, next) => {
 			throw new Error("You are providing old password");
 		}
 
+		const hashedPassword = await hashPassword(newPassword);
+
+		user.password = hashPassword;
+
+		await user.save();
+
+		res.status(200).json({
+			code: 200,
+			status: true,
+			message: "Password changed sucessfully",
+		});
+
 		res.json(req.user);
 	} catch (error) {
 		next(error);
