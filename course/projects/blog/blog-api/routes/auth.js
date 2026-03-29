@@ -14,6 +14,8 @@ const {
 
 const validate = require("../validators/validate");
 
+const isAuth = require("../middlewares/isAuth");
+
 // routes
 router.post("/signup", signupValidator, validate, authController.signup);
 
@@ -47,7 +49,7 @@ router.post(
 	authController.recoverPassword,
 );
 
-router.put("/change-password", authController.changePassword);
+router.put("/change-password", isAuth, authController.changePassword);
 
 module.exports = router;
 
