@@ -39,6 +39,8 @@ router.post(
 	authController.forgotPasswordCode,
 );
 
+// router.post = ("/recover-password")
+
 module.exports = router;
 
 /*
