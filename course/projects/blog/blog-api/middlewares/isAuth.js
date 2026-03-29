@@ -4,7 +4,17 @@ const isAuth = async (req, res, next) => {
 			req.headers.authorization &&
 			req.headers.authorization.split(" ");
 
-		console.log(authorization);
+		const token =
+			authorization.length > 1 ? authorization[1] : null;
+
+		console.log(token);
+
+		if (token) {
+		} else {
+			res.code = 400;
+
+			throw new Error("Token is required");
+		}
 
 		next();
 	} catch (error) {
