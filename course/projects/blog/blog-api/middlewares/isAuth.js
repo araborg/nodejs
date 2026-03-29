@@ -1,3 +1,6 @@
+const jwt = require("jsonwebtoken");
+const { jwtSecret } = require("../config/keys");
+
 const isAuth = async (req, res, next) => {
 	try {
 		const authorization =
