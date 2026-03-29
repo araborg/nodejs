@@ -248,6 +248,18 @@ const changePassword = async (req, res, next) => {
 	*/
 
 	try {
+		const { oldPassword, newPassword } = req.body;
+
+		const { _id } = req.user;
+
+		const user = await User.findById(_id);
+
+		if (!user) {
+			res.code = 404;
+
+			throw new Error("User not found");
+		}
+
 		res.json(req.user);
 	} catch (error) {
 		next(error);
