@@ -23,14 +23,18 @@ const isAuth = async (req, res, next) => {
 					email: payload.email,
 					role: payload.role,
 				};
+
+				next();
+			} else {
+				res.code = 401;
+
+				throw new Error("Unauthorized");
 			}
 		} else {
 			res.code = 400;
 
 			throw new Error("Token is required");
 		}
-
-		next();
 	} catch (error) {
 		next(error);
 	}
