@@ -134,7 +134,7 @@ const verifyUser = async (req, res, next) => {
 			throw new Error("User not found");
 		}
 
-		if (code) {
+		if (user.verificationCode === code) {
 			res.code = 400;
 		}
 	} catch (error) {
