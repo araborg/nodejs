@@ -134,9 +134,22 @@ const verifyUser = async (req, res, next) => {
 			throw new Error("User not found");
 		}
 
-		if (user.verificationCode === code) {
+		if (user.verificationCode !== code) {
 			res.code = 400;
+
+			throw new Error("Invalid code");
 		}
+
+		user.isverified = true;
+		user.verificationCode = null;
+
+		await user.save();
+
+		res.status(200).json({
+			code: 200,
+			status: true,
+			message: "User verified successfully",
+		});
 	} catch (error) {
 		next(error);
 	}
