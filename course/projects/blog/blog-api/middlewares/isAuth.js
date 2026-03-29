@@ -13,6 +13,8 @@ const isAuth = async (req, res, next) => {
 		console.log(token);
 
 		if (token) {
+			const payload = jwt(token, jwtSecret);
+			console.log(payload);
 		} else {
 			res.code = 400;
 
