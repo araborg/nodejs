@@ -202,6 +202,8 @@ const forgotPasswordCode = async (req, res, next) => {
 };
 
 const recoverPassword = async (req, res, next) => {
+	// http://localhost:2000/api/v1/auth/recover-password
+
 	try {
 		const { email, code, password } = req.body;
 
