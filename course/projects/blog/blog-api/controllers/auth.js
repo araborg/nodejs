@@ -127,6 +127,16 @@ const verifyUser = async (req, res, next) => {
 		const { email, code } = req.body;
 
 		const user = await User.findOne({ email });
+
+		if (!code) {
+			res.code = 404;
+
+			throw new Error("User not found");
+		}
+
+		if (code) {
+			res.code = 400;
+		}
 	} catch (error) {
 		next(error);
 	}
