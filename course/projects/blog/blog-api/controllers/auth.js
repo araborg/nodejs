@@ -124,6 +124,9 @@ const verifyCode = async (req, res, next) => {
 
 const verifyUser = async (req, res, next) => {
 	try {
+		const { email, code } = req.body;
+
+		const user = await User.findOne({ email });
 	} catch (error) {
 		next(error);
 	}
