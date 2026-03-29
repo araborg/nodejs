@@ -220,6 +220,18 @@ const recoverPassword = async (req, res, next) => {
 		}
 
 		const hashedPassword = await hashPassword(password);
+
+		user.password = hashedPassword;
+
+		user.forgotPasswordCode = null;
+
+		await user.save();
+
+		res.status(200).json({
+			code: 200,
+			status: true,
+			message: "Password recovered successfully",
+		});
 	} catch (error) {
 		next(error);
 	}
