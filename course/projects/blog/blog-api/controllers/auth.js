@@ -241,6 +241,7 @@ const recoverPassword = async (req, res, next) => {
 
 const changePassword = async (req, res, next) => {
 	try {
+		res.json({ pk: true });
 	} catch (error) {
 		next(error);
 	}

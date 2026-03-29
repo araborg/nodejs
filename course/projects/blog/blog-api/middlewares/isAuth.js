@@ -1,6 +1,10 @@
 const isAuth = async (req, res, next) => {
 	try {
-		console.log(req.headers);
+		const authorization =
+			req.headers.authorization &&
+			req.headers.authorization.split(" ");
+
+		console.log(authorization);
 
 		next();
 	} catch (error) {
