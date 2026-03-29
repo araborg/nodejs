@@ -276,7 +276,7 @@ const changePassword = async (req, res, next) => {
 
 		const hashedPassword = await hashPassword(newPassword);
 
-		user.password = hashPassword;
+		user.password = hashedPassword;
 
 		await user.save();
 
@@ -286,7 +286,7 @@ const changePassword = async (req, res, next) => {
 			message: "Password changed sucessfully",
 		});
 
-		res.json(req.user);
+		// res.json(req.user);
 	} catch (error) {
 		next(error);
 	}
