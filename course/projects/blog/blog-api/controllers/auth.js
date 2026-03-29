@@ -260,6 +260,20 @@ const changePassword = async (req, res, next) => {
 			throw new Error("User not found");
 		}
 
+		const match = await comparePassword(oldPassword, user.password);
+
+		if (!match) {
+			res.code = 400;
+
+			throw new Error("Old password does not match");
+		}
+
+		if (oldPassword === newPassword) {
+			res.code = 400;
+
+			throw new Error("You are providing old password");
+		}
+
 		res.json(req.user);
 	} catch (error) {
 		next(error);
