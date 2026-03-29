@@ -123,6 +123,15 @@ const verifyCode = async (req, res, next) => {
 };
 
 const verifyUser = async (req, res, next) => {
+	/*
+		http://localhost:2000/api/v1/auth/verify-user
+
+		{
+			"email": "arababs2015@gmail.com",
+			"code": "776789"
+		}
+	*/
+
 	try {
 		const { email, code } = req.body;
 
