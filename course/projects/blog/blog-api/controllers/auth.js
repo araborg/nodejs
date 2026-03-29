@@ -165,6 +165,8 @@ const verifyUser = async (req, res, next) => {
 };
 
 const forgotPasswordCode = async (req, res, next) => {
+	// http://localhost:2000/api/v1/auth/forgot-password-code
+
 	try {
 		const { email } = req.body;
 
@@ -192,7 +194,7 @@ const forgotPasswordCode = async (req, res, next) => {
 		res.status(200).json({
 			code: 200,
 			status: true,
-			message: "Forgot password code sent",
+			message: "Forgot password code sent successfully",
 		});
 	} catch (error) {
 		next(error);
