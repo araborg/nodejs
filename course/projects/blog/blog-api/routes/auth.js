@@ -32,7 +32,12 @@ router.post(
 	authController.verifyUser,
 );
 
-router.post("/forgot-password-code", authController.forgotPasswordCode);
+router.post(
+	"/forgot-password-code",
+	emailValidator,
+	validate,
+	authController.forgotPasswordCode,
+);
 
 module.exports = router;
 
