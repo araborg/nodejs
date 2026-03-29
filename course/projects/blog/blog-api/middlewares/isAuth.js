@@ -3,9 +3,13 @@ const { jwtSecret } = require("../config/keys");
 
 const isAuth = async (req, res, next) => {
 	try {
-		const authorization =
-			req.headers.authorization &&
-			req.headers.authorization.split(" ");
+		// const authorization =
+		// 	req.headers.authorization &&
+		// 	req.headers.authorization.split(" ");
+
+		const authorization = req.headers.authorization
+			? req.headers.authorization.split(" ")
+			: [];
 
 		const token =
 			authorization.length > 1 ? authorization[1] : null;

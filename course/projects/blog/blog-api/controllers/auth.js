@@ -240,8 +240,15 @@ const recoverPassword = async (req, res, next) => {
 };
 
 const changePassword = async (req, res, next) => {
+	/*
+		http://localhost:2000/api/v1/auth/change-password
+
+		add ds to d header section of postman:
+		Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OWM0MDQwNTlhOWE1N2Q4YzFiYTMzYmEiLCJuYW1lIjoiYXJhYm9yZyIsImVtYWlsIjoiYXJhYmFiczIwMTVAZ21haWwuY29tIiwicm9sZSI6MywiaWF0IjoxNzc0ODA5OTMyLCJleHAiOjE3NzU0MTQ3MzJ9.7c_VqDcyxpcWW9_vt7TnGSp5-WVyF5yRMACY9wCSETo
+	*/
+
 	try {
-		res.json({ pk: true });
+		res.json(req.user);
 	} catch (error) {
 		next(error);
 	}
