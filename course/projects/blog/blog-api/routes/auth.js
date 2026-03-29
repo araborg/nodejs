@@ -32,7 +32,7 @@ router.post(
 	authController.verifyUser,
 );
 
-// router.post("/forgot-password-code")
+router.post("/forgot-password-code", authController.forgotPasswordCode);
 
 module.exports = router;
 
