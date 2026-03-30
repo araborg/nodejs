@@ -4,3 +4,5 @@ const addCategory = async (req, res, next) => {
 		next(error);
 	}
 };
+
+module.exports = { addCategory };
