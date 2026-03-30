@@ -313,6 +313,14 @@ const updateProfile = async (req, res, next) => {
 		if (email) {
 			user.isVerified = false;
 		}
+
+		await user.save();
+
+		res.status(200).json({
+			code: 200,
+			status: true,
+			message: "User updated successfully.",
+		});
 	} catch (error) {
 		next(error);
 	}
