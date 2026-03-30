@@ -300,12 +300,28 @@ const updateProfile = async (req, res, next) => {
 
 		const { name, email } = req.body;
 
-		const user = await User.findById(_id);
+		const user = await User.findById(_id).select(
+			"-password -verificationCode -forgotPasswordCode",
+		);
 
 		if (!user) {
 			res.code = 404;
 
 			throw new Error("User not found");
+		}
+
+		if (email) {
+			const isUserExist = await User.findOne({ email });
+
+			if (
+				isUserExist &&
+				isUserExist.email === email &&
+				String(user._id !== String(isUserExist._id))
+			) {
+				res.code = 404;
+
+				throw new Error("Email already exist");
+			}
 		}
 
 		// ?????????????
@@ -318,11 +334,13 @@ const updateProfile = async (req, res, next) => {
 
 		await user.save();
 
+		console.log(user);
+
 		res.status(200).json({
 			code: 200,
 			status: true,
 			message: "User profile updated successfully.",
-			data: { user },
+			data: { user: user },
 		});
 	} catch (error) {
 		next(error);
