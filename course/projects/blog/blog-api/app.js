@@ -21,7 +21,7 @@ app.use(morgan("dev"));
 
 // route section
 app.use("/api/v1/auth", authRoute);
-app.use("/api/v1/auth", categoryRoute);
+app.use("/api/v1/category", categoryRoute);
 
 // not found route
 // app.use("*", notfound);

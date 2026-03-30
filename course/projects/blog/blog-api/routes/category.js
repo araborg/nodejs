@@ -1,4 +1,6 @@
-const authRoute = require("./auth");
-const categoryRoute = require("./category");
+const express = require("express");
+const router = express.Router();
 
-module.exports = { authRoute, categoryRoute };
+// router.post("/")
+
+module.exports = router;
