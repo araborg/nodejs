@@ -294,6 +294,11 @@ const changePassword = async (req, res, next) => {
 
 const updateProfile = async (req, res, next) => {
 	try {
+		const { _id } = req.user;
+
+		const { name, email } = req.body;
+
+		const user = await User.findById(_id);
 	} catch (error) {
 		next(error);
 	}

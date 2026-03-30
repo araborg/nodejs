@@ -63,6 +63,7 @@ router.put(
 	"/update-profile",
 	updateProfileValidator,
 	isAuth,
+	validate,
 	authController.updateProfile,
 );
 
