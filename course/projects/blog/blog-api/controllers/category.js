@@ -23,9 +23,17 @@ const addCategory = async (req, res, next) => {
 		}
 
 		const newCategory = new Category({
-			title,
-			desc,
+			title: title,
+			desc: desc,
 			updatedBy: _id,
+		});
+
+		await newCategory.save();
+
+		res.status(200).json({
+			code: 200,
+			status: true,
+			message: "Category added successfully",
 		});
 	} catch (error) {
 		next(error);
