@@ -293,6 +293,8 @@ const changePassword = async (req, res, next) => {
 };
 
 const updateProfile = async (req, res, next) => {
+	// http://localhost:2000/api/v1/auth/update-profile
+
 	try {
 		const { _id } = req.user;
 
@@ -319,7 +321,8 @@ const updateProfile = async (req, res, next) => {
 		res.status(200).json({
 			code: 200,
 			status: true,
-			message: "User updated successfully.",
+			message: "User profile updated successfully.",
+			data: { user },
 		});
 	} catch (error) {
 		next(error);
