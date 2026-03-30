@@ -1,3 +1,8 @@
 const { check } = require("express-validator");
+const { model } = require("mongoose");
 
-const addCategoryValidator = [];
+const addCategoryValidator = [
+	check("title").notEmpty().withMessage("Title is required"),
+];
+
+module.exports = { addCategoryValidator };
