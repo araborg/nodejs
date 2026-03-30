@@ -21,6 +21,12 @@ const addCategory = async (req, res, next) => {
 
 			throw new Error("User not found");
 		}
+
+		const newCategory = new Category({
+			title,
+			desc,
+			updatedBy: _id,
+		});
 	} catch (error) {
 		next(error);
 	}
