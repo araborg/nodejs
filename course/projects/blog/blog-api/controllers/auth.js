@@ -299,6 +299,20 @@ const updateProfile = async (req, res, next) => {
 		const { name, email } = req.body;
 
 		const user = await User.findById(_id);
+
+		if (!user) {
+			res.code = 404;
+
+			throw new Error("User not found");
+		}
+
+		// ?????????????
+		user.name = name ? name : user.name;
+		user.email = email ? email : user.email;
+
+		if (email) {
+			user.isVerified = false;
+		}
 	} catch (error) {
 		next(error);
 	}
