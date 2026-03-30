@@ -58,6 +58,8 @@ router.put(
 	authController.changePassword,
 );
 
+router.put("/update-profile", isAuth, authController.updateProfile);
+
 module.exports = router;
 
 /*

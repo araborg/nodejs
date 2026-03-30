@@ -66,6 +66,8 @@ const changePasswordValidator = [
 	check("newPassword").notEmpty().withMessage("New password is required"),
 ];
 
+const updateProfileValidator = [];
+
 module.exports = {
 	signupValidator,
 	signinValidator,
@@ -73,4 +75,5 @@ module.exports = {
 	verifyUserValidator,
 	recoverPasswordValidator,
 	changePasswordValidator,
+	updateProfileValidator,
 };
