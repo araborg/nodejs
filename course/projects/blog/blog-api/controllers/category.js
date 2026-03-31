@@ -1,6 +1,8 @@
 const { Category, User } = require("../models");
 
 const addCategory = async (req, res, next) => {
+	// http://localhost:2000/api/v1/category
+
 	try {
 		const { title, desc } = req.body;
 
