@@ -10,10 +10,10 @@ const isAdmin = require("../middlewares/isAdmin");
 
 router.post(
 	"/",
-	addCategoryValidator,
-	validate,
 	isAuth,
 	isAdmin,
+	addCategoryValidator,
+	validate,
 	categoryController.addCategory,
 );
 
