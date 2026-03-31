@@ -4,3 +4,5 @@ const isAdmin = (req, res, next) => {
 		next(error);
 	}
 };
+
+module.exports = isAdmin;

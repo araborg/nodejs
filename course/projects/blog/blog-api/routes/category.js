@@ -6,12 +6,14 @@ const { addCategoryValidator } = require("../validators/category");
 
 const validate = require("../validators/validate");
 const isAuth = require("../middlewares/isAuth");
+const isAdmin = require("../middlewares/isAdmin");
 
 router.post(
 	"/",
 	addCategoryValidator,
 	validate,
 	isAuth,
+	isAdmin,
 	categoryController.addCategory,
 );
 
