@@ -9,7 +9,7 @@ const isAuth = require("../middlewares/isAuth");
 const isAdmin = require("../middlewares/isAdmin");
 
 router.post(
-	"/",
+	"/", // http://localhost:2000/api/v1/category
 	isAuth,
 	isAdmin,
 	addCategoryValidator,

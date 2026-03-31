@@ -92,6 +92,8 @@ const updateCategory = async (req, res, next) => {
 };
 
 const deleteCategory = async (req, res, next) => {
+	// http://localhost:2000/api/v1/category/69cb97ea7e704a80af638bd3
+
 	try {
 		const { id } = req.params;
 
