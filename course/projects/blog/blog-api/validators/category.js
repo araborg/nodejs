@@ -8,9 +8,9 @@ const addCategoryValidator = [
 
 const isValidator = [
 	param("id").custom(async (id) => {
-		// if(id&&!mongoose.Types.ObjectId.isValid(id){
-		//     throw "Invalid category"
-		// })
+		if (id && !mongoose.Types.ObjectId.isValid(id)) {
+			throw "Invalid category";
+		}
 	}),
 ];
 
