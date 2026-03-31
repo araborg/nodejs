@@ -43,6 +43,8 @@ const addCategory = async (req, res, next) => {
 };
 
 const updateCategory = async (req, res, next) => {
+	// http://localhost:2000/api/v1/category/69cb97ea7e704a80af638bd3
+
 	try {
 		const { id } = req.params;
 
@@ -60,6 +62,7 @@ const updateCategory = async (req, res, next) => {
 
 		const isCategoryExist = await Category.findOne({ title });
 
+		// ds prevents dublicate titles
 		if (
 			isCategoryExist &&
 			isCategoryExist.title === title &&
@@ -81,6 +84,7 @@ const updateCategory = async (req, res, next) => {
 			code: 200,
 			status: true,
 			message: "Category updated successfully",
+			data: { category },
 		});
 	} catch (error) {
 		next(error);
