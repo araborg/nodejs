@@ -31,6 +31,7 @@ router.delete(
 	isAuth,
 	isAdmin,
 	idValidator,
+	validate,
 	categoryController.deleteCategory,
 );
 
