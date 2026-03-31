@@ -42,4 +42,6 @@ const addCategory = async (req, res, next) => {
 	}
 };
 
+const updateCategory = async (req, res, next) => {};
+
 module.exports = { addCategory };
