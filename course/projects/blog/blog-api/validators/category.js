@@ -6,12 +6,12 @@ const addCategoryValidator = [
 	check("title").notEmpty().withMessage("Title is required"),
 ];
 
-const isValidator = [
+const idValidator = [
 	param("id").custom(async (id) => {
 		if (id && !mongoose.Types.ObjectId.isValid(id)) {
-			throw "Invalid category";
+			throw "Invalid category id";
 		}
 	}),
 ];
 
-module.exports = { addCategoryValidator };
+module.exports = { addCategoryValidator, idValidator };

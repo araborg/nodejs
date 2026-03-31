@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const { categoryController } = require("../controllers");
-const { addCategoryValidator } = require("../validators/category");
+const { addCategoryValidator, idValidator } = require("../validators/category");
 
 const validate = require("../validators/validate");
 const isAuth = require("../middlewares/isAuth");
@@ -17,6 +17,21 @@ router.post(
 	categoryController.addCategory,
 );
 
-router.put("/:id", isAuth, isAdmin, categoryController.updateCategory);
+router.put(
+	"/:id",
+	isAuth,
+	isAdmin,
+	idValidator,
+	validate,
+	categoryController.updateCategory,
+);
+
+router.delete(
+	"/:id",
+	isAuth,
+	isAdmin,
+	idValidator,
+	categoryController.deleteCategory,
+);
 
 module.exports = router;
