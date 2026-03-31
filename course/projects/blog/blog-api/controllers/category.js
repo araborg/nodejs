@@ -42,6 +42,11 @@ const addCategory = async (req, res, next) => {
 	}
 };
 
-const updateCategory = async (req, res, next) => {};
+const updateCategory = async (req, res, next) => {
+	try {
+	} catch (error) {
+		next(error);
+	}
+};
 
-module.exports = { addCategory };
+module.exports = { addCategory, updateCategory };
