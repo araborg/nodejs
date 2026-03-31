@@ -76,6 +76,12 @@ const updateCategory = async (req, res, next) => {
 		category.updatedBy = _id;
 
 		await category.save();
+
+		res.status(200).json({
+			code: 200,
+			status: true,
+			message: "Category updated successfully",
+		});
 	} catch (error) {
 		next(error);
 	}
