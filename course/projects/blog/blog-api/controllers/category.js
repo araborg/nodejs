@@ -72,6 +72,10 @@ const updateCategory = async (req, res, next) => {
 
 		category.title = title ? title : category.title;
 		category.desc = desc;
+
+		category.updatedBy = _id;
+
+		await category.save();
 	} catch (error) {
 		next(error);
 	}
