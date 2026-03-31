@@ -69,6 +69,9 @@ const updateCategory = async (req, res, next) => {
 
 			throw new Error("Title already exist");
 		}
+
+		category.title = title ? title : category.title;
+		category.desc = desc;
 	} catch (error) {
 		next(error);
 	}
