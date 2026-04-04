@@ -126,6 +126,7 @@ const getCategories = async (req, res, next) => {
 			code: 200,
 			status: true,
 			message: "Get category list successfully",
+			data: { categories },
 		});
 	} catch (error) {
 		next(error);
