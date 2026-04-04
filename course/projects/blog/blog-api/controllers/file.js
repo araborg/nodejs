@@ -5,4 +5,4 @@ const uploadFile = async (req, res, next) => {
 	}
 };
 
-module.exports = uploadFile;
+module.exports = { uploadFile };
