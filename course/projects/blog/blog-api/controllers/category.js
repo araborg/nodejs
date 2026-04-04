@@ -175,7 +175,10 @@ const getCategories = async (req, res, next) => {
 
 		const pages = Math.ceil(totalDoc / sizeNumber);
 
-		const categories = await Category.find(query).skip();
+		const categories = await Category.find(query)
+			.skip((pageNumber - 1) * sizeNumber)
+			.limit(sizeNumber)
+			.sort({ updatedBy: -1 });
 
 		res.status(200).json({
 			code: 200,
