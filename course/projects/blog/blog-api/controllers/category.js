@@ -118,4 +118,6 @@ const deleteCategory = async (req, res, next) => {
 	}
 };
 
+const getCategories = async (req, res, next) => {};
+
 module.exports = { addCategory, updateCategory, deleteCategory };
