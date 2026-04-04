@@ -120,7 +120,25 @@ const deleteCategory = async (req, res, next) => {
 
 const getCategories = async (req, res, next) => {
 	try {
-		const categories = await Category.find({});
+		// http://localhost:2000/api/v1/category?q=desc_1
+		// http://localhost:2000/api/v1/category?q=title_1
+
+		// searching for specific category using query
+		const { q } = req.query;
+
+		let query = {};
+
+		if (q) {
+			const search = RegExp(q, "i");
+
+			query = { $or: [{ title: search }, { desc: search }] };
+		}
+
+		const categories = await Category.find(query);
+
+		// searching for all categories
+		// const categories = await Category.find({});
+		// http://localhost:2000/api/v1/category
 
 		res.status(200).json({
 			code: 200,
