@@ -120,6 +120,13 @@ const deleteCategory = async (req, res, next) => {
 
 const getCategories = async (req, res, next) => {
 	try {
+		const categories = await find({});
+
+		res.status(200).json({
+			code: 200,
+			status: true,
+			message: "Get category list successfully",
+		});
 	} catch (error) {
 		next(error);
 	}
