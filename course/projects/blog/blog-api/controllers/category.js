@@ -118,6 +118,11 @@ const deleteCategory = async (req, res, next) => {
 	}
 };
 
-const getCategories = async (req, res, next) => {};
+const getCategories = async (req, res, next) => {
+	try {
+	} catch (error) {
+		next(error);
+	}
+};
 
-module.exports = { addCategory, updateCategory, deleteCategory };
+module.exports = { addCategory, updateCategory, deleteCategory, getCategories };
