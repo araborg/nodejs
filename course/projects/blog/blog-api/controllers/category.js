@@ -194,6 +194,8 @@ const getCategories = async (req, res, next) => {
 };
 
 const getCategory = async (req, res, next) => {
+	// http://localhost:2000/api/v1/category/69d0f0b9b1a3b6c40a9e895f
+
 	try {
 		const { id } = req.params;
 
