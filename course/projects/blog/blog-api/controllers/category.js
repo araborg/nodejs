@@ -118,6 +118,8 @@ const deleteCategory = async (req, res, next) => {
 	}
 };
 
+/*
+specific category or all categories
 const getCategories = async (req, res, next) => {
 	try {
 		// http://localhost:2000/api/v1/category?q=desc_1
@@ -139,6 +141,41 @@ const getCategories = async (req, res, next) => {
 		// searching for all categories
 		// const categories = await Category.find({});
 		// http://localhost:2000/api/v1/category
+
+		res.status(200).json({
+			code: 200,
+			status: true,
+			message: "Get category list successfully",
+			data: { categories },
+		});
+	} catch (error) {
+		next(error);
+	}
+};
+*/
+
+// specific category or all categories and paginatn
+const getCategories = async (req, res, next) => {
+	try {
+		const { q, size, page } = req.query;
+
+		let query = {};
+
+		const sizeNumber = parseInt(size) || 10;
+		const pageNumber = parseInt(page) || 1;
+
+		if (q) {
+			const search = RegExp(q, "i");
+
+			query = { $or: [{ title: search }, { desc: search }] };
+		}
+
+		// const totalDoc = await Category.countDocuments({});
+		const totalDoc = await Category.countDocuments(query);
+
+		const pages = Math.ceil(totalDoc / sizeNumber);
+
+		const categories = await Category.find(query).skip();
 
 		res.status(200).json({
 			code: 200,
