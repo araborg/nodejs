@@ -5,12 +5,11 @@ const isAuth = require("../middlewares/isAuth");
 
 const { fileController } = require("../controllers");
 
-const multer = require("multer");
-
-const upload = multer({
-	dest: "./upload",
-});
-
-router.post("/upload", isAuth, fileController.uploadFile);
+router.post(
+	"/upload",
+	isAuth,
+	upload.single("image"),
+	fileController.uploadFile,
+);
 
 module.exports = router;
