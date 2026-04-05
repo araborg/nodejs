@@ -28,13 +28,13 @@ const upload = multer({
 
 	fileFilter: (req, file, callback) => {
 		// console.log(file);
-		const minetype = file.minetype;
+		const mimetype = file.mimetype;
 
 		if (
-			minetype === "image/jpg" ||
-			minetype === "image/jpeg" ||
-			minetype === "image/png" ||
-			minetype === "application/pdf"
+			mimetype === "image/jpg" ||
+			mimetype === "image/jpeg" ||
+			mimetype === "image/png" ||
+			mimetype === "application/pdf"
 		) {
 			callback(null, true);
 		} else {
