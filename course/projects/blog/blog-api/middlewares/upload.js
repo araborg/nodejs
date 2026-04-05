@@ -12,6 +12,8 @@ const storage = multer.diskStorage({
 		const extension = path.extname(originalName);
 		const filename = originalName.replace(extension, "");
 		const compressedFilename = filename.split(" ").join("_");
+
+		const lowercaseFilename = compressedFilename.toLocaleLowerCase();
 	},
 });
 
