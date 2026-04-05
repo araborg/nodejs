@@ -9,7 +9,8 @@ const { fileController } = require("../controllers");
 router.post(
 	"/upload",
 	isAuth,
-	upload.single("image"),
+	// upload.single("image"),
+	upload.array("image", 3),
 	fileController.uploadFile,
 );
 
