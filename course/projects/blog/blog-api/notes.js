@@ -37,7 +37,7 @@ Send emails from Node.js – easy as cake!
 
 npm i nodemailer
 
-
+npm i multer
 
 
 
