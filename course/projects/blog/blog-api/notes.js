@@ -45,7 +45,8 @@ search for AWS console on google
 Remember to check for any subscriptions on amazon anytime
 you read this.
 
-
+Install aws sdk:
+npm i @aws-sdk/client-s3
 
 
 
