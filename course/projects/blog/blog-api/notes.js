@@ -42,6 +42,9 @@ npm i multer
 S3 Bucket
 search for AWS console on google
 
+Remember to check for any subscriptions on amazon anytime
+you read this.
+
 
 
 
