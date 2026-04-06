@@ -39,7 +39,8 @@ npm i nodemailer
 
 npm i multer
 
-
+S3 Bucket
+search for AWS console on google
 
 
 
