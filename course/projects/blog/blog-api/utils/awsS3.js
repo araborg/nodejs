@@ -17,7 +17,7 @@ const client = new S3Client({
 	},
 });
 
-const uploadFile = async ({ file, ext }) => {
+const uploadFileToS3 = async ({ file, ext }) => {
 	// some_random_number.ext
 	const Key = `${generateCode(12)}_${Date.now()}${ext}`;
 
@@ -40,6 +40,6 @@ const uploadFile = async ({ file, ext }) => {
 	}
 };
 
-module.exports = { uploadFile };
+module.exports = { uploadFileToS3 };
 
 // npm i @aws-sdk/client-s3
