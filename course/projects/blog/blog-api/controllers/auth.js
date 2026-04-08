@@ -298,7 +298,7 @@ const updateProfile = async (req, res, next) => {
 	try {
 		const { _id } = req.user;
 
-		const { name, email } = req.body;
+		const { name, email, profilePic } = req.body;
 
 		const user = await User.findById(_id).select(
 			"-password -verificationCode -forgotPasswordCode",
@@ -322,6 +322,10 @@ const updateProfile = async (req, res, next) => {
 
 				throw new Error("Email already exist");
 			}
+		}
+
+		if (profilePic) {
+			// const file =
 		}
 
 		// ?????????????
