@@ -53,4 +53,6 @@ const uploadFile = async (req, res, next) => {
 	}
 };
 
+const getSignedUrl = async (req, res, next) => {};
+
 module.exports = { uploadFile };
