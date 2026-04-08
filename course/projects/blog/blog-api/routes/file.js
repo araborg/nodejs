@@ -16,4 +16,6 @@ router.post(
 
 router.get("/signed-url", isAuth, fileController.getSignedUrl);
 
+// router.delete("/delete-file", isAuth)
+
 module.exports = router;
