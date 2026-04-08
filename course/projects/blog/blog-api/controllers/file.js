@@ -57,7 +57,9 @@ const getSignedUrl = async (req, res, next) => {
 	try {
 		const { key } = req.query;
 
-		const url = await signedUrl();
+		const url = await signedUrl(key);
+
+		res.status(200).json({ code: 200, status: true, message: "" });
 	} catch (error) {
 		next(error);
 	}
