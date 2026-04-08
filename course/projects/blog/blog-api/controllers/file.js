@@ -78,6 +78,8 @@ const getSignedUrl = async (req, res, next) => {
 };
 
 const deleteFile = async (req, res, next) => {
+	// http://localhost:2000/api/v1/file/delete-file?key=2457887799877
+
 	try {
 		const { key } = req.query;
 
