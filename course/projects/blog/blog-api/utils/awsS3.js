@@ -2,6 +2,7 @@ const {
 	PutObjectCommand,
 	S3Client,
 	GetObjectCommand,
+	DeleteObjectCommand,
 } = require("@aws-sdk/client-s3");
 
 const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
@@ -65,7 +66,22 @@ const signedUrl = async (key) => {
 	}
 };
 
-const deleteFileFromS3 = async (key) => {};
+const deleteFileFromS3 = async (key) => {
+	const params = {
+		Bucket: awsBucketName,
+		key: key,
+	};
+
+	const command = new DeleteObjectCommand(params);
+
+	try {
+		await client.send(command);
+
+		return;
+	} catch (error) {
+		console.log(error);
+	}
+};
 
 module.exports = { uploadFileToS3, signedUrl, deleteFileFromS3 };
 
