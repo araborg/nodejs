@@ -14,4 +14,6 @@ router.post(
 	fileController.uploadFile,
 );
 
+router.get("/signed-url", isAuth, fileController.getSignedUrl);
+
 module.exports = router;

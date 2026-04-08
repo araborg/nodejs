@@ -40,6 +40,8 @@ const uploadFileToS3 = async ({ file, ext }) => {
 	}
 };
 
-module.exports = { uploadFileToS3 };
+const signedUrl = async (aws) => {};
+
+module.exports = { uploadFileToS3, signedUrl };
 
 // npm i @aws-sdk/client-s3
