@@ -53,6 +53,11 @@ const uploadFile = async (req, res, next) => {
 	}
 };
 
-const getSignedUrl = async (req, res, next) => {};
+const getSignedUrl = async (req, res, next) => {
+	try {
+	} catch (error) {
+		next(error);
+	}
+};
 
-module.exports = { uploadFile };
+module.exports = { uploadFile, getSignedUrl };
