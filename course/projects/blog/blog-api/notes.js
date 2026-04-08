@@ -49,5 +49,9 @@ Install aws sdk:
 npm i @aws-sdk/client-s3
 
 
+Install another aws sdk:
+npm i @aws-sdk/s3-request-presigner
+
+
 
 */
