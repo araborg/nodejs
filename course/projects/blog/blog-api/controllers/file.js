@@ -72,4 +72,11 @@ const getSignedUrl = async (req, res, next) => {
 	}
 };
 
+const deleteFile = async (req, res, next) => {
+	try {
+	} catch (error) {
+		next(error);
+	}
+};
+
 module.exports = { uploadFile, getSignedUrl };
