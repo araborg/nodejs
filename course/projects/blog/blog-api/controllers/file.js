@@ -2,6 +2,7 @@ const path = require("path");
 const { validateExtension } = require("../validators/file");
 
 const { uploadFileToS3 } = require("../utils/awsS3");
+const { File } = require("../models");
 
 const uploadFile = async (req, res, next) => {
 	// http://localhost:2000/api/v1/file/upload
@@ -25,7 +26,18 @@ const uploadFile = async (req, res, next) => {
 			throw new Error("Only .jpg or .jpeg or .png is allowed");
 		}
 
-		const key = await uploadFile({ file, ext });
+		const key = await uploadFileToS3({ file, ext });
+
+		// if (key) {
+		// 	const newFile = new File({
+		// 		key: key,
+		// 		size: file.size,
+		// 		mimetype: file.mimetype,
+		// 		createdBy: req.user._id,
+		// 	});
+
+		// 	await newFile.save();
+		// }
 
 		// res.json({ ok: true });
 		res.status(201).json({
