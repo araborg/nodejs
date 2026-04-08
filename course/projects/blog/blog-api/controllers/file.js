@@ -82,9 +82,17 @@ const deleteFile = async (req, res, next) => {
 		const { key } = req.query;
 
 		await deleteFileFromS3(key);
+
+		await File.findOneAndDelete({ key });
 	} catch (error) {
 		next(error);
 	}
+
+	req.status(200).json({
+		code: 200,
+		status: true,
+		message: "File deleted successfully",
+	});
 };
 
 module.exports = { uploadFile, getSignedUrl, deleteFile };
