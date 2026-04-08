@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, File } = require("../models");
 
 const hashPassword = require("../utils/hashpassword");
 const comparePassword = require("../utils/comparePassword");
@@ -325,12 +325,19 @@ const updateProfile = async (req, res, next) => {
 		}
 
 		if (profilePic) {
-			// const file =
+			const file = await File.findById(profilePic);
+
+			if (!file) {
+				res.code = 404;
+
+				throw new Error("File not found");
+			}
 		}
 
 		// ?????????????
 		user.name = name ? name : user.name;
 		user.email = email ? email : user.email;
+		user.profilePic = profilePic;
 
 		if (email) {
 			user.isVerified = false;
