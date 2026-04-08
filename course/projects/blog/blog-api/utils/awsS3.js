@@ -65,6 +65,8 @@ const signedUrl = async (key) => {
 	}
 };
 
-module.exports = { uploadFileToS3, signedUrl };
+const deleteFileFromS3 = async (key) => {};
+
+module.exports = { uploadFileToS3, signedUrl, deleteFileFromS3 };
 
 // npm i @aws-sdk/client-s3

@@ -79,4 +79,4 @@ const deleteFile = async (req, res, next) => {
 	}
 };
 
-module.exports = { uploadFile, getSignedUrl };
+module.exports = { uploadFile, getSignedUrl, deleteFile };

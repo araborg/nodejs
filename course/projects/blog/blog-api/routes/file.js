@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
+const { fileController } = require("../controllers");
+
 const isAuth = require("../middlewares/isAuth");
 const upload = require("../middlewares/upload");
-
-const { fileController } = require("../controllers");
 
 router.post(
 	"/upload",
@@ -16,6 +16,6 @@ router.post(
 
 router.get("/signed-url", isAuth, fileController.getSignedUrl);
 
-// router.delete("/delete-file", isAuth)
+router.delete("/delete-file", isAuth, fileController.deleteFile);
 
 module.exports = router;
