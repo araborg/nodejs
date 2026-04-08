@@ -26,18 +26,20 @@ const uploadFile = async (req, res, next) => {
 			throw new Error("Only .jpg or .jpeg or .png is allowed");
 		}
 
-		// const key = await uploadFileToS3({ file, ext });
+		const key = await uploadFileToS3({ file, ext });
 
-		// if (key) {
-		// 	const newFile = new File({
-		// 		key: key,
-		// 		size: file.size,
-		// 		mimetype: file.mimetype,
-		// 		createdBy: req.user._id,
-		// 	});
+		if (key) {
+			const newFile = new File({
+				key: key,
+				size: file.size,
+				mimetype: file.mimetype,
+				createdBy: req.user._id,
+			});
 
-		// 	await newFile.save();
-		// }
+			console.log(newFile);
+
+			await newFile.save();
+		}
 
 		// res.json({ ok: true });
 		res.status(201).json({
