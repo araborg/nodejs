@@ -133,12 +133,14 @@ const deletePost = async (req, res, next) => {
 	}
 };
 
-const getPost = async (req, res, next) => {
+const getPosts = async (req, res, next) => {
 	try {
 		const { page, size, q } = req.body;
 
 		const pageNumber = parseInt(page) || 1;
 		const sizeNumber = parseInt(size) || 10;
+
+		console.log(pageNumber, sizeNumber);
 
 		if (q) {
 			const search = new RegExp(q, "i");
@@ -168,4 +170,4 @@ const getPost = async (req, res, next) => {
 	}
 };
 
-module.exports = { addPost, updatePost, deletePost, getPost };
+module.exports = { addPost, updatePost, deletePost, getPosts };
