@@ -11,14 +11,13 @@ const isAuth = async (req, res, next) => {
 			? req.headers.authorization.split(" ")
 			: [];
 
-		const token =
-			authorization.length > 1 ? authorization[1] : null;
+		const token = authorization.length > 1 ? authorization[1] : null;
 
-		console.log(token);
+		console.log("token " + token);
 
 		if (token) {
 			const payload = jwt.verify(token, jwtSecret);
-			console.log(payload);
+			// console.log(payload);
 
 			if (payload) {
 				req.user = {
