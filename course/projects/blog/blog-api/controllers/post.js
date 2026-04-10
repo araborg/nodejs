@@ -1,6 +1,8 @@
 const { File, Category, Post } = require("../models");
 
 const addPost = async (req, res, next) => {
+	// http://localhost:2000/api/v1/posts
+
 	try {
 		const { title, desc, file, category } = req.body;
 
