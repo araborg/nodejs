@@ -1,7 +1,11 @@
 const { File, Category, Post } = require("../models");
 
 const addPost = async (req, res, next) => {
-	// http://localhost:2000/api/v1/posts
+	/* 
+        http://localhost:2000/api/v1/posts
+
+        { "title": "Title_1", "desc": "Desc_1", "file": "", "category": "69cb982d7e704a80af638bd8" }
+    */
 
 	try {
 		const { title, desc, file, category } = req.body;
