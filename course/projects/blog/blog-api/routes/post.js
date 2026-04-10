@@ -5,4 +5,4 @@ const { postController } = require("../controllers");
 
 router.post("/", isAuth, postController.addPost);
 
-module.export = router;
+module.exports = router;

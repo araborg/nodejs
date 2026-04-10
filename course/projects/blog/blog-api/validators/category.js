@@ -1,6 +1,5 @@
 const { check, param } = require("express-validator");
 const { mongoose } = require("mongoose");
-// const { model } = require("mongoose");
 
 const addCategoryValidator = [
 	check("title").notEmpty().withMessage("Title is required"),
