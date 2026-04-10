@@ -178,6 +178,22 @@ const getPosts = async (req, res, next) => {
 
 const getPost = async (req, res, next) => {
 	try {
+		const { id } = req.params;
+
+		const post = await Post.findById(id);
+
+		if (!post) {
+			res.code = 404;
+
+			throw new Error("Post not found");
+		}
+
+		res.status(200).json({
+			code: 200,
+			status: true,
+			message: "Get post successfully",
+			data: { post },
+		});
 	} catch (error) {
 		next(error);
 	}
