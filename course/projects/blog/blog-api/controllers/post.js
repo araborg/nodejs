@@ -134,13 +134,19 @@ const deletePost = async (req, res, next) => {
 };
 
 const getPosts = async (req, res, next) => {
+	// http://localhost:2000/api/v1/posts
+
+	// http://localhost:2000/api/v1/posts?size=5&page=3
+
 	try {
-		const { page, size, q } = req.body;
+		const { page, size, q } = req.query;
+
+		// console.log(page, size);
 
 		const pageNumber = parseInt(page) || 1;
 		const sizeNumber = parseInt(size) || 10;
 
-		console.log(pageNumber, sizeNumber);
+		let query = {};
 
 		if (q) {
 			const search = new RegExp(q, "i");
@@ -152,7 +158,7 @@ const getPosts = async (req, res, next) => {
 
 		const total = await Post.countDocuments(query);
 
-		const pages = Math.ceil(total / pageNumber);
+		const pages = Math.ceil(total / sizeNumber);
 
 		const posts = await Post.find(query)
 			.sort({ updatedBy: -1 })
