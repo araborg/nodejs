@@ -364,7 +364,17 @@ const currentUser = async (req, res, next) => {
 
 		const user = await User.findById(_id);
 
-		// if(){}
+		if (!user) {
+			res.code = 404;
+
+			throw new Error("User not found");
+		}
+
+		res.status(200).json({
+			code: 200,
+			status: true,
+			message: "Get current user successfully!",
+		});
 	} catch (error) {
 		next(error);
 	}
