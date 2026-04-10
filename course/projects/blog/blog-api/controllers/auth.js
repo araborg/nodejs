@@ -364,7 +364,9 @@ const currentUser = async (req, res, next) => {
 	try {
 		const { _id } = req.user;
 
-		const user = await User.findById(_id);
+		const user = await User.findById(_id)
+			.select("-password -verificationCode -forgotPasswordCode")
+			.populate("profilePic");
 
 		if (!user) {
 			res.code = 404;
