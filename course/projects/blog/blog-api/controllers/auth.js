@@ -358,6 +358,8 @@ const updateProfile = async (req, res, next) => {
 	}
 };
 
+const currentUser = async (req, res, next) => {};
+
 module.exports = {
 	signup,
 	signin,
