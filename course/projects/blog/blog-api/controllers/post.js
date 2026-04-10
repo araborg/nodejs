@@ -199,4 +199,4 @@ const getPost = async (req, res, next) => {
 	}
 };
 
-module.exports = { addPost, updatePost, deletePost, getPosts };
+module.exports = { addPost, updatePost, deletePost, getPosts, getPost };
