@@ -359,6 +359,8 @@ const updateProfile = async (req, res, next) => {
 };
 
 const currentUser = async (req, res, next) => {
+	// http://localhost:2000/api/v1/auth/current-user
+
 	try {
 		const { _id } = req.user;
 
@@ -374,6 +376,7 @@ const currentUser = async (req, res, next) => {
 			code: 200,
 			status: true,
 			message: "Get current user successfully!",
+			data: { user },
 		});
 	} catch (error) {
 		next(error);
