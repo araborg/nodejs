@@ -16,7 +16,7 @@ router.put(
 	postController.updatePost,
 );
 
-// router.get("/", isAuth)
+router.get("/", isAuth, postController.getPost);
 
 router.delete("/:id", isAuth, idValidator, validate, postController.deletePost);
 
