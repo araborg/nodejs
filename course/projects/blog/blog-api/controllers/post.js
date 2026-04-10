@@ -108,6 +108,8 @@ const updatePost = async (req, res, next) => {
 };
 
 const deletePost = async (req, res, next) => {
+	// http://localhost:2000/api/v1/posts/69d8bd970d853bfee5589e97
+
 	try {
 		const { id } = req.params;
 
@@ -131,4 +133,27 @@ const deletePost = async (req, res, next) => {
 	}
 };
 
-module.exports = { addPost, updatePost, deletePost };
+const getPost = async (req, res, next) => {
+	try {
+		const { page, size, q } = req.body;
+
+		const pageNumber = parseInt(page) || 1;
+		const sizeNumber = parseInt(size) || 10;
+
+		if (q) {
+			const search = new RegExp(q, "i");
+
+			query = {
+				$or: [{ title: search }],
+			};
+		}
+
+		const total = await Post.countDocuments(query);
+
+		const pages = Math.ceil(total / pageNumber);
+	} catch (error) {
+		next(error);
+	}
+};
+
+module.exports = { addPost, updatePost, deletePost, getPost };

@@ -16,6 +16,8 @@ router.put(
 	postController.updatePost,
 );
 
+// router.get("/", isAuth)
+
 router.delete("/:id", isAuth, idValidator, validate, postController.deletePost);
 
 module.exports = router;
