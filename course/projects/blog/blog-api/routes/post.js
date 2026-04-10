@@ -7,6 +7,12 @@ const validate = require("../validators/validate");
 
 router.post("/", isAuth, addPostValidator, validate, postController.addPost);
 
-// router.put("/:id", isAuth, addPostValidator, validate, postController.addPost);
+router.put(
+	"/:id",
+	isAuth,
+	addPostValidator,
+	validate,
+	postController.updatePost,
+);
 
 module.exports = router;

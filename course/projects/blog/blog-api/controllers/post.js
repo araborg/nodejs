@@ -97,6 +97,7 @@ const updatePost = async (req, res, next) => {
 				code: 200,
 				status: true,
 				message: "Post updated successfully",
+				data: { post },
 			});
 		}
 	} catch (error) {
