@@ -50,4 +50,12 @@ const addPost = async (req, res, next) => {
 	}
 };
 
-module.exports = { addPost };
+const updatePost = async (req, res, next) => {
+	try {
+		//
+	} catch (error) {
+		next(error);
+	}
+};
+
+module.exports = { addPost, updatePost };

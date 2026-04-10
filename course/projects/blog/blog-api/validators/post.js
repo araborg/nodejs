@@ -39,7 +39,7 @@ const updatePostValidator = [
 const idValidator = [
 	param("id").custom(async (id) => {
 		if (id && !mongoose.Types.ObjectId.isValid(id)) {
-			throw "Invalid category id";
+			throw "Invalid post id";
 		}
 	}),
 ];
