@@ -52,11 +52,11 @@ const addPost = async (req, res, next) => {
 
 const updatePost = async (req, res, next) => {
 	try {
+		const { title, desc, file, category } = req.body;
+
 		const { id } = req.params;
 
 		const { _id } = req.user;
-
-		const { title, desc, file, category } = req.body;
 
 		if (file) {
 			const isFileExist = await File.findById(file);
@@ -66,40 +66,40 @@ const updatePost = async (req, res, next) => {
 
 				throw new Error("File not found");
 			}
+		}
 
-			if (category) {
-				const isCategoryExist = await Category.findById(category);
+		if (category) {
+			const isCategoryExist = await Category.findById(category);
 
-				if (!isCategoryExist) {
-					res.code = 404;
-
-					throw new Error("Category not found");
-				}
-			}
-
-			const post = await Post.findById(id);
-
-			if (!post) {
+			if (!isCategoryExist) {
 				res.code = 404;
 
-				throw new Error("Post not found");
+				throw new Error("Category not found");
 			}
-
-			post.title = title ? title : post.title;
-			post.desc = desc;
-			post.file = file;
-			post.category = category ? categor : post.category;
-			post.updatedBy = _id;
-
-			await post.save();
-
-			res.status(200).json({
-				code: 200,
-				status: true,
-				message: "Post updated successfully",
-				data: { post },
-			});
 		}
+
+		const post = await Post.findById(id);
+
+		if (!post) {
+			res.code = 404;
+
+			throw new Error("Post not found");
+		}
+
+		post.title = title ? title : post.title;
+		post.desc = desc;
+		// post.file = file;
+		post.category = category ? categor : post.category;
+		post.updatedBy = _id;
+
+		await post.save();
+
+		res.status(200).json({
+			code: 200,
+			status: true,
+			message: "Post updated successfully",
+			data: { post },
+		});
 	} catch (error) {
 		next(error);
 	}
