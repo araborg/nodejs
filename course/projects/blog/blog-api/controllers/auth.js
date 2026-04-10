@@ -360,6 +360,11 @@ const updateProfile = async (req, res, next) => {
 
 const currentUser = async (req, res, next) => {
 	try {
+		const { _id } = req.user;
+
+		const user = await User.findById(_id);
+
+		// if(){}
 	} catch (error) {
 		next(error);
 	}
