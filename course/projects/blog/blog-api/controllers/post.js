@@ -51,12 +51,14 @@ const addPost = async (req, res, next) => {
 };
 
 const updatePost = async (req, res, next) => {
-	try {
-		const { title, desc, file, category } = req.body;
+	// http://localhost:2000/api/v1/posts/69d8bd970d853bfee5589e97
 
+	try {
 		const { id } = req.params;
 
 		const { _id } = req.user;
+
+		const { title, desc, file, category } = req.body;
 
 		if (file) {
 			const isFileExist = await File.findById(file);
@@ -89,7 +91,7 @@ const updatePost = async (req, res, next) => {
 		post.title = title ? title : post.title;
 		post.desc = desc;
 		// post.file = file;
-		post.category = category ? categor : post.category;
+		post.category = category ? category : post.category;
 		post.updatedBy = _id;
 
 		await post.save();
