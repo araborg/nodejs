@@ -1,4 +1,4 @@
-const { check } = require("express-validator");
+const { check, param } = require("express-validator");
 const { mongoose } = require("mongoose");
 
 const addPostValidator = [
