@@ -358,7 +358,12 @@ const updateProfile = async (req, res, next) => {
 	}
 };
 
-const currentUser = async (req, res, next) => {};
+const currentUser = async (req, res, next) => {
+	try {
+	} catch (error) {
+		next(error);
+	}
+};
 
 module.exports = {
 	signup,
@@ -369,4 +374,5 @@ module.exports = {
 	recoverPassword,
 	changePassword,
 	updateProfile,
+	currentUser,
 };
