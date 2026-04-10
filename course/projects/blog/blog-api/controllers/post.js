@@ -139,7 +139,7 @@ const getPosts = async (req, res, next) => {
 	// http://localhost:2000/api/v1/posts?size=5&page=3
 
 	try {
-		const { page, size, q } = req.query;
+		const { page, size, q, category } = req.query;
 
 		// console.log(page, size);
 
@@ -156,6 +156,12 @@ const getPosts = async (req, res, next) => {
 			};
 		}
 
+		if (category) {
+			query = { ...query, category };
+		}
+
+		console.log(category);
+
 		const total = await Post.countDocuments(query);
 
 		const pages = Math.ceil(total / sizeNumber);
@@ -164,9 +170,11 @@ const getPosts = async (req, res, next) => {
 			.populate("file")
 			.populate("category")
 			.populate(
-				"updatedBy, -password -verificationCode -forgotPasswordCode",
+				"updatedBy",
+				"-password -verificationCode -forgotPasswordCode",
 			)
-			.sort({ updatedBy: -1 })
+			// .sort({ updatedBy: -1 })
+			.sort({ _id: -1 })
 			.skip((pageNumber - 1) * sizeNumber)
 			.limit(sizeNumber);
 
@@ -191,7 +199,8 @@ const getPost = async (req, res, next) => {
 			.populate("file")
 			.populate("category")
 			.populate(
-				"updatedBy, -password -verificationCode -forgotPasswordCode",
+				"updatedBy",
+				"-password -verificationCode -forgotPasswordCode",
 			);
 
 		if (!post) {
