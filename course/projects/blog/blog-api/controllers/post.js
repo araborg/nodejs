@@ -52,11 +52,11 @@ const addPost = async (req, res, next) => {
 
 const updatePost = async (req, res, next) => {
 	try {
-		const { title, desc, file, category } = req.body;
-
 		const { id } = req.params;
 
 		const { _id } = req.user;
+
+		const { title, desc, file, category } = req.body;
 
 		if (file) {
 			const isFileExist = await File.findById(file);
