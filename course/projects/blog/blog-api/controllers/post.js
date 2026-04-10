@@ -176,4 +176,11 @@ const getPosts = async (req, res, next) => {
 	}
 };
 
+const getPost = async (req, res, next) => {
+	try {
+	} catch (error) {
+		next(error);
+	}
+};
+
 module.exports = { addPost, updatePost, deletePost, getPosts };
