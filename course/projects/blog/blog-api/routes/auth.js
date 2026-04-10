@@ -67,6 +67,8 @@ router.put(
 	authController.updateProfile,
 );
 
+// router.get()
+
 module.exports = router;
 
 /*
